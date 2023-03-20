@@ -1,30 +1,29 @@
 {
   "name": "admin",
-  "description": "Payload project created from blank template",
   "version": "1.0.0",
-  "main": "dist/server.js",
-  "license": "MIT",
+  "private": true,
   "scripts": {
-    "dev": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts nodemon",
-    "build:payload": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload build",
-    "build:server": "tsc",
-    "build": "yarn copyfiles && yarn build:payload && yarn build:server",
-    "serve": "cross-env PAYLOAD_CONFIG_PATH=dist/payload.config.js NODE_ENV=production node dist/server.js",
-    "copyfiles": "copyfiles -u 1 \"src/**/*.{html,css,scss,ttf,woff,woff2,eot,svg,jpg,png}\" dist/",
-    "generate:types": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:types",
-    "generate:graphQLSchema": "cross-env PAYLOAD_CONFIG_PATH=src/payload.config.ts payload generate:graphQLSchema"
-  },
-  "dependencies": {
-    "payload": "^1.6.19",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .js,.ts,.vue --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write ."
   },
   "devDependencies": {
-    "@types/express": "^4.17.9",
-    "cross-env": "^7.0.3",
-    "nodemon": "^2.0.6",
-    "ts-node": "^9.1.1",
-    "copyfiles": "^2.4.1",
-    "typescript": "^4.8.4"
+    "@nuxtjs/device": "^3.1.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/eslint-module": "^4.0.2",
+    "@nuxtjs/google-fonts": "^3.0.0-1",
+    "@typescript-eslint/parser": "^5.54.1",
+    "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nuxt": "^3.2.3",
+    "nuxt-headlessui": "^1.1.1",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3",
+    "typescript": "^4.9.5"
   }
 }

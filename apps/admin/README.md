@@ -1,19 +1,42 @@
-# cms
+# Nuxt 3 Starter
 
-This project was created using create-payload-app using the blank template.
+This is an opinionated starter template for [Nuxt 3](https://nuxt.com). It is based on the what we use and love at [Input Studio](https://inputstudio.co).
 
-## How to Use
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-`yarn dev` will start up your application and reload on any changes.
+## Features
 
-### Docker
+Don't worry, if you don't need something, you can remove it. It faster to remove than to add.
 
-If you have docker and docker-compose installed, you can run `docker-compose up`
+- [x] 👓 Sass — CSS preprocessor
+- [x] ✨ [Headless UI — UI components](https://headlessui.dev)
+- [x] 📱 [Device — Device detection](https://nuxt.com/modules/device)
+- [x] 🧹 Prettier — Code formatter
+- [x] 🪛 Eslint — Linter
+- [x] ⚙️ VS Code settings and recommended extensions
 
-To build the docker image, run `docker build -t my-tag .`
+## Setup
 
-Ensure you are passing all needed environment variables when starting up your container via `--env-file` or setting them with your deployment.
+Yeah, yarn is better than npm. But you can still use npm if you want.
 
-The 3 typical env vars will be `MONGODB_URI`, `PAYLOAD_SECRET`, and `PAYLOAD_CONFIG_PATH`
+```bash
+# Create a new Nuxt 3 project using this starter template:
+npx nuxi init -t gh:inputstudio/nuxt3-starter <project-name>
+# Go to the project directory:
+cd <project-name>
+# Install the dependencies:
+yarn install
+# Start the development server:
+yarn dev
+```
 
-`docker run --env-file .env -p 3000:3000 my-tag`
+## Production
+
+```bash
+# Build the application for production:
+yarn build
+# Preview production build:
+yarn preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
