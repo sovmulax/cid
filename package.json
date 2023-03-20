@@ -10,8 +10,7 @@
     "dev:admin": "turbo run dev --filter=admin",
     "dev:web": "turbo run dev --filter=web",
     "lint": "turbo run lint",
-    "format": "prettier --write **/* --ignore-path .gitignore",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "turbo run format"
   },
   "devDependencies": {
     "prettier": "^2.8.4",
