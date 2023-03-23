@@ -2,9 +2,21 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Welcome to Nuxt',
+      title: 'Projet CID',
       meta: [{ name: 'description', content: 'My awesome Nuxt project' }],
-      link: [{ rel: 'icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', href: 'images/favicon.ico' },
+        { rel: 'stylesheet', href: '/css/bootstrap.min.css' },
+        { rel: 'stylesheet', href: '/css/style.css' },
+        { rel: 'stylesheet', href: '/css/icons.css' },
+      ],
+      script: [
+        { type: 'text/javascript', src: '/js/jquery.min.js' },
+        { type: 'text/javascript', src: '/js/bootstrap.bundle.min.js' },
+        { type: 'text/javascript', src: '/js/jquery.slimscroll.js' },
+        { type: 'text/javascript', src: '/js/waves.min.js' },
+        { type: 'text/javascript', src: '/js/app.js' },
+      ],
     },
   },
   css: ['@/assets/scss/main.scss'],
@@ -15,9 +27,6 @@ export default defineNuxtConfig({
           // additionalData: '@import "@/assets/scss/my-style.scss";', // Auto import scss files your Single-File Component (SFC)
         },
       },
-    },
-    server: {
-      port: 8000,
     },
   },
   modules: ['@nuxtjs/device', '@nuxtjs/eslint-module', '@nuxtjs/google-fonts', 'nuxt-headlessui'],

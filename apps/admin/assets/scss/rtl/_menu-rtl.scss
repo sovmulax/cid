@@ -1,0 +1,134 @@
+
+
+/******** menu **********/ 
+
+#topnav {
+    .topbar-main {
+        .logo{
+            float: right;
+        }
+
+        .app-search {
+            .form-control{
+                padding-right: 18px;
+                padding-left: 40px;
+                margin-right: 0;
+                margin-left: 16px;
+            }
+    
+            button{
+                left: 26px;
+            }
+        }
+    
+        .notification-list {
+    
+            &.list-inline-item:not(:last-child) {
+                margin-left: 0;
+            }
+    
+            .language-switch {
+                a {
+                    img{
+                        float: left;
+                    }
+                }
+            }
+    
+            .notify-item{
+                .notify-icon{
+                    float: right;
+                    margin-left: 10px;
+                    margin-right: 0px;
+                }
+                .notify-details{
+                    margin-left: 0;
+                    margin-right: 45px;
+                }
+            }
+            .notify-all{
+                text-align: center !important;
+            }
+    
+            .profile-dropdown i{
+                margin-right: 0px;
+                margin-left: 5px;
+            }
+        }
+
+    }
+
+    .navigation-menu {
+        > li {
+            > a {
+                i{
+                    margin-right: 0px;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px){
+    #topnav {
+        .navigation-menu {
+            > li{
+                &:first-of-type {
+                    > a {
+                        padding-right: 0;
+                        padding-left: 15px;
+                    }
+                }
+
+                .submenu{
+                    left: auto;
+                    right: 0;
+                    text-align: right;
+                    > li{
+                        .submenu{
+                            right: 100%;
+                        }
+
+                        &.has-submenu{
+                            > a:after{
+                                content: "\55";
+                                left: 20px;
+                                right: auto;
+                            }
+                        }
+                    }
+                }
+
+                &.last-elements .submenu {
+                    right: auto;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px){
+    #topnav {
+        
+        .navigation-menu {
+            text-align: right;
+            > li {
+                .submenu {
+                    padding-right: 20px;
+                    
+                }
+                > a{
+                    
+                    i{
+                        &.mdi-drop {
+                            float: left;
+                            margin-left: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

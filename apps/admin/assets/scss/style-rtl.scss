@@ -42,7 +42,10 @@ TABLES OF CSS
 32. Pricing
 33. Extra pages
 34. Account pages
-
+35. Bootstrap-rtl
+36. Menu-rtl
+37. Pages-rtl
+38. Plugins-rtl
 
 
 
@@ -185,3 +188,21 @@ TABLES OF CSS
 34. Account pages
    ====== */
 @import "account-pages";
+
+/* ======
+35. Bootstrap-rtl
+====== */
+@import "rtl/bootstrap-rtl";
+/* ======
+36. Menu-rtl
+====== */
+@import "rtl/menu-rtl";
+/* ======
+37. Pages-rtl
+====== */
+@import "rtl/pages-rtl";
+/* ======
+38. Plugins-rtl
+====== */
+@import "rtl/plugins-rtl";
+

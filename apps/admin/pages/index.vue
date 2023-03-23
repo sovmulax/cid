@@ -1,9 +1,9 @@
+<script lang="ts" setup>
+import Customheader from './components/header.vue';
+</script>
+
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <Customheader />
 </template>
 
-<script lang="ts" setup></script>
-
-<style lang="scss" scoped></style>
+<style scoped></style>
