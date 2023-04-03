@@ -9,11 +9,6 @@ try {
 } catch (error) {}
 const data = ref(records);
 const i = 1;
-
-async function author(id) {
-  const author = await pb.collection('users').getOne(id);
-  return author.name;
-}
 </script>
 
 <template>

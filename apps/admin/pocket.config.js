@@ -5,7 +5,7 @@ const pb = new PocketBase('https://pb.marcaureln.com');
 try {
   await pb.admins.authWithPassword('soumailaevane@gmail.com', 'onditmdpdoitetrelong');
 } catch (error) {
-  console.log(error);
+  // console.log(error);
 }
 
 export default pb;

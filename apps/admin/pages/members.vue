@@ -26,9 +26,12 @@ const data = ref(records);
               <h5 class="card-title mt-0">{{ item.fullname }}</h5>
               <h6 class="card-title mt-0">{{ item.jobTitle }}</h6>
               <p class="card-text">
-              <a :href="item.email"><i class="mdi mdi-email font-20"></i> {{ item.email }}</a><br>
-              <a :href="item.linkedin"><i class="mdi mdi-linkedin-box font-20"></i> {{ item.linkedin }}</a><br>
-              <a :href="item.facebook"><i class="mdi mdi-facebook-box font-20"></i> {{ item.facebook }}</a><br>
+                <a :href="item.email"><i class="mdi mdi-email font-20"></i> {{ item.email }}</a
+                ><br />
+                <a :href="item.linkedin"><i class="mdi mdi-linkedin-box font-20"></i> {{ item.linkedin }}</a
+                ><br />
+                <a :href="item.facebook"><i class="mdi mdi-facebook-box font-20"></i> {{ item.facebook }}</a
+                ><br />
               </p>
             </div>
           </div>
