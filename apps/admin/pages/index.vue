@@ -1,9 +1,11 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div>
-    <h1>test</h1>
-  </div>
+  <NuxtLayout name="body">
+    <template #title-header>
+      <h4>Dashboard</h4>
+    </template>
+  </NuxtLayout>
 </template>
 
 <style scoped></style>
