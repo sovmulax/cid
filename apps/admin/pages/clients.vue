@@ -1,12 +1,10 @@
 <script setup>
-import PocketBase, { Record } from 'pocketbase';
 import { ref } from 'vue';
+import pb from '../pocket.config.js';
 
 // collect data from pocketbase
-const pb = new PocketBase('https://pb.marcaureln.com');
 let records;
 try {
-  await pb.admins.authWithPassword('soumailaevane@gmail.com', 'onditmdpdoitetrelong');
   records = await pb.collection('clients').getFullList();
 } catch (error) {}
 const data = ref(records);
