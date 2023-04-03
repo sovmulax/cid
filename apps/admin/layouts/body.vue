@@ -146,9 +146,8 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            2019 © Veltrix
             <span class="d-none d-sm-inline-block">
-              - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</span
+              Made with <i class="mdi mdi-heart text-danger"></i> by InputStudio X Sovmulax</span
             >
           </div>
         </div>

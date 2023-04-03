@@ -3,7 +3,7 @@
 <template>
   <NuxtLayout name="body">
     <template #title-header>
-      <h4>Dashboard</h4>
+      <h5>Dashboard</h5>
     </template>
   </NuxtLayout>
 </template>
