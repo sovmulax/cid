@@ -15,7 +15,8 @@ try {
 } catch (error) {}
 const data1 = ref(events);
 const data2 = ref(agenda);
-let i = 1;
+const i = 1;
+const j = 1;
 </script>
 
 <template>
@@ -31,7 +32,7 @@ let i = 1;
               <h4 class="mt-0 header-title">Listes des événements</h4>
               <div id="accordion">
                 <div class="card mb-1">
-                  <div class="card-header p-3" id="headingOne">
+                  <div id="headingOne" class="card-header p-3">
                     <h6
                       class="m-0 font-14 text-dark"
                       data-target="#collapseOne"
@@ -75,7 +76,7 @@ let i = 1;
                   </div>
                 </div>
                 <div class="card mb-1">
-                  <div class="card-header p-3" id="headingTwo">
+                  <div id="headingTwo" class="card-header p-3">
                     <h6
                       class="m-0 font-14 text-dark collapsed hei"
                       data-target="#collapseTwo"
@@ -103,7 +104,7 @@ let i = 1;
                           </thead>
                           <tbody>
                             <tr v-for="item in data2" :key="item.id">
-                              <th scope="row">{{ i++ }}</th>
+                              <th scope="row">{{ j++ }}</th>
                               <td>{{ item.title }}</td>
                               <td>{{ item.type }}</td>
                               <td>{{ item.startDate }}</td>
