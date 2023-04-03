@@ -5008,6 +5008,11 @@ pluralize@^8.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-8.0.0.tgz#1a6fa16a38d12a1901e0320fa017051c539ce3b1"
   integrity sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==
 
+pocketbase@^0.13.1:
+  version "0.13.1"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.13.1.tgz#b6297148999f67d9b4b5eb86ebb5013ef9c55640"
+  integrity sha512-3Wsj87VcmvqmziWXdXWKyCDKbA3rfMR5wlP64UJj+7KBss4ZEXv3Z1ZXhLe5OOiFwF+ErbcO9bzWBMrVLfsIpQ==
+
 postcss-calc@^8.2.3:
   version "8.2.4"
   resolved "https://registry.yarnpkg.com/postcss-calc/-/postcss-calc-8.2.4.tgz#77b9c29bfcbe8a07ff6693dc87050828889739a5"
@@ -5566,6 +5571,11 @@ safe-regex@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+
+sass-migrator@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/sass-migrator/-/sass-migrator-1.7.3.tgz#0ac232b530d78a1b84dfaf24aaccdfd03159acf6"
+  integrity sha512-8JMZ15HMvjE8X3i1NhPu2GQzEIT74xrGACq6J9RzdbJ49N1Fl0lFvfX03+hAQN0MKNYKASq6fx1VZLa5NuwBWw==
 
 sass@^1.58.3:
   version "1.59.2"
