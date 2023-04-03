@@ -141,6 +141,9 @@
       <!-- end row-->
     </div>
   </div>
+  <div>
+    <slot></slot>
+  </div>
 </template>
 
 <script lang="ts" setup></script>

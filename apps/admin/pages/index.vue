@@ -1,9 +1,9 @@
-<script lang="ts" setup>
-import Customheader from './components/header.vue';
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <Customheader />
+  <div>
+    <h1>test</h1>
+  </div>
 </template>
 
 <style scoped></style>
