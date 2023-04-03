@@ -20,7 +20,7 @@ const data = ref(records);
         <div v-for="item in data" :key="item.id" class="col-md-6 col-xl-3">
           <div class="card">
             <img
-              class="card-img-top img-fluid"
+              class="card-img-top img-fluid size"
               :src="`https://pb.marcaureln.com/api/files/` + item.collectionId + `/` + item.id + `/` + item.logo"
               alt="Card image cap"
             />
@@ -36,4 +36,9 @@ const data = ref(records);
   </NuxtLayout>
 </template>
 
-<style scoped></style>
+<style scoped>
+.size {
+  height: 200px;
+  object-fit: cover;
+}
+</style>
