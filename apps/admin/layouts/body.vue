@@ -80,19 +80,22 @@
               <!-- Navigation Menu-->
               <ul class="navigation-menu">
                 <li class="has-submenu">
-                  <a href="index.html"><i class="ion ion-md-business"></i>Entreprises</a>
+                  <nuxt-link to="/"><i class="ion ion-md-home"></i>Accueil</nuxt-link>
                 </li>
                 <li class="has-submenu">
-                  <a href="index.html"><i class="ion ion-md-calendar"></i>Agenda / Évenements</a>
+                  <nuxt-link to="/projects"><i class="ion ion-md-laptop"></i>Gestion de Projets</nuxt-link>
                 </li>
                 <li class="has-submenu">
-                  <a href="index.html"><i class="ion ion-md-paper"></i>Actualités</a>
+                  <nuxt-link to="/clients"><i class="ion ion-md-business"></i>Entreprises</nuxt-link>
                 </li>
                 <li class="has-submenu">
-                  <a href="index.html"><i class="ion ion-md-people"></i>Membres</a>
+                  <nuxt-link to="/events"><i class="ion ion-md-calendar"></i>Agenda / Évenements</nuxt-link>
                 </li>
                 <li class="has-submenu">
-                  <a href="index.html"><i class="ion ion-md-laptop"></i>Gestion de Projets</a>
+                  <nuxt-link to="/post"><i class="ion ion-md-paper"></i>Actualités</nuxt-link>
+                </li>
+                <li class="has-submenu">
+                  <nuxt-link to="/members"><i class="ion ion-md-people"></i>Membres</nuxt-link>
                 </li>
               </ul>
               <!-- End navigation menu -->
