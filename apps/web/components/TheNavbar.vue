@@ -1,5 +1,8 @@
 <template>
-  <div class="h-12 w-full p-12 flex justify-between items-center">
+  <div
+    class="h-12 w-full p-12 flex justify-between items-center text-white"
+    :class="{ 'absolute bg-transparent': $route.path === '/' }"
+  >
     <nuxt-link class="w-12" to="/">
       <img class="object-contain" src="~/assets/img/logo.png" alt="Logo CID" />
     </nuxt-link>
