@@ -1,0 +1,19 @@
+@import '_vars';
+
+.btn {
+  background-color: $secondary;
+  color: $background;
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color: $secondary, $amount: 10);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
