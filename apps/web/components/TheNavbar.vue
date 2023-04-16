@@ -4,14 +4,14 @@
       <img class="object-contain" src="~/assets/img/logo.png" alt="Logo CID" />
     </nuxt-link>
 
-    <div class="flex gap-12 items-center">
+    <div class="flex gap-12 items-center font-bold">
       <nuxt-link to="/">Accueil</nuxt-link>
       <nuxt-link to="#">Projets</nuxt-link>
       <nuxt-link to="#">Actualités</nuxt-link>
       <nuxt-link to="#">À propos</nuxt-link>
     </div>
 
-    <nuxt-link to="#" class="btn">Contact</nuxt-link>
+    <nuxt-link to="#" class="btn">Nous contacter</nuxt-link>
   </div>
 </template>
 
