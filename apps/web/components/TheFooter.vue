@@ -21,7 +21,9 @@
     </div>
 
     <div class="text-center">
-      <p>&copy; {{ new Date().getFullYear() }} Cellule d'Innovation et de Développement</p>
+      <p>
+        &copy; 2017 - {{ new Date().getFullYear() }} Cellule d'Innovation et de Développement. Tous droits réservés.
+      </p>
     </div>
   </div>
 </template>
