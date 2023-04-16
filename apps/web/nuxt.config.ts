@@ -17,7 +17,7 @@ export default defineNuxtConfig({
       },
     },
   },
-  modules: ['@nuxtjs/device', '@nuxtjs/eslint-module', '@nuxtjs/google-fonts', 'nuxt-headlessui'],
+  modules: ['@nuxtjs/device', '@nuxtjs/eslint-module', '@nuxtjs/google-fonts', 'nuxt-headlessui', 'nuxt-icon'],
   device: {
     refreshOnResize: true,
   },
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
   },
   googleFonts: {
     families: {
-      Inter: true,
+      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
     download: true,
     base64: false,
