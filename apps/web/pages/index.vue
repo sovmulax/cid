@@ -1,9 +1,5 @@
 <template>
-  <div>
-    <TheNavbar />
-    <div class="h-screen bg-slate-100"></div>
-    <TheFooter />
-  </div>
+  <div class="h-screen bg-slate-100"></div>
 </template>
 
 <script lang="ts" setup>
