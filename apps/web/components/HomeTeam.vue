@@ -24,33 +24,38 @@
 </template>
 
 <script setup lang="ts">
+import drKouassiPicture from '@/assets/img/dr-kouassi.jpg';
+import prAsseuPicture from '@/assets/img/pr-asseu.jpg';
+import prDiabyPicture from '@/assets/img/pr-diaby.jpg';
+import drPandryPicture from '@/assets/img/dr-pandry.jpg';
+
 const members = [
   {
     fullname: 'Dr KOUASSI Franklin',
     jobTitle: 'Responsable',
-    profilePicture: 'https://www.goethe.de/resources/files/jpg1118/photo_dr-franklin-formatkey-jpg-w245.jpg',
-    linkedin: 'https://www.linkedin.com/',
+    profilePicture: drKouassiPicture,
+    linkedin: 'https://ci.linkedin.com/in/franklin-kouassi-00358113',
     facebook: 'https://www.facebook.com/',
   },
   {
     fullname: 'Pr ASSEU Olivier',
     jobTitle: 'Responsable',
-    profilePicture: 'https://livedna.net/images/scientist/ASSEU-Olivier-Pascal-Kouame.jpg',
+    profilePicture: prAsseuPicture,
     linkedin: 'https://www.linkedin.com/',
     facebook: 'https://www.facebook.com/',
   },
   {
-    fullname: 'Dr VALLE Linda',
+    fullname: 'Pr DIABY Moustapha',
     jobTitle: 'Responsable',
-    profilePicture: 'https://cio-mag.com/wp-content/uploads/2019/09/Linda-Nanan-Vallee1.png',
-    linkedin: 'https://www.linkedin.com/',
+    profilePicture: prDiabyPicture,
+    linkedin: 'https://ci.linkedin.com/in/moustapha-diaby-34040b58',
     facebook: 'https://www.facebook.com/',
   },
   {
-    fullname: 'Dr KANGA Koffi',
+    fullname: 'Dr PANDRY Ghislain',
     jobTitle: 'Responsable',
-    profilePicture: 'https://www.goethe.de/resources/files/jpg1118/photo_dr-franklin-formatkey-jpg-w245.jpg',
-    linkedin: 'https://www.linkedin.com/',
+    profilePicture: drPandryPicture,
+    linkedin: 'https://www.linkedin.com/in/ghislain-pandry-49b863108/',
     facebook: 'https://www.facebook.com/',
   },
 ];

@@ -16,36 +16,37 @@
 </template>
 
 <script lang="ts" setup>
+import logoSIIN from '@/assets/img/logo-siin.jpg';
+import logoINPH from '@/assets/img/logo-inph.png';
+import logoLaPoste from '@/assets/img/logo-laposte.jpg';
+import logoLanfiaTech from '@/assets/img/logo-lanfiatech.png';
+import logoOnBusiness from '@/assets/img/logo-onbusiness.png';
+
 const companies = [
   {
-    name: 'Société Générale',
-    logo: 'https://societegenerale.ci/fileadmin/user_upload/logos/logo_SGBCI.png',
-    link: '#',
+    name: 'SIIN',
+    logo: logoSIIN,
+    link: 'https://www.easyassur.net/',
   },
   {
-    name: 'MTN',
-    logo: 'https://yt3.ggpht.com/a/AGF-l7-oiv32Ut2Q5MlBTgQAQUv4zYXcZeNQQ8FBDA=s900-c-k-c0xffffffff-no-rj-mo',
-    link: '#',
+    name: 'La Poste',
+    logo: logoLaPoste,
+    link: 'https://laposte.ci.post/',
   },
   {
-    name: 'Orange',
-    logo: 'https://cdn.contactcenterworld.com/images/company/orange-uganda-1200px-logo.jpg',
-    link: '#',
+    name: 'INPH',
+    logo: logoINPH,
+    link: 'http://www.inhp.ci/',
   },
   {
-    name: 'CIE',
-    logo: 'https://cme.ci/static/main/images/Logo_CIE.png',
-    link: '#',
+    name: 'LanfiaTech',
+    logo: logoLanfiaTech,
+    link: 'https://lanfiatech.ci/',
   },
   {
-    name: 'Total Energies',
-    logo: 'https://www.todomotorperu.com/wp-content/uploads/2021/06/TotalEnergies_Logo_RGB-840x664.png',
-    link: '#',
-  },
-  {
-    name: 'SIR',
-    logo: 'https://arda.africa/wp-content/uploads/2022/08/Arda_Sponsor_Logos_Diamond_SIR_update-200x200.png',
-    link: '#',
+    name: 'OnBusiness',
+    logo: logoOnBusiness,
+    link: 'https://www.eciob.com/',
   },
 ];
 </script>
