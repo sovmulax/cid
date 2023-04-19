@@ -1,5 +1,8 @@
 <template>
-  <HomeHero />
+  <main>
+    <HomeHero />
+    <HomeShowcase />
+  </main>
 </template>
 
 <script lang="ts" setup>
