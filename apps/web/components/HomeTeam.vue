@@ -1,0 +1,59 @@
+<template>
+  <section class="flex flex-col items-center py-16">
+    <h1 class="text-6xl font-bold tracking-tight">Une équipe d'experts</h1>
+    <div class="flex mt-12 gap-12">
+      <div v-for="member in members" :key="member.fullname" class="w-64 text-center">
+        <img
+          :src="member.profilePicture"
+          :alt="`Photo de ${member.fullname}`"
+          class="w-full h-64 object-cover rounded-full mb-3"
+        />
+        <h2 class="text-xl font-semibold uppercase tracking-tight">{{ member.fullname }}</h2>
+        <h3 class="leading-6 text-neutral-800">{{ member.jobTitle }}</h3>
+        <div class="flex gap-3 justify-center my-3">
+          <a :href="member.facebook" target="_blank" rel="noopener noreferrer">
+            <Icon name="mdi:facebook" size="48px" class="text-neutral-800 hover:text-black" />
+          </a>
+          <a :href="member.linkedin" target="_blank" rel="noopener noreferrer">
+            <Icon name="mdi:linkedin" size="48px" class="text-neutral-800 hover:text-black" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script setup lang="ts">
+const members = [
+  {
+    fullname: 'Dr KOUASSI Franklin',
+    jobTitle: 'Responsable',
+    profilePicture: 'https://www.goethe.de/resources/files/jpg1118/photo_dr-franklin-formatkey-jpg-w245.jpg',
+    linkedin: 'https://www.linkedin.com/',
+    facebook: 'https://www.facebook.com/',
+  },
+  {
+    fullname: 'Pr ASSEU Olivier',
+    jobTitle: 'Responsable',
+    profilePicture: 'https://livedna.net/images/scientist/ASSEU-Olivier-Pascal-Kouame.jpg',
+    linkedin: 'https://www.linkedin.com/',
+    facebook: 'https://www.facebook.com/',
+  },
+  {
+    fullname: 'Dr VALLE Linda',
+    jobTitle: 'Responsable',
+    profilePicture: 'https://cio-mag.com/wp-content/uploads/2019/09/Linda-Nanan-Vallee1.png',
+    linkedin: 'https://www.linkedin.com/',
+    facebook: 'https://www.facebook.com/',
+  },
+  {
+    fullname: 'Dr KANGA Koffi',
+    jobTitle: 'Responsable',
+    profilePicture: 'https://www.goethe.de/resources/files/jpg1118/photo_dr-franklin-formatkey-jpg-w245.jpg',
+    linkedin: 'https://www.linkedin.com/',
+    facebook: 'https://www.facebook.com/',
+  },
+];
+</script>
+
+<style scoped></style>

@@ -2,6 +2,7 @@
   <main>
     <HomeHero />
     <HomeProjects />
+    <HomeTeam />
     <HomeShowcase />
   </main>
 </template>
