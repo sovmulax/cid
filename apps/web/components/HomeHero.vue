@@ -6,8 +6,7 @@
   >
     <h1 class="text-8xl my-12 font-bold tracking-wide leading-none">Cellule d'Innovation et de Développement</h1>
     <p class="md:w-1/2 font-bold text-xl">
-      La Cellule d'Innovation et de Dévéloppement (CID) est le centre de recherche de projets innovants en matière de
-      TIC de l'ESATIC.
+      La Cellule d'Innovation et de Dévéloppement (CID) est le centre de recherche de projets innovants de l'ESATIC.
     </p>
     <NuxtLink to="#" class="btn my-12">Vous avez un projet ?</NuxtLink>
     <Icon name="material-symbols:keyboard-double-arrow-down" size="32px" class="text-white animate-bounce" />

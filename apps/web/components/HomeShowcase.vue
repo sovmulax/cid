@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center py-9">
+  <div class="flex flex-col items-center py-12">
     <h1 class="text-xl uppercase font-bold tracking-wide leading-none">Ils nous font confiance</h1>
     <div class="flex gap-9 justify-between my-9">
       <a
