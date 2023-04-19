@@ -4,13 +4,13 @@
     role="img"
     aria-label="Image Description"
   >
-    <h1 class="text-8xl tracking-wide leading-none">Cellule d'Innovation et de Développement</h1>
-    <p class="md:w-1/2 font-bold text-lg">
+    <h1 class="text-8xl font-bold tracking-wide leading-none">Cellule d'Innovation et de Développement</h1>
+    <p class="md:w-1/2 font-bold my-9 text-xl">
       La Cellule d'Innovation et de Dévéloppement (CID) est le centre de recherche de projets innovants en matière de
       TIC de l'ESATIC.
     </p>
-    <NuxtLink to="#" class="btn my-9">Vous avez un projet ?</NuxtLink>
-    <Icon name="material-symbols:keyboard-double-arrow-down" size="32px" class="text-white animate-bounce" />
+    <NuxtLink to="#" class="btn">Vous avez un projet ?</NuxtLink>
+    <Icon name="material-symbols:keyboard-double-arrow-down" size="32px" class="text-white animate-bounce my-9" />
   </div>
 </template>
 
@@ -22,7 +22,8 @@
     url('~/assets/img/home-hero.webp') no-repeat center center scroll;
 }
 
-h1 {
+.hero--wrapper h1,
+.hero--wrapper p {
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
 }
 </style>
