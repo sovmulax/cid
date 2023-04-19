@@ -1,6 +1,6 @@
 <template>
   <div
-    class="hero--wrapper flex justify-center items-center flex-col w-full overflow-hidden text-center text-white"
+    class="hero__wrapper flex justify-center items-center flex-col w-full overflow-hidden text-center text-white"
     role="img"
     aria-label="Image Description"
   >
@@ -15,15 +15,15 @@
 </template>
 
 <style>
-.hero--wrapper {
+.hero__wrapper {
   height: 100vh;
   background-size: cover !important;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0.65) 100%),
     url('~/assets/img/home-hero.webp') no-repeat center center scroll;
 }
 
-.hero--wrapper h1,
-.hero--wrapper p {
+.hero__wrapper h1,
+.hero__wrapper p {
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
 }
 </style>
