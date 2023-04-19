@@ -1,0 +1,116 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  deleted   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  Post      Post[]
+}
+
+model Client {
+  id        String   @id @default(uuid())
+  name      String
+  logo      String?
+  deleted   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Event {
+  id        String    @id @default(uuid())
+  title     String
+  type      EventType
+  startDate DateTime
+  endDate   DateTime?
+  private   Boolean   @default(false)
+  deleted   Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Member {
+  id             String          @id @default(uuid())
+  fullname       String
+  jobTitle       String
+  email          String?
+  facebook       String?
+  linkedin       String?
+  profilePicture String?
+  deleted        Boolean         @default(false)
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  ProjectMember  ProjectMember[]
+}
+
+model Post {
+  id        String   @id @default(uuid())
+  slug      String   @unique
+  title     String
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id])
+  content   String   @db.LongText
+  deleted   Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Project {
+  id            String          @id @default(uuid())
+  title         String
+  domain        String?
+  subdomain     String?
+  startDate     DateTime
+  endDate       DateTime?
+  deleted       Boolean         @default(false)
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  ProjectMember ProjectMember[]
+  ProjectTask   ProjectTask[]
+}
+
+model ProjectMember {
+  id          String        @id @default(uuid())
+  projectId   String
+  project     Project       @relation(fields: [projectId], references: [id])
+  memberId    String
+  member      Member        @relation(fields: [memberId], references: [id])
+  deleted     Boolean       @default(false)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  ProjectTask ProjectTask[]
+}
+
+model ProjectTask {
+  id              String        @id @default(uuid())
+  title           String
+  status          String
+  projectId       String
+  project         Project       @relation(fields: [projectId], references: [id])
+  projectMemberId String
+  projectMember   ProjectMember @relation(fields: [projectMemberId], references: [id])
+  deleted         Boolean       @default(false)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+}
+
+enum EventType {
+  MEETING
+  WORKSHOP
+  TRAINING
+  COACHING
+  OTHER
+}
