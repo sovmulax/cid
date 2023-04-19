@@ -3,6 +3,7 @@
     <HomeHero />
     <HomeProjects />
     <HomeTeam />
+    <HomeContact />
     <HomeShowcase />
   </main>
 </template>
