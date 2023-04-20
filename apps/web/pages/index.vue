@@ -1,5 +1,11 @@
 <template>
-  <HomeHero />
+  <main>
+    <HomeHero />
+    <HomeProjects />
+    <HomeTeam />
+    <HomeContact />
+    <HomeShowcase />
+  </main>
 </template>
 
 <script lang="ts" setup>

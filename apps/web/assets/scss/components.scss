@@ -6,6 +6,7 @@
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   font-weight: bold;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
   &:hover,
   &:focus {
@@ -15,5 +16,28 @@
 
   &:hover {
     transform: translateY(-1px);
+  }
+}
+
+.btn--primary {
+  background-color: $primary;
+  color: $background;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($color: $primary, $amount: 10);
+  }
+}
+
+.btn--neutral {
+  background-color: $background;
+  color: $primary;
+
+  &:hover,
+  &:focus {
+    background-color: $background;
+    color: darken($color: $primary, $amount: 10);
+    box-shadow: unset;
+    transform: unset;
   }
 }

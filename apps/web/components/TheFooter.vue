@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-1/2 border-t-2 mt-9 py-9 gap-16">
+  <div class="flex flex-col h-1/2 py-9 gap-16">
     <div class="flex justify-center gap-12 flex-wrap">
       <div v-for="contact in contacts" :key="contact.link">
         <NuxtLink :to="contact.link" class="flex gap-3 items-center">
