@@ -5193,6 +5193,11 @@ pocketbase@^0.13.1:
   resolved "https://registry.npmjs.org/pocketbase/-/pocketbase-0.13.1.tgz"
   integrity sha512-3Wsj87VcmvqmziWXdXWKyCDKbA3rfMR5wlP64UJj+7KBss4ZEXv3Z1ZXhLe5OOiFwF+ErbcO9bzWBMrVLfsIpQ==
 
+pocketbase@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.14.0.tgz#0788d0f537b2e9f4c4f72aeb73a9fc4cba397bda"
+  integrity sha512-4y8kZkGQh4NJkuy/LntUBbFAplz655/5/+XYKetSwj6MYMo3N3zWFno+HxzmL59njsauwGsiNEWggbEETm1+WA==
+
 postcss-calc@^8.2.3:
   version "8.2.4"
   resolved "https://registry.npmjs.org/postcss-calc/-/postcss-calc-8.2.4.tgz"

@@ -16,39 +16,31 @@
 </template>
 
 <script lang="ts" setup>
-import logoSIIN from '@/assets/img/logo-siin.jpg';
-import logoINPH from '@/assets/img/logo-inph.png';
-import logoLaPoste from '@/assets/img/logo-laposte.jpg';
-import logoLanfiaTech from '@/assets/img/logo-lanfiatech.png';
-import logoOnBusiness from '@/assets/img/logo-onbusiness.png';
+import PocketBase from 'pocketbase';
 
-const companies = [
-  {
-    name: 'SIIN',
-    logo: logoSIIN,
-    link: 'https://www.easyassur.net/',
-  },
-  {
-    name: 'La Poste',
-    logo: logoLaPoste,
-    link: 'https://laposte.ci.post/',
-  },
-  {
-    name: 'INPH',
-    logo: logoINPH,
-    link: 'http://www.inhp.ci/',
-  },
-  {
-    name: 'LanfiaTech',
-    logo: logoLanfiaTech,
-    link: 'https://lanfiatech.ci/',
-  },
-  {
-    name: 'OnBusiness',
-    logo: logoOnBusiness,
-    link: 'https://www.eciob.com/',
-  },
-];
+const { apiBaseUrl } = useRuntimeConfig().public;
+
+interface PocketBaseRecord {
+  id: string;
+  collectionId: string;
+  collectionName: string;
+  created: string;
+  updated: string;
+}
+
+interface Company extends PocketBaseRecord {
+  name: string;
+  logo: string;
+  link: string;
+}
+
+const pb = new PocketBase(apiBaseUrl);
+
+const companies: Company[] = await pb.collection('clients').getFullList();
+companies.map((company) => {
+  company.logo = pb.files.getUrl(company, company.logo);
+  return company;
+});
 </script>
 
 <style lang="sass"></style>

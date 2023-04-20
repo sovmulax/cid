@@ -7,6 +7,11 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', href: '/favicon.ico' }],
     },
   },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL,
+    },
+  },
   css: ['@/assets/scss/main.scss'],
   vite: {
     css: {
