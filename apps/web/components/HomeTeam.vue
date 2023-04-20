@@ -24,34 +24,9 @@
 </template>
 
 <script setup lang="ts">
-import PocketBase from 'pocketbase';
-
-const { apiBaseUrl } = useRuntimeConfig().public;
-
-interface PocketBaseRecord {
-  id: string;
-  collectionId: string;
-  collectionName: string;
-  created: string;
-  updated: string;
-}
-
-interface Member extends PocketBaseRecord {
-  fullname: string;
-  jobTitle: string;
-  picture: string;
-  email: string | undefined;
-  facebook: string | undefined;
-  linkedin: string | undefined;
-}
-
-const pb = new PocketBase(apiBaseUrl);
-
-const members: Member[] = await pb.collection('members').getFullList();
-members.map((member) => {
-  member.picture = pb.files.getUrl(member, member.picture);
-  return member;
-});
+const { $pb } = useNuxtApp();
+const members: Member[] = await $pb.collection('members').getFullList();
+members.map((member) => getFileUrl(member, 'picture'));
 </script>
 
-<style scoped></style>
+<style lang="sass"></style>
