@@ -2,7 +2,7 @@
   <div
     class="hero__wrapper flex justify-center items-center flex-col w-full overflow-hidden text-center text-white"
     role="img"
-    aria-label="Image Description"
+    aria-label="Photo de Marília Castelli sur Unsplash"
   >
     <h1 class="text-8xl my-12 font-bold tracking-wide leading-none">Cellule d'Innovation et de Développement</h1>
     <p class="md:w-1/2 font-bold text-xl">
