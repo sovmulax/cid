@@ -1,7 +1,7 @@
 <template>
-  <section class="flex flex-col items-center py-16">
+  <section class="flex flex-col items-center py-16 gap-12">
     <h1 class="text-6xl font-bold tracking-tight">Une équipe d'experts</h1>
-    <div class="flex mt-12 gap-12">
+    <div class="flex gap-12">
       <div v-for="member in members" :key="member.fullname" class="w-64 text-center">
         <img
           :src="member.picture"
@@ -20,6 +20,7 @@
         </div>
       </div>
     </div>
+    <NuxtLink to="/a-propos" class="btn btn--primary">En savoir plus</NuxtLink>
   </section>
 </template>
 
