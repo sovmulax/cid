@@ -21,4 +21,4 @@ const companies: Company[] = await $pb.collection('clients').getFullList();
 companies.map((company) => getFileUrl(company, 'logo'));
 </script>
 
-<style lang="sass"></style>
+<style lang="scss"></style>

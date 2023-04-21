@@ -29,4 +29,4 @@ const members: Member[] = await $pb.collection('members').getFullList();
 members.map((member) => getFileUrl(member, 'picture'));
 </script>
 
-<style lang="sass"></style>
+<style lang="scss"></style>

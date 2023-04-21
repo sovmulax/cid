@@ -13,11 +13,7 @@
     </div>
 
     <div class="flex flex-col gap-3 md:flex-row md:gap-16 justify-center items-center font-bold flex-wrap">
-      <nuxt-link to="/">Accueil</nuxt-link>
-      <nuxt-link to="#">Projets</nuxt-link>
-      <nuxt-link to="#">Actualités</nuxt-link>
-      <nuxt-link to="#">À propos</nuxt-link>
-      <nuxt-link to="#">Nous contacter</nuxt-link>
+      <nuxt-link v-for="link in links" :key="link.path" :to="link.path">{{ link.name }}</nuxt-link>
     </div>
 
     <div class="text-center">
@@ -49,6 +45,14 @@ const contacts = [
     link: 'mailto:cid@esatic.edu.ci',
   },
 ];
+
+const links = [
+  { name: 'Accueil', path: '/' },
+  { name: 'Projets', path: '/projets' },
+  { name: 'Actualités', path: '/actualites' },
+  { name: 'À propos', path: '/a-propos' },
+  { name: 'Nous contacter', path: '/contact' },
+];
 </script>
 
-<style></style>
+<style lang="scss"></style>
