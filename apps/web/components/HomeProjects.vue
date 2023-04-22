@@ -26,20 +26,20 @@ const projects = [
     name: 'Système de diagnostic',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
     image: 'https://drkoch.dk/wp-content/uploads/2016/10/IMG_0628.jpg',
-    link: '/projets/1',
+    link: '/projets',
   },
   {
     name: 'Système de drone',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
     image:
       'https://ocs-pl.oktawave.com/v1/AUTH_2887234e-384a-4873-8bc5-405211db13a2/spidersweb/2019/11/DJI-Mavic-Mini-23-of-26.jpg',
-    link: '/projets/1',
+    link: '/projets',
   },
   {
     name: 'Agriculture',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
     image: 'https://straydoginstitute.org/wp-content/uploads/2021/07/shutterstock_1282334635.jpg',
-    link: '/projets/1',
+    link: '/projets',
   },
 ];
 </script>
