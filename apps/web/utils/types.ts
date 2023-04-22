@@ -22,3 +22,11 @@ interface Member extends PocketBaseRecord {
   facebook: string | undefined;
   linkedin: string | undefined;
 }
+
+interface Post extends PocketBaseRecord {
+  title: string;
+  content: string;
+  author: string;
+  slug: string;
+  cover: string | undefined;
+}

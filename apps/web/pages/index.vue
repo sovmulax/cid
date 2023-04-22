@@ -1,6 +1,7 @@
 <template>
   <main>
     <HomeHero />
+    <HomeNews />
     <HomeProjects />
     <HomeTeam />
     <HomeContact />

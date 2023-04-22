@@ -31,6 +31,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
-    "pocketbase": "^0.14.0"
+    "pocketbase": "^0.14.0",
+    "timeago.js": "^4.0.2"
   }
 }
