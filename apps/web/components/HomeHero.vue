@@ -4,8 +4,10 @@
     role="img"
     aria-label="Photo de Marília Castelli sur Unsplash"
   >
-    <h1 class="text-8xl my-12 font-bold tracking-wide leading-none">Cellule d'Innovation et de Développement</h1>
-    <p class="md:w-1/2 font-bold text-xl">
+    <h1 class="text-4xl md:text-8xl my-12 font-bold tracking-wide leading-none">
+      Cellule d'Innovation et de Développement
+    </h1>
+    <p class="md:w-1/2 font-bold md:text-xl">
       La Cellule d'Innovation et de Dévéloppement (CID) est le centre de recherche de projets innovants de l'ESATIC.
     </p>
     <NuxtLink to="/contact" class="btn my-12">Vous avez un projet ?</NuxtLink>
