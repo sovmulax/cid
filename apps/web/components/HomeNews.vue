@@ -1,13 +1,9 @@
 <template>
   <section class="flex flex-col items-center py-16 gap-12">
-    <h1 class="text-6xl font-bold tracking-tight">À la une</h1>
-    <div class="flex">
-      <div v-for="post in posts" :key="post.id" class="flex flex-col gap-1">
-        <NuxtLink
-          :to="`/actualites/${post.slug}`"
-          class="post__wrapper w-96 overflow-hidden inline-block"
-          title="En savoir plus"
-        >
+    <h1 class="text-6xl font-bold tracking-tight text-center">À la une</h1>
+    <div class="flex flex-wrap justify-around">
+      <div v-for="post in posts" :key="post.id" class="flex flex-col gap-1 mb-3">
+        <NuxtLink :to="`/actualites/${post.slug}`" class="post__wrapper w-80 md:w-96 overflow-hidden inline-block">
           <img
             :src="post.cover"
             :alt="`Couverture de l'article : ${post.title}`"

@@ -1,7 +1,7 @@
 <template>
   <section class="flex flex-col items-center py-16 gap-12">
-    <h1 class="text-6xl font-bold tracking-tight">Une équipe d'experts</h1>
-    <div class="flex gap-12">
+    <h1 class="text-6xl font-bold tracking-tight text-center">Une équipe d'experts</h1>
+    <div class="flex gap-12 flex-wrap justify-around">
       <div v-for="member in members" :key="member.fullname" class="w-64 text-center">
         <img
           :src="member.picture"

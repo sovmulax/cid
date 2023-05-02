@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col h-1/2 py-9 gap-16">
-    <div class="flex justify-center gap-12 flex-wrap">
+    <div class="flex md:justify-center gap-12 flex-wrap px-9">
       <div v-for="contact in contacts" :key="contact.link">
         <NuxtLink :to="contact.link" class="flex gap-3 items-center">
           <Icon :name="contact.icon" size="32px" :class="'text-primary'" />

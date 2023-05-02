@@ -1,12 +1,18 @@
 <template>
-  <section class="flex flex-col items-center py-16">
-    <h1 class="text-6xl font-bold tracking-tight">Nos Projets</h1>
+  <section class="flex flex-col items-center py-16 px-9">
+    <h1 class="text-6xl font-bold tracking-tight text-center">Nos Projets</h1>
     <p class="md:w-1/2 my-9 text-xl leading-6 text-neutral-800">
       La CID aborde des projets divers et repartis en plusieurs catégories. Cette diversité nous permet d'atteindre
       plusieurs domaines d'activité satifaisant ainsi une majeure partie de la population.
     </p>
-    <div class="flex">
-      <NuxtLink v-for="project in projects" :key="project.name" :to="project.link" class="w-96" title="En savoir plus">
+    <div class="flex flex-wrap">
+      <NuxtLink
+        v-for="project in projects"
+        :key="project.name"
+        :to="project.link"
+        class="w-80 md:w-96 mb-3"
+        title="En savoir plus"
+      >
         <img
           :src="project.image"
           :alt="`Image du projet ${project.name}`"
