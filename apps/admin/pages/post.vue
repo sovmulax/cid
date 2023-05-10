@@ -37,7 +37,9 @@ const i = 1;
                     <td>
                       {{ item.created }}
                     </td>
-                    <td><nuxt-link to="/post"><i class="fas fa-arrow-circle-right"></i></nuxt-link></td>
+                    <td>
+                      <nuxt-link to="/post"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
+                    </td>
                   </tr>
                 </tbody>
               </table>
