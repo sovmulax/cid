@@ -1,4 +1,16 @@
-<script lang="ts" setup></script>
+<script setup>
+import { ref } from 'vue';
+import pb from '../../pocket.config.js';
+import dateformat from '../../helper/helper.js';
+// collect data from pocketbase
+let records;
+try {
+  records = await pb.collection('projects').getFullList();
+} catch (error) {}
+const data = ref(records);
+// console.log(data.value.length);
+// const i = 1;
+</script>
 
 <template>
   <NuxtLayout name="body">
@@ -21,23 +33,25 @@
                     <th>Sous-Domaine</th>
                     <th>Date Début</th>
                     <th>Date Fin</th>
+                    <th>État</th>
                     <th>Tâches</th>
                     <th>Membres</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <tr v-for="item in data" :key="item.id">
                     <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ item.title }}</td>
+                    <td>{{ item.domain }}</td>
+                    <td>{{ item.subDomain }}</td>
+                    <td>{{ dateformat(item.startDate) }}</td>
+                    <td>{{ dateformat(item.endDate) }}</td>
+                    <td>0%</td>
                     <td>
-                      <nuxt-link to="/"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
+                      <nuxt-link :to="`/taches/` + item.id"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
                     </td>
                     <td>
-                      <nuxt-link to="/"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
+                      <nuxt-link :to="`/membres/` + item.id"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
                     </td>
                   </tr>
                 </tbody>
