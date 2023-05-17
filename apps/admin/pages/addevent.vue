@@ -1,3 +1,29 @@
+<script setup>
+import { ref } from 'vue';
+// import pb from '../pocket.config.js';
+
+const title = ref('');
+const type = ref('');
+const startDate = ref('');
+const endDate = ref('');
+
+function Createvent() {
+  try {
+    // const data = {
+    //   title: title.value,
+    //   type: type.value,
+    //   startDate: '2022-01-01 10:00:00.123Z',
+    //   endDate: '2022-01-01 10:00:00.123Z',
+    //   private: true,
+    // };
+    // console.log(data);
+    // const record = await pb.collection('events').create(data);
+    // Gérer la réponse du serveur en cas de succès
+  } catch (e) {
+    // Gérer les erreurs de création d'événement
+  }
+}
+</script>
 <template>
   <NuxtLayout name="body">
     <template #title-header> Evènements</template>
@@ -12,7 +38,7 @@
               <form class="custom-validation" @submit.prevent="Createvent">
                 <div class="form-group">
                   <label>Titre</label>
-                  <input type="text" class="form-control" required placeholder="Type something" v-model="title" />
+                  <input v-model="title" type="text" class="form-control" required placeholder="Type something" />
                 </div>
 
                 <div class="form-group">
@@ -30,22 +56,22 @@
                   <label for="example-date-input">Date debut</label>
 
                   <input
+                    id="example-date-input"
+                    v-model="startDate"
                     class="form-control"
                     type="date"
-                    v-model="startDate"
                     placeholder="2011-08-19"
-                    id="example-date-input"
                   />
                 </div>
                 <div class="form-group">
                   <label for="example-date-input">Date Fin</label>
 
                   <input
+                    id="example-date-input"
+                    v-model="endDate"
                     class="form-control"
                     type="date"
-                    v-model="endDate"
                     placeholder="2011-08-19"
-                    id="example-date-input"
                   />
                 </div>
 
@@ -63,31 +89,3 @@
     </template>
   </NuxtLayout>
 </template>
-<script setup>
-import { ref } from 'vue';
-import pb from '../pocket.config.js';
-
-const title = ref('');
-const type = ref('');
-const startDate = ref('');
-const endDate = ref('');
-
-async function Createvent() {
-  try {
-    const data = {
-      title: title.value,
-      type: type.value,
-      startDate: '2022-01-01 10:00:00.123Z',
-      endDate: '2022-01-01 10:00:00.123Z',
-      private: true,
-    };
-    console.log(data);
-
-    const record = await pb.collection('events').create(data);
-    // Gérer la réponse du serveur en cas de succès
-  } catch (e) {
-    console.log(e);
-    // Gérer les erreurs de création d'événement
-  }
-}
-</script>

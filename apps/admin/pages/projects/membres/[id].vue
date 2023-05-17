@@ -1,23 +1,19 @@
 <script setup>
-import { ref } from 'vue';
-import pb from '../../../pocket.config.js';
-import dateformat from '../../../helper/helper.js';
-// collect data from pocketbase
-let records;
-let membre;
-const id = route.params.id;
-try {
-  //records = await pb.collection('projects').getFullList();
-  records = await pb.collection('project_members').getFullList({
-    filter: 'projectId=' + id,
-  });
-  membre = await pb.collection('members').getFullList({
-    filter: 'projectId=' + id,
-  });
-} catch (error) {}
-const data = ref(records);
-// console.log(data.value.length);
-// const i = 1;
+// import { ref } from 'vue';
+// import pb from '../../../pocket.config.js';
+// // collect data from pocketbase
+// let records;
+// let membre;
+// const id = route.params.id;
+// try {
+//   records = await pb.collection('project_members').getFullList({
+//     filter: 'projectId=' + id,
+//   });
+//   membre = await pb.collection('members').getFullList({
+//     filter: 'projectId=' + id,
+//   });
+// } catch (error) {}
+// // const data = ref(records);
 </script>
 
 <template>
@@ -46,7 +42,7 @@ const data = ref(records);
                     <th>Membres</th>
                   </tr>
                 </thead>
-                <tbody>
+                <!-- <tbody>
                   <tr v-for="item in data" :key="item.id">
                     <th scope="row"></th>
                     <td>{{ item.title }}</td>
@@ -62,7 +58,7 @@ const data = ref(records);
                       <nuxt-link :to="`/membres/` + item.id"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
                     </td>
                   </tr>
-                </tbody>
+                </tbody> -->
               </table>
             </div>
           </div>

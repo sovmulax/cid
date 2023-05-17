@@ -23,7 +23,6 @@ const j = 1;
   <NuxtLayout name="body">
     <template #title-header>
       <h5>Agenda / Événements</h5>
-
     </template>
     <template #content>
       <div class="row">

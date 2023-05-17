@@ -1,3 +1,36 @@
+<script setup>
+import { ref } from 'vue';
+// import pb from '../pocket.config.js';
+import PocketBase from 'pocketbase';
+
+const pb = new PocketBase('https://cid.marcaureln.com');
+try {
+  await pb.admins.authWithPassword('soumailaevane@gmail.com', 'onditmdpdoitetrelong');
+} catch (error) {
+  // console.log(error);
+}
+
+const title = ref('');
+const slug = ref('');
+const content = ref('');
+function Addpost() {
+  // const data = {
+  //   title: title.value,
+  //   content: content.value,
+  //   author: 'KONAN FABRICE',
+  //   slug: slug.value,
+  // };
+  // console.log(data);
+  try {
+    // const records = await pb.collection('posts').create(data);
+  } catch (e) {
+    // console.log(e);
+  }
+}
+
+// collect data from pocketbase
+</script>
+
 <template>
   <NuxtLayout name="body">
     <template #title-header> Evènements</template>
@@ -12,18 +45,18 @@
               <form class="custom-validation" @submit.prevent="Addpost">
                 <div class="form-group">
                   <label>Titre</label>
-                  <input type="text" class="form-control" required placeholder="Type something" v-model="title" />
+                  <input v-model="title" type="text" class="form-control" required placeholder="Type something" />
                 </div>
 
                 <div class="form-group">
                   <label>Slug</label>
-                  <input type="text" class="form-control" required placeholder="Type something" v-model="slug" />
+                  <input v-model="slug" type="text" class="form-control" required placeholder="Type something" />
                 </div>
 
                 <div class="form-group">
                   <label>Détails</label>
                   <div>
-                    <textarea required class="form-control" rows="5" v-model="content" type="text"></textarea>
+                    <textarea v-model="content" required class="form-control" rows="5" type="text"></textarea>
                   </div>
                 </div>
                 <div class="form-group mb-0">
@@ -47,36 +80,3 @@
   object-fit: cover;
 }
 </style>
-<script setup>
-import { ref } from 'vue';
-//import pb from '../pocket.config.js';
-import PocketBase from 'pocketbase';
-
-const pb = new PocketBase('https://cid.marcaureln.com');
-try {
-  await pb.admins.authWithPassword('soumailaevane@gmail.com', 'onditmdpdoitetrelong');
-} catch (error) {
-  console.log(error);
-}
-
-const title = ref('');
-const slug = ref('');
-const content = ref('');
-
-async function Addpost() {
-  const data = {
-    title: title.value,
-    content: content.value,
-    author: 'KONAN FABRICE',
-    slug: slug.value,
-  };
-  console.log(data);
-  try {
-    const records = await pb.collection('posts').create(data);
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-// collect data from pocketbase
-</script>

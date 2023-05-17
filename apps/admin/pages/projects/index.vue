@@ -8,8 +8,6 @@ try {
   records = await pb.collection('projects').getFullList();
 } catch (error) {}
 const data = ref(records);
-// console.log(data.value.length);
-// const i = 1;
 </script>
 
 <template>
@@ -48,10 +46,14 @@ const data = ref(records);
                     <td>{{ dateformat(item.endDate) }}</td>
                     <td>0%</td>
                     <td>
-                      <nuxt-link :to="`/taches/` + item.id"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
+                      <nuxt-link :to="`/projects/taches/` + item.id"
+                        ><i class="fas fa-arrow-circle-right"></i
+                      ></nuxt-link>
                     </td>
                     <td>
-                      <nuxt-link :to="`/membres/` + item.id"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
+                      <nuxt-link :to="`/projects/membres/` + item.id"
+                        ><i class="fas fa-arrow-circle-right"></i
+                      ></nuxt-link>
                     </td>
                   </tr>
                 </tbody>
