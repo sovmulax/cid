@@ -12,9 +12,7 @@ const data = ref(records);
 
 <template>
   <NuxtLayout name="body">
-    <template #title-header>
-      <h5>Projets</h5>
-    </template>
+    <template #title-header> Projets </template>
     <template #content>
       <div class="row">
         <div class="col-md-12 card">
@@ -46,14 +44,14 @@ const data = ref(records);
                     <td>{{ dateformat(item.endDate) }}</td>
                     <td>0%</td>
                     <td>
-                      <nuxt-link :to="`/projects/taches/` + item.id"
+                      <nuxt-link :to="`/projects/taches/${item.id}`"
                         ><i class="fas fa-arrow-circle-right"></i
                       ></nuxt-link>
                     </td>
                     <td>
-                      <nuxt-link :to="`/projects/membres/` + item.id"
-                        ><i class="fas fa-arrow-circle-right"></i
-                      ></nuxt-link>
+                      <nuxt-link :to="`/projects/membres/${item.id}`">
+                        <i class="fas fa-arrow-circle-right"></i>
+                      </nuxt-link>
                     </td>
                   </tr>
                 </tbody>

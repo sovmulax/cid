@@ -1,64 +1,45 @@
 <script setup>
 // import { ref } from 'vue';
-// import pb from '../../../pocket.config.js';
-// // collect data from pocketbase
-// let records;
-// let membre;
-// const id = route.params.id;
-// try {
-//   records = await pb.collection('project_members').getFullList({
-//     filter: 'projectId=' + id,
-//   });
-//   membre = await pb.collection('members').getFullList({
-//     filter: 'projectId=' + id,
-//   });
-// } catch (error) {}
-// // const data = ref(records);
+import pb from '../../../pocket.config.js';
+// collect data from pocketbase
+let records;
+
+try {
+  const route = useRoute();
+  const id = route.params.id;
+  records = await pb.collection('project_members').getFullList({
+    filter: `projectId = "${id}"`,
+  });
+} catch (error) {
+  // console.log(error);
+}
+const data = ref(records);
 </script>
 
 <template>
   <NuxtLayout name="body">
-    <template #title-header>
-      <h5>Projets / Membres</h5>
-    </template>
+    <template #title-header> Projets / Membres </template>
     <template #content>
       <div class="row">
         <div class="col-md-12 card">
           <div class="card-body">
-            <h4 class="mt-0 header-title">Liste des Articles</h4>
-            <p class="text-muted mb-4"></p>
+            <h4 class="mt-0 header-title">Liste des Membres du Projet</h4>
             <div class="table-responsive">
               <table class="table table-striped mb-0">
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Intitulé</th>
-                    <th>Domaine</th>
-                    <th>Sous-Domaine</th>
-                    <th>Date Début</th>
-                    <th>Date Fin</th>
-                    <th>État</th>
-                    <th>Tâches</th>
-                    <th>Membres</th>
+                    <th>Nom du Membre</th>
+                    <th>Rôle</th>
                   </tr>
                 </thead>
-                <!-- <tbody>
-                  <tr v-for="item in data" :key="item.id">
-                    <th scope="row"></th>
-                    <td>{{ item.title }}</td>
-                    <td>{{ item.domain }}</td>
-                    <td>{{ item.subDomain }}</td>
-                    <td>{{ dateformat(item.startDate) }}</td>
-                    <td>{{ dateformat(item.endDate) }}</td>
-                    <td>0%</td>
-                    <td>
-                      <nuxt-link :to="`/taches/` + item.id"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
-                    </td>
-                    <td>
-                      <nuxt-link :to="`/membres/` + item.id"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
-                    </td>
+                <tbody>
+                  <tr v-for="(item, index) in data" :key="item.id">
+                    <th scope="row">{{ index + 1 }}</th>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.role }}</td>
                   </tr>
-                </tbody> -->
+                </tbody>
               </table>
             </div>
           </div>
