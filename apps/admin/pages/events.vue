@@ -23,6 +23,7 @@ const j = 1;
   <NuxtLayout name="body">
     <template #title-header>
       <h5>Agenda / Événements</h5>
+
     </template>
     <template #content>
       <div class="row">
@@ -30,6 +31,7 @@ const j = 1;
           <div class="card">
             <div class="card-body">
               <h4 class="mt-0 header-title">Listes des événements</h4>
+              <p><NuxtLink to="addevent">Ajouter</NuxtLink></p>
               <div id="accordion">
                 <div class="card mb-1">
                   <div id="headingOne" class="card-header p-3">

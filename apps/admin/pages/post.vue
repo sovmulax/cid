@@ -19,7 +19,7 @@ const i = 1;
         <div class="col-md-12 card">
           <div class="card-body">
             <h4 class="mt-0 header-title">Liste des Articles</h4>
-            <p class="text-muted mb-4"></p>
+            <p class="text-muted mb-4"><NuxtLink to="/addactualite"> Ajouter</NuxtLink></p>
             <div class="table-responsive">
               <table class="table table-striped mb-0">
                 <thead>
