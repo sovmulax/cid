@@ -1,0 +1,1 @@
+export { default } from "file:///C:/Users/GSK-PREMIUM/Desktop/Projets%20professionnels/CID/cid/node_modules/@nuxt/vite-builder/dist/runtime/client.manifest.mjs"

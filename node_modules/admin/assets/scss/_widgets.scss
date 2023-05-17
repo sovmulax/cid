@@ -1,0 +1,140 @@
+/* ==============
+  Widgets
+===================*/
+
+.widget-chart li {
+    width: 31.5%;
+    display: inline-block;
+    padding: 0;
+    i {
+        font-size: 22px;
+    }
+}
+
+// right sidebar
+
+.right-sidebar{
+  position: fixed;
+  width: 280px;
+  top: 70px;
+  bottom: 0px;
+  right: 0px;
+  padding-bottom: 30px;
+  background: $white;
+  box-shadow: $shadow;
+}
+
+@media (min-width: 1200px){
+  .dasboard-content{
+    margin-right: 280px;
+  }
+}
+
+
+.user-wid{
+  .user-wid-content , .user-img img{
+    position: relative;
+    bottom: 16px;
+    box-shadow: $shadow;
+  }
+}
+
+// dashboard datepicker
+
+.dashboard-date-pick{
+  .datepicker-inline{
+    border: none;
+    width: auto;
+    .table-condensed{
+      tr{
+        td{
+          padding: 6px 8px;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}
+
+// dashboard map
+
+.dashboard-map-wid{
+  height: 250px;
+}
+
+
+// Earning widget
+
+.wid-earning{
+  padding: 15px 0px;
+  border-bottom: 1px solid $gray-200;
+  &:last-child{
+    border-bottom: none;
+  }
+}
+
+.social-source{
+  color: $body-color !important;
+  tr{
+    &:first-of-type{
+      td{
+        border-top: none;
+      }
+    }
+  }
+}
+
+// tab-widget
+
+.tab-wid{
+  position: relative;
+  .nav-link{
+    padding-bottom: 24px;
+    position: relative;
+    &:hover, &:focus{
+      border-color: transparent;
+      background: transparent; 
+    }
+    &.active{
+      border-color: transparent;
+      background: transparent;
+      &::before{
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        bottom: -7px;
+        left: 0px;
+        right: 0px;
+        border-left: 1px solid $gray-500;
+        border-top: 1px solid $gray-500;
+        transform: rotate(45deg);
+        background: $white;
+        margin: 0px auto;
+      }
+      .date, .product-icon{
+        color: $danger;
+      }
+    }
+  }
+}
+
+
+.latest-message-list{
+  .message-list-item{
+    position: relative;
+        a{
+          display: block;
+          padding: 14px 0px;
+          border-bottom: 1px solid $gray-200;
+          color: $gray-600;
+        }
+
+    &:last-child{
+      a{
+        border: none;
+      }
+    }
+  }
+}
+
