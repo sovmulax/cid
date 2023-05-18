@@ -1,18 +1,21 @@
 <template>
   <nav
-    class="h-12 w-full p-12 flex justify-between items-center text-white"
-    :class="{ 'absolute bg-transparent': $route.path === '/' }"
+    class="flex h-12 w-full items-center justify-between p-12"
+    :class="{
+      'absolute bg-transparent text-white': $route.path === '/',
+      'border-b-[1px] bg-white text-black': $route.path !== '/',
+    }"
   >
     <nuxt-link class="w-12" to="/">
       <img class="object-contain" src="~/assets/img/logo.png" alt="Logo CID" />
     </nuxt-link>
 
-    <div v-if="$device.isDesktop" class="nav-links flex gap-9 items-center font-bold">
+    <div v-if="$device.isDesktop" class="nav-links flex items-center gap-9 font-bold">
       <nuxt-link
         v-for="link in links"
         :key="link.path"
         :to="link.path"
-        class="hover:bg-neutral-800 hover:bg-opacity-50 rounded py-3 px-9"
+        class="rounded px-9 py-3 hover:bg-neutral-800 hover:bg-opacity-50"
       >
         {{ link.name }}
       </nuxt-link>
@@ -34,13 +37,13 @@
         leave-to-class="transform scale-95 opacity-0"
       >
         <HeadlessMenuItems
-          class="mobile-nav-links flex flex-col left-0 top-0 absolute z-50 bg-background h-screen w-2/3 p-12 gap-9"
+          class="mobile-nav-links absolute left-0 top-0 z-50 flex h-screen w-2/3 flex-col gap-9 bg-background p-12"
         >
           <nuxt-link
             v-for="link in links"
             :key="link.path"
             :to="link.path"
-            class="text-foreground font-bold"
+            class="font-bold text-foreground"
             @click="close"
           >
             {{ link.name }}

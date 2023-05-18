@@ -2,10 +2,17 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Welcome to Nuxt',
-      meta: [{ name: 'description', content: 'My awesome Nuxt project' }],
+      title: "Cellule d'Innovation et de Développement — ESATIC",
+      meta: [
+        {
+          name: 'description',
+          content:
+            "La Cellule d'Innovation et de Dévéloppement (CID) est le centre de recherche de projets innovants de l'ESATIC.",
+        },
+      ],
       link: [{ rel: 'icon', href: '/favicon.ico' }],
     },
+    pageTransition: { name: 'page', mode: 'in-out' },
   },
   runtimeConfig: {
     public: {
@@ -13,15 +20,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/scss/main.scss'],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // additionalData: '@import "@/assets/scss/my-style.scss";', // Auto import scss files your Single-File Component (SFC)
-        },
-      },
-    },
-  },
   modules: ['@nuxtjs/device', '@nuxtjs/eslint-module', '@nuxtjs/google-fonts', 'nuxt-headlessui', 'nuxt-icon'],
   device: {
     refreshOnResize: true,

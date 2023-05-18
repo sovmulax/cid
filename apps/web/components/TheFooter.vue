@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col h-1/2 py-9 gap-16">
-    <div class="flex md:justify-center gap-12 flex-wrap px-9">
+  <div class="flex h-1/2 flex-col gap-16 py-9" :class="{ 'border-t-[1px]': $route.path !== '/' }">
+    <div class="flex flex-wrap gap-12 px-9 md:justify-center">
       <div v-for="contact in contacts" :key="contact.link">
-        <NuxtLink :to="contact.link" class="flex gap-3 items-center">
+        <NuxtLink :to="contact.link" class="flex items-center gap-3">
           <Icon :name="contact.icon" size="32px" :class="'text-primary'" />
           <div class="flex flex-col gap-1">
             <h3 class="font-black">{{ contact.title }}</h3>
@@ -12,7 +12,7 @@
       </div>
     </div>
 
-    <div class="flex flex-col gap-3 md:flex-row md:gap-16 justify-center items-center font-bold flex-wrap">
+    <div class="flex flex-col flex-wrap items-center justify-center gap-3 font-bold md:flex-row md:gap-16">
       <nuxt-link v-for="link in links" :key="link.path" :to="link.path">{{ link.name }}</nuxt-link>
     </div>
 
@@ -54,5 +54,3 @@ const links = [
   { name: 'Nous contacter', path: '/contact' },
 ];
 </script>
-
-<style lang="scss"></style>

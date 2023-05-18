@@ -1,7 +1,14 @@
 <template>
-  <div></div>
+  <main class="bg-neutral-50">
+    <AboutIntro />
+    <AboutTeam />
+    <AboutGallery />
+    <HomeContact />
+  </main>
 </template>
 
-<script setup lang="ts"></script>
-
-<style lang="scss"></style>
+<script setup lang="ts">
+useHead({
+  title: "À Propos — Cellule d'Innovation et de Développement",
+});
+</script>

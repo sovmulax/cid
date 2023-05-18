@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-primary text-white flex flex-col items-center py-16 px-9 md:px-96 gap-9">
+  <section class="flex flex-col items-center gap-9 bg-primary px-9 py-16 text-white md:px-96">
     <h1 class="text-6xl font-bold tracking-tight">Vous avez un projet ?</h1>
     <p class="text-center">
       Laissez-nous vous aider à lui donner vie ! Notre équipe de professionnels qualifiés possède l'expertise et
@@ -12,5 +12,3 @@
 </template>
 
 <script setup lang="ts"></script>
-
-<style scoped></style>
