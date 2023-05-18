@@ -2,8 +2,14 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Welcome to Nuxt',
-      meta: [{ name: 'description', content: 'My awesome Nuxt project' }],
+      title: "Cellule d'Innovation et de Développement — ESATIC",
+      meta: [
+        {
+          name: 'description',
+          content:
+            "La Cellule d'Innovation et de Dévéloppement (CID) est le centre de recherche de projets innovants de l'ESATIC.",
+        },
+      ],
       link: [{ rel: 'icon', href: '/favicon.ico' }],
     },
   },
