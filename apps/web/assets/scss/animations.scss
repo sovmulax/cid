@@ -1,0 +1,12 @@
+// Image zoom in on hover effect
+.zoom-in-effect img {
+  display: block;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.zoom-in-effect:hover img {
+  transform: scale(1.1);
+  transform-origin: 50% 50%;
+}

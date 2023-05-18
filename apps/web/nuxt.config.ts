@@ -13,15 +13,6 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/scss/main.scss'],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // additionalData: '@import "@/assets/scss/my-style.scss";', // Auto import scss files your Single-File Component (SFC)
-        },
-      },
-    },
-  },
   modules: ['@nuxtjs/device', '@nuxtjs/eslint-module', '@nuxtjs/google-fonts', 'nuxt-headlessui', 'nuxt-icon'],
   device: {
     refreshOnResize: true,

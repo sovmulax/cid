@@ -1,26 +1,20 @@
 <template>
-  <section class="flex flex-col items-center py-16 px-9">
-    <h1 class="text-6xl font-bold tracking-tight text-center">Nos Projets</h1>
-    <p class="md:w-1/2 my-9 text-xl leading-6 text-neutral-800">
+  <section class="flex flex-col items-center px-9 py-16">
+    <h1 class="text-center text-6xl font-bold tracking-tight">Nos Projets</h1>
+    <p class="my-9 text-xl leading-6 text-neutral-800 md:w-1/2">
       La CID aborde des projets divers et repartis en plusieurs catégories. Cette diversité nous permet d'atteindre
       plusieurs domaines d'activité satifaisant ainsi une majeure partie de la population.
     </p>
     <div class="flex flex-wrap">
-      <NuxtLink
-        v-for="project in projects"
-        :key="project.name"
-        :to="project.link"
-        class="w-80 md:w-96 mb-3"
-        title="En savoir plus"
-      >
-        <img
-          :src="project.image"
-          :alt="`Image du projet ${project.name}`"
-          class="h-80 object-cover hover:scale-110 transition-all mb-3"
-        />
-        <h2 class="text-xl font-semibold uppercase tracking-tight">{{ project.name }}</h2>
-        <p class="leading-6 text-neutral-800">{{ project.description }}</p>
-      </NuxtLink>
+      <div v-for="project in projects" :key="project.name" class="flex w-80 flex-col md:w-96">
+        <NuxtLink :to="project.link" class="zoom-in-effect mb-3 inline-block overflow-hidden" title="En savoir plus">
+          <img :src="project.image" :alt="`Image du projet ${project.name}`" class="h-80 object-cover" />
+        </NuxtLink>
+        <NuxtLink :to="project.link" title="En savoir plus">
+          <h2 class="text-xl font-semibold uppercase tracking-tight">{{ project.name }}</h2>
+          <p class="leading-6 text-neutral-800">{{ project.description }}</p>
+        </NuxtLink>
+      </div>
     </div>
     <NuxtLink to="/projets" class="btn btn--primary m-9"> Voir tous les projets </NuxtLink>
   </section>
@@ -49,5 +43,3 @@ const projects = [
   },
 ];
 </script>
-
-<style lang="scss"></style>
