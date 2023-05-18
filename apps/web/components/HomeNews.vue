@@ -1,13 +1,13 @@
 <template>
-  <section class="flex flex-col items-center py-16 gap-12">
-    <h1 class="text-6xl font-bold tracking-tight text-center">À la une</h1>
+  <section class="flex flex-col items-center gap-12 py-16">
+    <h1 class="text-center text-6xl font-bold tracking-tight">À la une</h1>
     <div class="flex flex-wrap justify-around">
-      <div v-for="post in posts" :key="post.id" class="flex flex-col gap-1 mb-3">
-        <NuxtLink :to="`/actualites/${post.slug}`" class="zoom-in-effect w-80 md:w-96 overflow-hidden inline-block">
+      <div v-for="post in posts" :key="post.id" class="mb-3 flex flex-col gap-1">
+        <NuxtLink :to="`/actualites/${post.slug}`" class="zoom-in-effect inline-block w-80 overflow-hidden md:w-96">
           <img :src="post.cover" :alt="`Couverture de l'article : ${post.title}`" class="h-80 object-cover" />
         </NuxtLink>
         <NuxtLink :to="`/actualites/${post.slug}`" title="Lire l'article">
-          <h2 class="text-xl font-semibold uppercase tracking-tight hover:text-primary transition-colors">
+          <h2 class="text-xl font-semibold uppercase tracking-tight transition-colors hover:text-primary">
             {{ post.title }}
           </h2>
         </NuxtLink>
