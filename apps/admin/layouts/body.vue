@@ -73,9 +73,6 @@
               <!-- Navigation Menu-->
               <ul class="navigation-menu">
                 <li class="has-submenu">
-                  <nuxt-link to="/"><i class="ion ion-md-home"></i>Accueil</nuxt-link>
-                </li>
-                <li class="has-submenu">
                   <nuxt-link to="/projects"><i class="ion ion-md-laptop"></i>Gestion de Projets</nuxt-link>
                 </li>
                 <li class="has-submenu">
@@ -112,8 +109,10 @@
                   </h4>
                 </div>
                 <div class="col-sm-6">
-                  <div class="float-right d-none d-md-block">
-                    <div class="dropdown"></div>
+                  <div class="d-none d-md-block float-right">
+                    <div class="dropdown">
+                      <slot name="btn-header" />
+                    </div>
                   </div>
                 </div>
                 <!-- end col-->

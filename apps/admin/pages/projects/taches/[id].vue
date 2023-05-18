@@ -42,9 +42,9 @@ const data = ref(records);
       <div class="row">
         <div class="col-md-12 card">
           <div class="card-body">
-            <h4 class="mt-0 header-title">Liste des Tâches du Projet</h4>
+            <h4 class="header-title mt-0">Liste des Tâches du Projet</h4>
             <div class="table-responsive">
-              <table class="table table-striped mb-0">
+              <table class="table-striped mb-0 table">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -98,11 +98,8 @@ const data = ref(records);
                               </div>
                             </div>
                           </div>
-                          <!-- /.modal-content -->
                         </div>
-                        <!-- /.modal-dialog -->
                       </div>
-                      <!-- /.modal -->
                     </td>
                   </tr>
                 </tbody>
