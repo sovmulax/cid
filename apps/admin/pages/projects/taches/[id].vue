@@ -1,9 +1,7 @@
 <script setup>
 // import { ref } from 'vue';
 import pb from '../../../pocket.config.js';
-// collect data from pocketbase
 let records;
-
 try {
   const route = useRoute();
   const id = route.params.id;
@@ -12,6 +10,15 @@ try {
   });
 } catch (error) {
   // console.log(error);
+}
+
+async function updatetask(idg) {
+  const data = {
+    status: '2',
+  };
+  await pb.collection('project_tasks').update(idg, data);
+  const router = useRouter();
+  router.go();
 }
 const data = ref(records);
 </script>
@@ -67,7 +74,9 @@ const data = ref(records);
                             </div>
                             <div class="modal-body">
                               <div class="d-flex justify-content-around">
-                                <a href="#" class="btn btn-success">Confirmer</a>
+                                <a href="#" class="btn btn-success" data-dismiss="modal" @click="updatetask(item.id)"
+                                  >Terminer</a
+                                >
                                 <a href="#" class="btn btn-danger">Annuler</a>
                               </div>
                             </div>
