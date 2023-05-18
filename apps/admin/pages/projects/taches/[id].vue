@@ -7,16 +7,28 @@ try {
   const id = route.params.id;
   records = await pb.collection('project_tasks').getFullList({
     filter: `projectId = "${id}"`,
+    sort: 'status',
   });
 } catch (error) {
   // console.log(error);
 }
 
-async function updatetask(idg) {
-  const data = {
-    status: '2',
-  };
-  await pb.collection('project_tasks').update(idg, data);
+async function updatetask(id, type) {
+  let data;
+  switch (type) {
+    case 1:
+      data = {
+        status: '2',
+      };
+      break;
+    case 2:
+      data = {
+        status: '3',
+      };
+      break;
+  }
+
+  await pb.collection('project_tasks').update(id, data);
   const router = useRouter();
   router.go();
 }
@@ -50,6 +62,7 @@ const data = ref(records);
                     <td>{{ item.status }}</td>
                     <td>
                       <button
+                        v-if="item.status != 3"
                         type="button"
                         class="btn btn-primary waves-effect waves-light"
                         data-toggle="modal"
@@ -74,7 +87,11 @@ const data = ref(records);
                             </div>
                             <div class="modal-body">
                               <div class="d-flex justify-content-around">
-                                <a href="#" class="btn btn-success" data-dismiss="modal" @click="updatetask(item.id)"
+                                <a
+                                  href="#"
+                                  class="btn btn-success"
+                                  data-dismiss="modal"
+                                  @click="updatetask(item.id, parseInt(item.status))"
                                   >Terminer</a
                                 >
                                 <a href="#" class="btn btn-danger">Annuler</a>
