@@ -54,5 +54,3 @@ const links = [
   { name: 'Nous contacter', path: '/contact' },
 ];
 </script>
-
-<style lang="scss"></style>

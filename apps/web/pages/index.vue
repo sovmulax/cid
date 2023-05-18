@@ -14,5 +14,3 @@ useHead({
   title: "Cellule d'Innovation et de Développement — ESATIC",
 });
 </script>
-
-<style lang="scss"></style>

@@ -29,5 +29,3 @@ const { $pb } = useNuxtApp();
 const members: Member[] = await $pb.collection('members').getFullList();
 members.map((member) => getFileUrl(member, 'picture'));
 </script>
-
-<style lang="scss"></style>
