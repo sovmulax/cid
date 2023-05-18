@@ -10,3 +10,16 @@
   transform: scale(1.1);
   transform-origin: 50% 50%;
 }
+
+// Page transition effect
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s ease;
+}
+
+.page-enter,
+.page-leave-active {
+  opacity: 0;
+  // transform: translateZ(0);
+  // backface-visibility: hidden;
+}
