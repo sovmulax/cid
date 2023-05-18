@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-1/2 flex-col gap-16 py-9">
+  <div class="flex h-1/2 flex-col gap-16 py-9" :class="{ 'border-t-[1px]': $route.path !== '/' }">
     <div class="flex flex-wrap gap-12 px-9 md:justify-center">
       <div v-for="contact in contacts" :key="contact.link">
         <NuxtLink :to="contact.link" class="flex items-center gap-3">

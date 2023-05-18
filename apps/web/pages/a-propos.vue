@@ -1,5 +1,10 @@
 <template>
-  <main class="min-h-screen bg-neutral-100"></main>
+  <main class="bg-neutral-50">
+    <AboutIntro />
+    <AboutTeam />
+    <AboutGallery />
+    <HomeContact />
+  </main>
 </template>
 
 <script setup lang="ts">
