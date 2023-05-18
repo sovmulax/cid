@@ -14,39 +14,9 @@ const data = ref(records);
   <NuxtLayout name="body">
     <template #title-header> Projets </template>
     <template #btn-header>
-      <button class="btn btn-primary" type="button" data-toggle="modal" data-target=".bs-example-modal-center">
+      <nuxt-link to="/projects/form" class="btn btn-primary" type="button">
         <i class="mdi mdi-plus-circle mr-2"></i> Ajouter Un Projet
-      </button>
-      <div
-        class="modal fade bs-example-modal-center"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="mySmallModalLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title mt-0">Mise à Jour de la tâche</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <div class="d-flex justify-content-around">
-                <a
-                  href="#"
-                  class="btn btn-success"
-                  data-dismiss="modal"
-                  @click="updatetask(item.id, parseInt(item.status))"
-                  >Terminer</a
-                >
-                <a href="#" class="btn btn-danger">Annuler</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </nuxt-link>
     </template>
     <template #content>
       <div class="row">
