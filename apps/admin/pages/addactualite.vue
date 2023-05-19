@@ -13,18 +13,25 @@ try {
 const title = ref('');
 const slug = ref('');
 const content = ref('');
-function Addpost() {
-  // const data = {
-  //   title: title.value,
-  //   content: content.value,
-  //   author: 'KONAN FABRICE',
-  //   slug: slug.value,
-  // };
-  // console.log(data);
+async function Addpost() {
   try {
-    // const records = await pb.collection('posts').create(data);
+    // const data = {
+    //   title: title.value,
+    //   content: content.value,
+    //   author: 'KONAN FABRICE',
+    //   slug: slug.value,
+    // };
+    const data = {
+      title: 'test Fabino',
+      content: 'test',
+      author: 'RELATION_RECORD_ID',
+      slug: 'test',
+    };
+    console.log(data);
+
+    const records = await pb.collection('posts').create(data);
   } catch (e) {
-    // console.log(e);
+    console.log(e);
   }
 }
 
@@ -39,7 +46,7 @@ function Addpost() {
         <div class="col-lg-6">
           <div class="card">
             <div class="card-body">
-              <h4 class="mt-0 header-title">Ajout d'actualités</h4>
+              <h4 class="header-title mt-0">Ajout d'actualités</h4>
               <p class="text-muted mb-4">Remplissez correctement les champs de ce formulaire sans aucune fantaisie</p>
 
               <form class="custom-validation" @submit.prevent="Addpost">

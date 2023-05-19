@@ -5,7 +5,7 @@ import pb from '../pocket.config.js';
 // collect data from pocketbase
 let records;
 try {
-  records = await pb.collection('post').getFullList();
+  records = await pb.collection('posts').getFullList();
 } catch (error) {}
 const data = ref(records);
 const i = 1;
@@ -18,10 +18,10 @@ const i = 1;
       <div class="row">
         <div class="col-md-12 card">
           <div class="card-body">
-            <h4 class="mt-0 header-title">Liste des Articles</h4>
+            <h4 class="header-title mt-0">Liste des Articles</h4>
             <p class="text-muted mb-4"><NuxtLink to="/addactualite"> Ajouter</NuxtLink></p>
             <div class="table-responsive">
-              <table class="table table-striped mb-0">
+              <table class="table-striped mb-0 table">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -36,6 +36,9 @@ const i = 1;
                     <td>{{ item.title }}</td>
                     <td>
                       {{ item.created }}
+                    </td>
+                    <td>
+                      {{ item.content }}
                     </td>
                     <td>
                       <nuxt-link to="/post"><i class="fas fa-arrow-circle-right"></i></nuxt-link>

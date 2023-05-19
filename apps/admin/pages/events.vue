@@ -29,28 +29,32 @@ const j = 1;
         <div class="col-xl-12">
           <div class="card">
             <div class="card-body">
-              <h4 class="mt-0 header-title">Listes des événements</h4>
-              <p><NuxtLink to="addevent">Ajouter</NuxtLink></p>
+              <h4 class="header-title mt-0">Listes des événements</h4>
+              <p>
+                <NuxtLink to="addevent"
+                  ><span style="width: 30px; height: 30px">Ajouter <i class="fas fa-plus-circle"></i></span>
+                </NuxtLink>
+              </p>
               <div id="accordion">
                 <div class="card mb-1">
                   <div id="headingOne" class="card-header p-3">
                     <h6
-                      class="m-0 font-14 text-dark"
+                      class="font-14 text-dark m-0"
                       data-target="#collapseOne"
                       data-toggle="collapse"
                       aria-expanded="true"
                       aria-controls="collapseOne"
                     >
-                      Événements Privés (<code>Agenda</code>)
+                      Événements Privés (<code>Agenda</code>)<i class="mdi mdi-gamepad-round-outline"></i>
                     </h6>
                   </div>
 
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div id="collapseOne" class="show collapse" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                      <h4 class="mt-0 header-title">Liste des Evenements</h4>
+                      <h4 class="header-title mt-0">Liste des Evenements</h4>
                       <p class="text-muted mb-4">Ces événements ne sont visibles que par vous.</p>
                       <div class="table-responsive">
-                        <table class="table table-striped mb-0">
+                        <table class="table-striped mb-0 table">
                           <thead>
                             <tr>
                               <th>#</th>
@@ -59,6 +63,7 @@ const j = 1;
                               <th>Date de Début</th>
                               <th>Date de Fin</th>
                               <th>Privé ?</th>
+                              <th>Actions</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -69,6 +74,12 @@ const j = 1;
                               <td>{{ item.startDate }}</td>
                               <td>{{ item.endDate }}</td>
                               <td>{{ item.private }}</td>
+                              <td>
+                                <NuxtLink to="/"><span style="color:green"><i class="fas fa-marker"></i></span></NuxtLink
+                                ><button style="border: none">
+                                  <span style="color: red"><i class="far fa-trash-alt"></i></span>
+                                </button>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -79,7 +90,7 @@ const j = 1;
                 <div class="card mb-1">
                   <div id="headingTwo" class="card-header p-3">
                     <h6
-                      class="m-0 font-14 text-dark collapsed hei"
+                      class="font-14 text-dark collapsed hei m-0"
                       data-target="#collapseTwo"
                       data-toggle="collapse"
                       aria-expanded="false"
@@ -92,7 +103,7 @@ const j = 1;
                     <div class="card-body">
                       <p class="text-muted mb-4"></p>
                       <div class="table-responsive">
-                        <table class="table table-striped mb-0">
+                        <table class="table-striped mb-0 table">
                           <thead>
                             <tr>
                               <th>#</th>
