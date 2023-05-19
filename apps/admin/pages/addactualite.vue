@@ -1,43 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-// import pb from '../pocket.config.js';
-import PocketBase from 'pocketbase';
-
-const pb = new PocketBase('https://cid.marcaureln.com');
-try {
-  await pb.admins.authWithPassword('soumailaevane@gmail.com', 'onditmdpdoitetrelong');
-} catch (error) {
-  // console.log(error);
-}
-
-const title = ref('');
-const slug = ref('');
-const content = ref('');
-async function Addpost() {
-  try {
-    // const data = {
-    //   title: title.value,
-    //   content: content.value,
-    //   author: 'KONAN FABRICE',
-    //   slug: slug.value,
-    // };
-    const data = {
-      title: 'test Fabino',
-      content: 'test',
-      author: 'RELATION_RECORD_ID',
-      slug: 'test',
-    };
-    console.log(data);
-
-    const records = await pb.collection('posts').create(data);
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-// collect data from pocketbase
-</script>
-
 <template>
   <NuxtLayout name="body">
     <template #title-header> Evènements</template>
@@ -80,6 +40,33 @@ async function Addpost() {
     </template>
   </NuxtLayout>
 </template>
+<script setup>
+import { ref } from 'vue';
+import pb from '../pocket.config.js';
+
+const title = ref('');
+const type = ref('');
+const startDate = ref('');
+const endDate = ref('');
+const router = useRouter();
+
+async function Addpost() {
+  try {
+    const data = {
+      title: 'test',
+      content: 'test',
+      author: 'kssbi5h7twevq95, doe@gmail.com',
+      slug: 'test',
+    };
+
+    console.log(data);
+    const record = await pb.collection('posts').create(data);
+    //router.push('/events');
+  } catch (e) {
+    console.log(e);
+  }
+}
+</script>
 
 <style scoped>
 .size {

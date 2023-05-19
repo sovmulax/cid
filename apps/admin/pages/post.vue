@@ -19,7 +19,9 @@ const i = 1;
         <div class="col-md-12 card">
           <div class="card-body">
             <h4 class="header-title mt-0">Liste des Articles</h4>
-            <p class="text-muted mb-4"><NuxtLink to="/addactualite"> Ajouter</NuxtLink></p>
+            <p class="text-muted mb-4">
+              <NuxtLink to="/addactualite" style="color: #00aeff"> Ajouter<i class="fas fa-plus-circle"></i></NuxtLink>
+            </p>
             <div class="table-responsive">
               <table class="table-striped mb-0 table">
                 <thead>
@@ -42,6 +44,13 @@ const i = 1;
                     </td>
                     <td>
                       <nuxt-link to="/post"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
+                    </td>
+                    <td>
+                      <NuxtLink to="/"
+                        ><span style="color: green"><i class="fas fa-marker"></i></span></NuxtLink
+                      ><button style="border: none">
+                        <span style="color: red"><i class="far fa-trash-alt"></i></span>
+                      </button>
                     </td>
                   </tr>
                 </tbody>

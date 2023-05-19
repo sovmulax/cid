@@ -32,7 +32,7 @@ const j = 1;
               <h4 class="header-title mt-0">Listes des événements</h4>
               <p>
                 <NuxtLink to="addevent"
-                  ><span style="width: 30px; height: 30px">Ajouter <i class="fas fa-plus-circle"></i></span>
+                  ><span style="width: 30px; height: 30px; color: #00aeff;">Ajouter <i class="fas fa-plus-circle"></i></span>
                 </NuxtLink>
               </p>
               <div id="accordion">
