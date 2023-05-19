@@ -1,29 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-// import pb from '../pocket.config.js';
-
-const title = ref('');
-const type = ref('');
-const startDate = ref('');
-const endDate = ref('');
-
-function Createvent() {
-  try {
-    // const data = {
-    //   title: title.value,
-    //   type: type.value,
-    //   startDate: '2022-01-01 10:00:00.123Z',
-    //   endDate: '2022-01-01 10:00:00.123Z',
-    //   private: true,
-    // };
-    // console.log(data);
-    // const record = await pb.collection('events').create(data);
-    // Gérer la réponse du serveur en cas de succès
-  } catch (e) {
-    // Gérer les erreurs de création d'événement
-  }
-}
-</script>
 <template>
   <NuxtLayout name="body">
     <template #title-header> Evènements</template>
@@ -32,7 +6,7 @@ function Createvent() {
         <div class="col-lg-6">
           <div class="card">
             <div class="card-body">
-              <h4 class="mt-0 header-title">Ajout d'actualités</h4>
+              <h4 class="header-title mt-0">Ajout d'actualités</h4>
               <p class="text-muted mb-4">Remplissez correctement les champs de ce formulaire sans aucune fantaisie</p>
 
               <form class="custom-validation" @submit.prevent="Createvent">
@@ -46,9 +20,9 @@ function Createvent() {
                   <div>
                     <select v-model="type" class="custom-select">
                       <option selected>--</option>
+                      <option value="Réunion">Réunion</option>
+                      <option value="TAF">TAF</option>
                       <option value="Formation">Formation</option>
-                      <option value="Reunion">Réunion</option>
-                      <option value="Briefing">Briefing</option>
                     </select>
                   </div>
                 </div>
@@ -89,3 +63,29 @@ function Createvent() {
     </template>
   </NuxtLayout>
 </template>
+<script setup>
+import { ref } from 'vue';
+import pb from '../pocket.config.js';
+
+const title = ref('');
+const type = ref('');
+const startDate = ref('');
+const endDate = ref('');
+const router =useRouter()
+
+async function Createvent() {
+  try {
+    const data = {
+      title: title.value,
+      type: type.value,
+      startDate: startDate.value,
+      endDate: endDate.value,
+      private: true,
+    };
+
+    console.log(data);
+    const record = await pb.collection('events').create(data);
+    router.push("/events")
+  } catch (e) {}
+}
+</script>
