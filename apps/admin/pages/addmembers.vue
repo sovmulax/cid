@@ -9,10 +9,17 @@
               <h4 class="header-title mt-0">Ajout de membres</h4>
               <p class="text-muted mb-4">Remplissez correctement les champs de ce formulaire sans aucune fantaisie</p>
 
-              <form class="custom-validation" @submit.prevent="Addmembers">
+              <form class="custom-validation" @submit.prevent="Addmembers" enctype="multipart/form-data">
                 <div class="form-group">
                   <label>Nom & Prénoms</label>
-                  <input v-model="fullname" type="text" class="form-control" required placeholder="Type something" />
+                  <input
+                    v-model="fullname"
+                    type="text"
+                    class="form-control"
+                    required
+                    placeholder="Type something"
+                    accept="image/*"
+                  />
                 </div>
 
                 <div class="form-group">
@@ -25,7 +32,15 @@
                       <label>Photo</label>
 
                       <div class="custom-file">
-                        <input type="file" name="file" class="custom-file-input" id="customFile" />
+                        <input
+                          @change="handleFileUpload"
+                          id="fileInput"
+                          type="file"
+                          ref="image"
+                          accept="*/*"
+                          class="custom-file-input"
+                        />
+
                         <label class="custom-file-label" for="customFile">Choisir une photo</label>
                       </div>
                     </div>
@@ -67,20 +82,35 @@ const jobTitle = ref('');
 const email = ref('');
 const facebook = ref('');
 const linkedin = ref('');
+const formData = new FormData();
 const router = useRouter();
+
+// listen to file input changes and add the selected files to the form data
 
 async function Addmembers() {
   try {
-    const data = {
-      fullname: fullname.value,
-      jobTitle: jobTitle.value,
-      email: email.value,
-      facebook: facebook.value,
-      linkedin: linkedin.value,
-    };
+    const fileInput = document.getElementById('fileInput');
 
-    console.log(data);
-    const record = await pb.collection('members').create(data);
+    // listen to file input changes and add the selected files to the form data
+    fileInput.addEventListener('change', function () {
+      for (let file of fileInput.files) {
+        formData.append('documents', file);
+      }
+    });
+
+    // set some other regular text field value
+
+    formData.append('fullname', fullname.value);
+    formData.append('jobTitle', jobTitle.value);
+    formData.append('email', email.value);
+    formData.append('facebook', facebook.value);
+    formData.append('linkedin', linkedin.value);
+    formData.append('picture', document.getElementById('fileInput').files[0]);
+    console.log(formData);
+
+    // upload and create new record
+    const createdRecord = await pb.collection('members').create(formData);
   } catch (e) {}
+  router.push('/members');
 }
 </script>

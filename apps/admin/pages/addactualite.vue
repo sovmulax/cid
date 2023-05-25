@@ -21,6 +21,35 @@
                 </div>
 
                 <div class="form-group">
+                  <label>Auteur</label>
+                  <div>
+                    <select class="form-control" v-model="author">
+                      <option v-for="item in data" :key="item.id" :value="item.id">{{ item.username }}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="card">
+                    <div class="card-body">
+                      <label>Photo</label>
+
+                      <div class="custom-file">
+                        <input
+                          @change="handleFileUpload"
+                          id="fileInput"
+                          type="file"
+                          ref="image"
+                          accept="*/*"
+                          class="custom-file-input"
+                        />
+
+                        <label class="custom-file-label" for="customFile">Choisir une photo</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
                   <label>Détails</label>
                   <div>
                     <textarea v-model="content" required class="form-control" rows="5" type="text"></textarea>
@@ -43,25 +72,44 @@
 <script setup>
 import { ref } from 'vue';
 import pb from '../pocket.config.js';
+const router = useRouter();
+let records;
+try {
+  records = await pb.collection('users').getFullList();
+} catch (error) {}
+const data = ref(records);
+const i = 1;
 
 const title = ref('');
-const type = ref('');
-const startDate = ref('');
-const endDate = ref('');
-const router = useRouter();
+const content = ref('');
+const author = ref('');
+const slug = ref('');
+const formData = new FormData();
 
 async function Addpost() {
   try {
-    const data = {
-      title: 'test',
-      content: 'test',
-      author: 'kssbi5h7twevq95, doe@gmail.com',
-      slug: 'test',
-    };
+    const fileInput = document.getElementById('fileInput');
 
-    console.log(data);
-    const record = await pb.collection('posts').create(data);
-    //router.push('/events');
+    fileInput.addEventListener('change', function () {
+      for (let file of fileInput.files) {
+        formData.append('documents', file);
+      }
+    });
+
+    formData.append('title', title.value);
+    formData.append('slug', slug.value);
+    formData.append('author', author.value);
+    formData.append('content', content.value);
+    formData.append('cover', document.getElementById('fileInput').files[0]);
+
+    console.log(formData);
+    const createdRecord = await pb.collection('posts').create(formData);
+    title.value = '';
+    content.value = '';
+    author.value = '';
+    slug.value = '';
+
+    router.push('/post');
   } catch (e) {
     console.log(e);
   }

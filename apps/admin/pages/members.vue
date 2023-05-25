@@ -15,7 +15,7 @@ const data = ref(records);
     <template #title-header> Membres </template>
     <template #content>
       <div>
-        <NuxtLink to="/addmembers" style="color: #00aeff">Ajouter<i class="fas fa-plus-circle"></i></NuxtLink>
+        <NuxtLink to="/addmembers" style="color:black" class="btn btn-primary waves-effect waves-light mr-1">Ajouter<i class="fas fa-plus-circle"></i></NuxtLink><br/>
         <div class="row">
           <div v-for="item in data" :key="item.id" class="col-md-6 col-xl-3">
             <div class="card">

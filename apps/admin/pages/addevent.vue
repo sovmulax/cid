@@ -67,11 +67,13 @@
 import { ref } from 'vue';
 import pb from '../pocket.config.js';
 
+
 const title = ref('');
 const type = ref('');
 const startDate = ref('');
 const endDate = ref('');
-const router =useRouter()
+
+const router = useRouter();
 
 async function Createvent() {
   try {
@@ -85,7 +87,7 @@ async function Createvent() {
 
     console.log(data);
     const record = await pb.collection('events').create(data);
-    router.push("/events")
+    router.push('/events');
   } catch (e) {}
 }
 </script>
