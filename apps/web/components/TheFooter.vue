@@ -20,6 +20,14 @@
       <p>
         &copy; 2017 - {{ new Date().getFullYear() }} Cellule d'Innovation et de Développement. Tous droits réservés.
       </p>
+      <p class="mt-1">
+        Développé par
+        <a class="font-bold" href="https://sovmulax.me" target="_blank" rel="noopener noreferrer">sovmulax</a> x
+        <a class="font-bold" href="https://marcaureln.com" target="_blank" rel="noopener noreferrer">marcaureln</a> x
+        <a class="font-bold" href="https://github.com/konan-fabrice" target="_blank" rel="noopener noreferrer">
+          konan-fabrice
+        </a>
+      </p>
     </div>
   </div>
 </template>
