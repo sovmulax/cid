@@ -1,28 +1,28 @@
 <template>
   <form class="flex flex-col gap-3 lg:w-1/3" @submit.prevent="submit">
     <input
-      class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 shadow focus:outline-none"
+      class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       type="text"
       placeholder="Nom de l'entreprise"
       required
     />
 
     <input
-      class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 shadow focus:outline-none"
+      class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       type="text"
       placeholder="Email/Numéro de téléphone"
       required
     />
 
     <input
-      class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 shadow focus:outline-none"
+      class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       type="text"
       placeholder="Objet"
       required
     />
 
     <textarea
-      class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 shadow focus:outline-none"
+      class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       rows="4"
       placeholder="Parlez-nous de votre projet"
       required
