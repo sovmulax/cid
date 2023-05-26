@@ -26,6 +26,7 @@
 
 <script setup lang="ts">
 const { $pb } = useNuxtApp();
-const members: Member[] = await $pb.collection('members').getFullList();
+const list = await $pb.collection('members').getList(1, 4, { sort: 'created' });
+const members = list.items as unknown as Member[];
 members.map((member) => getFileUrl(member, 'picture'));
 </script>
