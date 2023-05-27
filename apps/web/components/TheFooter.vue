@@ -22,9 +22,18 @@
       </p>
       <p class="mt-1">
         Développé par
-        <a class="font-bold" href="https://sovmulax.me" target="_blank" rel="noopener noreferrer">sovmulax</a> x
-        <a class="font-bold" href="https://marcaureln.com" target="_blank" rel="noopener noreferrer">marcaureln</a> x
-        <a class="font-bold" href="https://github.com/konan-fabrice" target="_blank" rel="noopener noreferrer">
+        <a class="font-bold" href="https://sovmulax.me" target="_blank" rel="noopener noreferrer">sovmulax</a>
+        x
+        <a class="font-bold" href="https://marcaureln.com?ref=cid" target="_blank" rel="noopener noreferrer">
+          marcaureln
+        </a>
+        x
+        <a
+          class="font-bold"
+          href="https://konankouameaimefabrice.000webhostapp.com/index.php"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           konan-fabrice
         </a>
       </p>
