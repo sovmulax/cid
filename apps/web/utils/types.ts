@@ -6,6 +6,7 @@ interface PocketBaseRecord {
   collectionName: string;
   created: string;
   updated: string;
+  expand?: any;
 }
 
 interface Company extends PocketBaseRecord {
