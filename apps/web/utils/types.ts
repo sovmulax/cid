@@ -29,4 +29,5 @@ interface Post extends PocketBaseRecord {
   author: string;
   slug: string;
   cover: string | undefined;
+  excerpt: string;
 }
