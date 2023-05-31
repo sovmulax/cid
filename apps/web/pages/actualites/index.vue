@@ -2,7 +2,7 @@
   <main class="flex min-h-screen flex-col items-center gap-9 bg-neutral-50 p-9">
     <h1 class="text-6xl font-bold tracking-tight">Actualités</h1>
 
-    <div class="flex flex-wrap gap-9">
+    <div class="flex flex-wrap justify-center gap-9">
       <BlogPost v-for="post in posts" :key="post.id" :post="post" />
     </div>
 
