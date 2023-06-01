@@ -26,6 +26,6 @@ register('fr', fr);
 
 const { $pb } = useNuxtApp();
 const response = await $pb.collection('posts').getList(1, 3, { sort: '-created' });
-const posts: Post[] = response.items;
+const posts = response.items as unknown as Post[];
 posts.map((post) => getFileUrl(post, 'cover'));
 </script>

@@ -6,6 +6,7 @@ interface PocketBaseRecord {
   collectionName: string;
   created: string;
   updated: string;
+  expand?: any;
 }
 
 interface Company extends PocketBaseRecord {
@@ -29,4 +30,5 @@ interface Post extends PocketBaseRecord {
   author: string;
   slug: string;
   cover: string | undefined;
+  excerpt: string;
 }
