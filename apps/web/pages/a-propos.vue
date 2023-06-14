@@ -3,7 +3,7 @@
     <AboutIntro />
     <AboutTeam />
     <AboutGallery />
-    <HomeContact />
+    <AppContact />
   </main>
 </template>
 

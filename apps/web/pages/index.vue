@@ -4,7 +4,7 @@
     <HomeNews />
     <HomeProjects />
     <HomeTeam />
-    <HomeContact />
+    <AppContact />
     <HomeShowcase />
   </main>
 </template>
