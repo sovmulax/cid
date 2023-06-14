@@ -1,5 +1,7 @@
 {
-  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -7,5 +9,4 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
-  "vue3snippets.enable-compile-vue-file-on-did-save-code": false
 }
