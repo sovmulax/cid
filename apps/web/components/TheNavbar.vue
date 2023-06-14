@@ -22,11 +22,10 @@
     </div>
 
     <nuxt-link to="/contact" class="btn hidden lg:block">Nous contacter</nuxt-link>
-    <!-- TODO: Overflow hidden when menu opened -->
     <HeadlessMenu v-slot="{ open, close }">
       <HeadlessMenuButton id="menu-btn" class="lg:hidden">
-        <Icon v-if="open" name="mdi:close" size="32px" />
-        <Icon v-else name="mdi:menu" size="32px" />
+        <Icon v-if="open" name="mdi:close" size="32px" @vnode-mounted="hideBodyOverflow" />
+        <Icon v-else name="mdi:menu" size="32px" @vnode-mounted="resetBodyOverflow" />
       </HeadlessMenuButton>
       <transition
         enter-active-class="transition duration-100 ease-out"
@@ -55,6 +54,18 @@
 </template>
 
 <script setup lang="ts">
+function hideBodyOverflow() {
+  if (process.client) {
+    document.body.classList.add('h-screen', 'overflow-y-hidden');
+  }
+}
+
+function resetBodyOverflow() {
+  if (process.client) {
+    document.body.classList.remove('h-screen', 'overflow-y-hidden');
+  }
+}
+
 const links = [
   { name: 'Accueil', path: '/' },
   { name: 'Projets', path: '/projets' },
