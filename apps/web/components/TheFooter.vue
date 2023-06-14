@@ -1,6 +1,6 @@
 <template>
-  <div class="flex h-1/2 flex-col gap-16 py-9" :class="{ 'border-t-[1px]': $route.path !== '/' }">
-    <div class="flex flex-wrap gap-12 px-9 md:justify-center">
+  <div class="flex h-1/2 flex-col justify-center gap-16 px-3 py-9" :class="{ 'border-t-[1px]': $route.path !== '/' }">
+    <div class="mx-auto inline-flex flex-col flex-wrap gap-12 px-3 md:flex-row md:justify-center">
       <div v-for="contact in contacts" :key="contact.link">
         <NuxtLink :to="contact.link" class="flex items-center gap-3">
           <Icon :name="contact.icon" size="32px" :class="'text-primary'" />
