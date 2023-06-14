@@ -10,7 +10,7 @@
       <img class="object-contain" src="~/assets/img/logo.png" alt="Logo CID" />
     </nuxt-link>
 
-    <div v-if="$device.isDesktop" class="nav-links flex items-center gap-9 font-bold">
+    <div class="nav-links hidden items-center gap-9 font-bold lg:flex">
       <nuxt-link
         v-for="link in links"
         :key="link.path"
@@ -21,10 +21,10 @@
       </nuxt-link>
     </div>
 
-    <nuxt-link v-if="$device.isDesktop" to="/contact" class="btn">Nous contacter</nuxt-link>
+    <nuxt-link to="/contact" class="btn hidden lg:block">Nous contacter</nuxt-link>
     <!-- TODO: Overflow hidden when menu opened -->
-    <HeadlessMenu v-else v-slot="{ open, close }">
-      <HeadlessMenuButton id="menu-btn">
+    <HeadlessMenu v-slot="{ open, close }">
+      <HeadlessMenuButton id="menu-btn" class="lg:hidden">
         <Icon v-if="open" name="mdi:close" size="32px" />
         <Icon v-else name="mdi:menu" size="32px" />
       </HeadlessMenuButton>
