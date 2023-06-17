@@ -24,8 +24,8 @@
     <nuxt-link to="/contact" class="btn hidden lg:block">Nous contacter</nuxt-link>
     <HeadlessMenu v-slot="{ open, close }">
       <HeadlessMenuButton id="menu-btn" class="lg:hidden">
-        <Icon v-if="open" name="mdi:close" size="32px" @vnode-mounted="hideBodyOverflow" />
-        <Icon v-else name="mdi:menu" size="32px" @vnode-mounted="resetBodyOverflow" />
+        <Icon v-if="open" name="mdi:close" size="32px" @vue:mounted="hideBodyOverflow" />
+        <Icon v-else name="mdi:menu" size="32px" @vue:mounted="resetBodyOverflow" />
       </HeadlessMenuButton>
       <transition
         enter-active-class="transition duration-100 ease-out"
