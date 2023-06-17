@@ -20,7 +20,14 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/scss/main.scss'],
-  modules: ['@nuxtjs/device', '@nuxtjs/eslint-module', '@nuxtjs/google-fonts', 'nuxt-headlessui', 'nuxt-icon'],
+  modules: [
+    '@nuxtjs/device',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/google-fonts',
+    'nuxt-headlessui',
+    'nuxt-icon',
+    'nuxt-snackbar',
+  ],
   device: {
     refreshOnResize: true,
   },
@@ -43,5 +50,8 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  snackbar: {
+    duration: 5000,
   },
 });
