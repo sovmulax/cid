@@ -9,4 +9,7 @@
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
   },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
