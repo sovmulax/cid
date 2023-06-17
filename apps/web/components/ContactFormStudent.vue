@@ -1,6 +1,7 @@
 <template>
   <form class="flex flex-col gap-3 lg:w-1/3" @submit.prevent="submit">
     <input
+      v-model="data.title"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       type="text"
       placeholder="Titre du projet"
@@ -8,6 +9,7 @@
     />
 
     <input
+      v-model="data.domain"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       type="text"
       placeholder="Domaine Scientifique (Ex: Bio-informatique)"
@@ -15,6 +17,7 @@
     />
 
     <input
+      v-model="data.subDomain"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       type="text"
       placeholder="Axe de recherche (Ex: Intelligence Artificielle, Internet des Objets, Biologie, etc.)"
@@ -22,13 +25,15 @@
     />
 
     <select
+      v-model="data.duration"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
     >
-      <option disabled selected>Durée du Projet</option>
+      <option value="0" disabled selected>Durée du Projet</option>
       <option v-for="index in 5" :key="index" :value="index">{{ index }} an(s)</option>
     </select>
 
     <textarea
+      v-model="data.description"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       rows="4"
       placeholder="Résume du projet (maximum 250 mots et 05 mots-clés)"
@@ -37,6 +42,7 @@
     ></textarea>
 
     <textarea
+      v-model="data.problem"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       rows="4"
       placeholder="Problématique (maximum 500 mots)"
@@ -77,6 +83,7 @@
 
         <div class="flex gap-3">
           <input
+            v-model="member.name"
             class="focus:shadow-outline flex-grow appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
             type="text"
             placeholder="Nom et prénom(s)"
@@ -105,6 +112,7 @@
 
         <div class="flex gap-3">
           <input
+            v-model="member.phone"
             class="focus:shadow-outline flex-grow appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
             type="tel"
             placeholder="Téléphone"
@@ -112,6 +120,7 @@
           />
 
           <input
+            v-model="member.email"
             class="focus:shadow-outline flex-grow appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
             type="email"
             placeholder="Email"
@@ -121,26 +130,38 @@
       </div>
     </div>
 
-    <button class="mt-3 rounded-md bg-primary p-3 text-xl font-bold text-white" type="submit">Envoyer</button>
+    <button
+      class="mt-3 rounded-md bg-primary p-3 text-xl font-bold text-white disabled:bg-gray-400"
+      type="submit"
+      :disabled="loading"
+    >
+      Envoyer
+    </button>
   </form>
 </template>
 
 <script setup lang="ts">
-interface Member {
-  name: string;
-  gender: string;
-  speciality: string;
-  phone: string;
-  email: string;
-}
+import { ClientResponseError } from 'pocketbase';
 
-const members = ref([] as Member[]);
+const snackbar = useSnackbar();
+const { $pb } = useNuxtApp();
+const loading = ref(false);
+const members = ref([] as ProjectMember[]);
 const specialities = [
   { code: 'SRIT', name: 'Système Réseaux Informatique et Télécommunication' },
   { code: 'SIGL', name: 'Système Informatique et Génie Logiciel' },
   { code: 'RTEL', name: 'Réseaux Télécommunication' },
   { code: 'TWIN', name: 'Technologies du Web et Image Numérique' },
 ];
+
+const data = ref({
+  title: '',
+  domain: '',
+  subDomain: '',
+  duration: 0,
+  description: '',
+  problem: '',
+});
 
 function addMember() {
   members.value.push({
@@ -149,6 +170,7 @@ function addMember() {
     speciality: '',
     phone: '',
     email: '',
+    role: 'Membre',
   });
 }
 
@@ -156,7 +178,58 @@ function removeMember(index: number) {
   members.value.splice(index, 1);
 }
 
-function submit() {
-  alert('Votre message a bien été envoyé !');
+function clear() {
+  data.value = {
+    title: '',
+    domain: '',
+    subDomain: '',
+    duration: 0,
+    description: '',
+    problem: '',
+  };
+  members.value = [];
+}
+
+async function submit() {
+  try {
+    loading.value = true;
+
+    const { id } = await $pb.collection('projects').create({
+      title: data.value.title,
+      domain: data.value.domain,
+      subDomain: data.value.subDomain,
+      duration: data.value.duration,
+      description: data.value.description,
+      problem: data.value.problem,
+    });
+
+    for (const member of members.value) {
+      await $pb.collection('project_members').create({
+        projectId: id,
+        ...member,
+      });
+    }
+
+    snackbar.add({
+      type: 'success',
+      text: 'Votre message a bien été envoyé !',
+    });
+
+    clear();
+  } catch (error) {
+    if (error instanceof ClientResponseError) {
+      return snackbar.add({
+        type: 'error',
+        text: error.response.message,
+      });
+    }
+
+    snackbar.add({
+      type: 'error',
+      text: "Une erreur est survenue lors de l'envoi du message !",
+    });
+  } finally {
+    loading.value = false;
+  }
 }
 </script>

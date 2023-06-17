@@ -31,6 +31,18 @@ declare global {
     cover: string | undefined;
     excerpt: string;
   }
+
+  interface ProjectMember {
+    projectId?: string;
+    memberId?: string;
+    role: string;
+    name: string;
+    gender: string;
+    speciality: string;
+    phone: string;
+    email: string;
+  }
+  
 }
 
 export {};
