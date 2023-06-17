@@ -32,6 +32,18 @@ declare global {
     excerpt: string;
   }
 
+  interface Project extends PocketBaseRecord {
+    title: string;
+    domain: string;
+    subDomain: string;
+    startDate?: string;
+    endDate?: string;
+    duration: number;
+    description: string;
+    problem: string;
+    cover?: string;
+  }
+
   interface ProjectMember {
     projectId?: string;
     memberId?: string;
@@ -42,7 +54,6 @@ declare global {
     phone: string;
     email: string;
   }
-  
 }
 
 export {};

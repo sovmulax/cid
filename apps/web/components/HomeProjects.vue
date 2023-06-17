@@ -6,14 +6,16 @@
       plusieurs domaines d'activité satifaisant ainsi une majeure partie de la population.
     </p>
     <div class="flex flex-wrap">
-      <div v-for="project in projects" :key="project.name" class="flex w-80 flex-col md:w-96">
-        <NuxtLink :to="project.link" class="zoom-in-effect mb-3 inline-block overflow-hidden" title="En savoir plus">
-          <img :src="project.image" :alt="`Image du projet ${project.name}`" class="h-80 object-cover" />
-        </NuxtLink>
-        <NuxtLink :to="project.link" title="En savoir plus">
-          <h2 class="text-xl font-semibold uppercase tracking-tight">{{ project.name }}</h2>
-          <p class="leading-6 text-neutral-800">{{ project.description }}</p>
-        </NuxtLink>
+      <div v-for="project in projects" :key="project.title" class="flex w-80 flex-col md:w-96">
+        <div class="zoom-in-effect mb-3 inline-block overflow-hidden">
+          <img :src="project.cover" :alt="`Image du projet ${project.title}`" class="h-80 object-cover" />
+        </div>
+        <div>
+          <h2 class="text-xl font-semibold uppercase tracking-tight">{{ project.title }}</h2>
+          <p class="leading-6 text-neutral-800">
+            {{ project.description.length > 80 ? project.description.substring(0, 80) + '...' : project.description }}
+          </p>
+        </div>
       </div>
     </div>
     <NuxtLink to="/projets" class="btn btn--primary m-9"> Voir tous les projets </NuxtLink>
@@ -21,25 +23,10 @@
 </template>
 
 <script lang="ts" setup>
-const projects = [
-  {
-    name: 'Système de diagnostic',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-    image: 'https://drkoch.dk/wp-content/uploads/2016/10/IMG_0628.jpg',
-    link: '/projets',
-  },
-  {
-    name: 'Système de drone',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-    image:
-      'https://ocs-pl.oktawave.com/v1/AUTH_2887234e-384a-4873-8bc5-405211db13a2/spidersweb/2019/11/DJI-Mavic-Mini-23-of-26.jpg',
-    link: '/projets',
-  },
-  {
-    name: 'Agriculture',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-    image: 'https://straydoginstitute.org/wp-content/uploads/2021/07/shutterstock_1282334635.jpg',
-    link: '/projets',
-  },
-];
+const { $pb } = useNuxtApp();
+const response = await $pb.collection('projects').getList(1, 3, {
+  filter: 'featured=true',
+});
+const projects = response.items as unknown as Project[];
+projects.map((project) => getFileUrl(project, 'cover'));
 </script>
