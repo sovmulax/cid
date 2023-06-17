@@ -1,8 +1,8 @@
 <template>
-  <main>
+  <Body>
     <TheNavbar />
     <slot />
     <TheFooter />
     <NuxtSnackbar />
-  </main>
+  </Body>
 </template>
