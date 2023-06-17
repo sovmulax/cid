@@ -10,5 +10,10 @@
   },
   "extends": ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended"],
   "plugins": [],
-  "rules": {}
+  "rules": {
+    "import/namespace": "off",
+    "import/named": "off",
+    "import/order": "off",
+    "import/no-duplicates": "off"
+  }
 }
