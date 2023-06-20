@@ -27,6 +27,7 @@ export default defineNuxtConfig({
     'nuxt-headlessui',
     'nuxt-icon',
     'nuxt-snackbar',
+    'nuxt-swiper',
   ],
   device: {
     refreshOnResize: true,
