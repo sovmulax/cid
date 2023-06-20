@@ -3,7 +3,7 @@
     <img :alt="`Couverture de l'article : ${post.title}`" :src="post.cover" class="h-56 w-full object-cover" />
 
     <div class="p-4 sm:p-6">
-      <span class="mt-2 line-clamp-3 text-xs/relaxed text-gray-500">Publié {{ format(post.created, 'fr') }}</span>
+      <span class="mt-2 line-clamp-3 text-xs/relaxed text-gray-500">Publié {{ timeago(post.created) }}</span>
 
       <NuxtLink :to="`/actualites/${post.slug}`">
         <h2 class="text-lg font-medium text-gray-900">{{ post.title }}</h2>
@@ -25,10 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import { format, register } from 'timeago.js';
-import fr from 'timeago.js/lib/lang/fr';
-register('fr', fr);
-
 defineProps({
   post: {
     type: Object as PropType<Post>,
