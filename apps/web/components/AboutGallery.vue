@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col items-center gap-12 px-9 pb-24 pt-12 lg:px-64">
+  <section class="flex flex-col items-center gap-12 px-9 pb-24 pt-12 lg:px-96">
     <h1 class="text-6xl font-bold tracking-tight">Galerie</h1>
 
     <div class="container">
@@ -15,7 +15,6 @@
           delay: 3000,
           disableOnInteraction: true,
         }"
-        class="mySwiper"
       >
         <SwiperSlide v-for="(slide, index) in slides" :key="index">
           <img :src="slide" :alt="`Image n°${index + 1}`" />
