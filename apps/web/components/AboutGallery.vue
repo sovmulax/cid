@@ -31,7 +31,7 @@ const slides = (await Promise.all(Object.values(modules).map((importModule) => i
 );
 </script>
 
-<style>
+<style lang="scss">
 .swiper {
   width: 100%;
   height: 100%;
