@@ -1,11 +1,71 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { ref } from 'vue';
+import pb from '../pocket.config.js';
+
+const email = ref<string | null>(null);
+const password = ref<string | null>(null);
+
+async function login() {
+  if (email && password) {
+    await pb
+      .collection('users')
+      .authWithPassword(email.value as string, password.value as string)
+      .then((user) => {
+        navigateTo('/projects');
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  return;
+}
+</script>
 
 <template>
-  <NuxtLayout name="body">
-    <template #title-header>
-      <h5>Home</h5>
-    </template>
-  </NuxtLayout>
+  <div class="account-pages my-5 pt-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-pattern shadow-none">
+            <div class="card-body">
+              <div class="p-3">
+                <h4 class="font-18 text-center">Connexion</h4>
+                <br />
+                <div class="form-horizontal">
+                  <div class="form-group">
+                    <label for="username">Email</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      v-model="email"
+                      id="username"
+                      placeholder="Enter username"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="userpassword">Mot de Passe</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      v-model="password"
+                      id="userpassword"
+                      placeholder="Enter password"
+                    />
+                  </div>
+
+                  <div class="mt-3">
+                    <button class="btn btn-primary btn-block waves-effect waves-light" @click="login">Log In</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style scoped></style>
