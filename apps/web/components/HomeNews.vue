@@ -11,7 +11,7 @@
             {{ post.title }}
           </h2>
         </NuxtLink>
-        <span>Publié {{ format(post.created, 'fr') }}</span>
+        <span>Publié {{ timeago(post.created) }}</span>
       </div>
     </div>
     <NuxtLink to="/actualites" class="btn btn--primary"> Voir toutes l'actualités </NuxtLink>
@@ -19,11 +19,6 @@
 </template>
 
 <script setup lang="ts">
-import { format, register } from 'timeago.js';
-import fr from 'timeago.js/lib/lang/fr';
-
-register('fr', fr);
-
 const { $pb } = useNuxtApp();
 const response = await $pb.collection('posts').getList(1, 3, { sort: '-created' });
 const posts = response.items as unknown as Post[];

@@ -21,16 +21,13 @@ export default defineNuxtConfig({
   },
   css: ['@/assets/scss/main.scss'],
   modules: [
-    '@nuxtjs/device',
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
     'nuxt-headlessui',
     'nuxt-icon',
     'nuxt-snackbar',
+    'nuxt-swiper',
   ],
-  device: {
-    refreshOnResize: true,
-  },
   eslint: {
     lintOnStart: false,
     formatter: 'visualstudio',

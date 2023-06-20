@@ -1,21 +1,57 @@
 <template>
-  <section class="flex flex-col items-center gap-12 px-9 pb-24 pt-12 lg:px-64">
+  <section class="flex flex-col items-center gap-12 px-9 pb-24 pt-12 lg:px-96">
     <h1 class="text-6xl font-bold tracking-tight">Galerie</h1>
 
     <div class="container">
-      <div class="-m-1 flex flex-wrap md:-m-2">
-        <div v-for="index in 6" :key="index" class="flex flex-wrap md:w-1/2 lg:w-1/3">
-          <div class="w-full p-1 md:p-2">
-            <img
-              alt="gallery"
-              class="block h-full w-full rounded-lg object-cover object-center"
-              src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-            />
-          </div>
-        </div>
-      </div>
+      <Swiper
+        :modules="[SwiperAutoplay, SwiperNavigation, SwiperEffectFade]"
+        :centered-slides="true"
+        :space-between="1000"
+        :slides-per-view="1"
+        :loop="true"
+        :effect="'fade'"
+        :navigation="true"
+        :autoplay="{
+          delay: 3000,
+          disableOnInteraction: true,
+        }"
+      >
+        <SwiperSlide v-for="(slide, index) in slides" :key="index">
+          <img :src="slide" :alt="`Image n°${index + 1}`" />
+        </SwiperSlide>
+      </Swiper>
     </div>
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const modules = import.meta.glob('@/assets/img/gallery/*');
+const slides = (await Promise.all(Object.values(modules).map((importModule) => importModule()))).map(
+  (mod: any) => mod.default
+);
+</script>
+
+<style lang="scss">
+.swiper {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+
+  @media (min-width: 1024px) {
+    height: 480px;
+  }
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+</style>
