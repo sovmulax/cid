@@ -1,17 +1,48 @@
 <script setup>
 import pb from '../../pocket.config.js';
+import { ref, onMounted } from 'vue';
 // collect data from pocketbase
 try {
   records = await pb.collection('projects').getFullList();
 } catch (error) {}
 
-function addTextInput() {
+const counter = useState('counter', () => 0);
+
+function ajouterLigne() {
+  if (typeof this.i == 'undefined') this.i = 2;
+  var doc = document.getElementById('placement'); 
+
+  const row1 = document.createElement('div');
+  row1.className = 'row insert';
+  
+  const fieldset = document.createElement('fieldset');
+  fieldset.className = 'form-fieldset ui-input __first';
+  
   const input = document.createElement('input');
   input.type = 'text';
-  input.className = 'form-control'; // Set the desired CSS class
-  // Append the input element to the container
-  const container = document.getElementById('textInputContainer');
-  container.appendChild(input);
+  input.name = 'player' + i.toString();
+  input.id = 'username';
+  input.tabIndex = '0';
+
+  const label = document.createElement('label');
+  label.htmlFor = 'username';
+  label.text = 'username';
+  label.id = 'label';
+
+  const span = document.createElement('span');
+  span.dataText = 'Pseudonyme';
+  var texte = 'Pseudonyme';
+  span.innerHTML = texte; 
+  
+  i += 1;
+  doc.appendChild(row1);
+  row1.appendChild(fieldset);
+  fieldset.appendChild(input);
+  fieldset.appendChild(label);
+  label.appendChild(span);
+
+  const parent = document.getElementById('nbJoueurs');
+  parent.value = i;
 }
 </script>
 
@@ -27,7 +58,7 @@ function addTextInput() {
                 <div class="form-group">
                   <label>Intitulé du Projet</label>
                   <div>
-                    <input type="text" class="form-control" required placeholder="Min 6 chars." />
+                    <input type="text" class="form-control" placeholder="Min 6 chars." />
                   </div>
                 </div>
                 <div class="form-group">
@@ -53,13 +84,13 @@ function addTextInput() {
                 <div class="row">
                   <div class="col-12">
                     <h5>Liste des Membres</h5>
-                    <div class="row">
-                      <div class="col-6">
+                    <div ref="inputContainer" class="row">
+                      <!-- <div class="col-6">
                         <input type="text" class="form-control" required placeholder="Min 6 chars." />
                       </div>
                       <div class="col-6">
                         <input type="text" class="form-control" required placeholder="Min 6 chars." />
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -71,6 +102,7 @@ function addTextInput() {
                   </div>
                 </div>
               </form>
+              <button>test</button>
             </div>
           </div>
         </div>

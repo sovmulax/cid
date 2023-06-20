@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase';
 
 // collect data from pocketbase
-const pb = new PocketBase('https://cid.marcaureln.com');
+const pb = new PocketBase('http://localhost:8080/');
 
 try {
   await pb.admins.authWithPassword('soumailaevane@gmail.com', 'onditmdpdoitetrelong');
