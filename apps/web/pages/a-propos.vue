@@ -2,6 +2,7 @@
   <main class="bg-neutral-50">
     <AboutIntro />
     <AboutTeam />
+    <AboutPodcast />
     <AboutGallery />
     <AppContact />
   </main>
