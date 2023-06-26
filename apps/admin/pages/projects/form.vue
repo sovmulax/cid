@@ -9,15 +9,16 @@ try {
 const counter = useState('counter', () => 0);
 
 function ajouterLigne() {
-  if (typeof this.i == 'undefined') this.i = 2;
-  var doc = document.getElementById('placement'); 
+  let i = 2;
+  
+  const doc = document.getElementById('inputContainer');
 
   const row1 = document.createElement('div');
   row1.className = 'row insert';
-  
+
   const fieldset = document.createElement('fieldset');
   fieldset.className = 'form-fieldset ui-input __first';
-  
+
   const input = document.createElement('input');
   input.type = 'text';
   input.name = 'player' + i.toString();
@@ -26,14 +27,14 @@ function ajouterLigne() {
 
   const label = document.createElement('label');
   label.htmlFor = 'username';
-  label.text = 'username';
+  label.textContent = 'username';
   label.id = 'label';
 
   const span = document.createElement('span');
-  span.dataText = 'Pseudonyme';
-  var texte = 'Pseudonyme';
-  span.innerHTML = texte; 
-  
+  span.dataset.text = 'Pseudonyme';
+  const texte = 'Pseudonyme';
+  span.innerHTML = texte;
+
   i += 1;
   doc.appendChild(row1);
   row1.appendChild(fieldset);
@@ -42,8 +43,9 @@ function ajouterLigne() {
   label.appendChild(span);
 
   const parent = document.getElementById('nbJoueurs');
-  parent.value = i;
+  parent.value =  i;
 }
+
 </script>
 
 <template>
@@ -84,7 +86,7 @@ function ajouterLigne() {
                 <div class="row">
                   <div class="col-12">
                     <h5>Liste des Membres</h5>
-                    <div ref="inputContainer" class="row">
+                    <div id="inputContainer" class="row">
                       <!-- <div class="col-6">
                         <input type="text" class="form-control" required placeholder="Min 6 chars." />
                       </div>
@@ -102,7 +104,7 @@ function ajouterLigne() {
                   </div>
                 </div>
               </form>
-              <button>test</button>
+              <button @click="ajouterLigne">test</button>
             </div>
           </div>
         </div>

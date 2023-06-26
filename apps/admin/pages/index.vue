@@ -1,25 +1,31 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import pb from '../pocket.config.js';
+// const pb = new PocketBase('http://localhost:8080/');
 
 const email = ref<string | null>(null);
 const password = ref<string | null>(null);
 
-async function login() {
-  if (email && password) {
-    await pb
-      .collection('users')
-      .authWithPassword(email.value as string, password.value as string)
-      .then((user) => {
-        navigateTo('/projects');
-        console.log(user);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
-  return;
-}
+// async function login() {
+//   if (email && password) {
+//     await pb
+//       .collection('users')
+//       .authWithPassword(email.value as string, password.value as string)
+//       .then((user) => {
+//         return user;
+//         // navigateTo('/projects');
+//         // console.log(user);
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   }
+// }
+
+// const users = login();
+
+// export const useAuth = () => useState('users', () => login())
+
 </script>
 
 <template>
@@ -56,7 +62,7 @@ async function login() {
                   </div>
 
                   <div class="mt-3">
-                    <button class="btn btn-primary btn-block waves-effect waves-light" @click="login">Log In</button>
+                    <button class="btn btn-primary btn-block waves-effect waves-light">Log In</button>
                   </div>
                 </div>
               </div>
