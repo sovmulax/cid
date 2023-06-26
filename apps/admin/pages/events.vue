@@ -63,7 +63,7 @@ const j = 1;
                               <th>Date de Début</th>
                               <th>Date de Fin</th>
                               <th>Privé ?</th>
-                              <th>Actions</th>
+                              <!-- <th>Actions</th> -->
                             </tr>
                           </thead>
                           <tbody>
@@ -73,13 +73,13 @@ const j = 1;
                               <td>{{ item.type }}</td>
                               <td>{{ item.startDate }}</td>
                               <td>{{ item.endDate }}</td>
-                              <td>{{ item.private }}</td>
-                              <td>
+                              <td>{{ item.private == true ? 'oui' : 'non' }}</td>
+                              <!-- <td>
                                 <NuxtLink to="/"><span style="color:green"><i class="fas fa-marker"></i></span></NuxtLink
                                 ><button style="border: none">
                                   <span style="color: red"><i class="far fa-trash-alt"></i></span>
                                 </button>
-                              </td>
+                              </td> -->
                             </tr>
                           </tbody>
                         </table>
@@ -121,7 +121,7 @@ const j = 1;
                               <td>{{ item.type }}</td>
                               <td>{{ item.startDate }}</td>
                               <td>{{ item.endDate }}</td>
-                              <td>{{ item.private }}</td>
+                              <td>{{ item.private == true ? 'oui' : 'non' }}</td>
                             </tr>
                           </tbody>
                         </table>

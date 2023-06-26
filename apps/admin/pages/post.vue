@@ -44,7 +44,10 @@ const i = 1;
                     <td>
                       {{ item.content }}
                     </td>
-                    <td>
+                    <!-- <td>
+                      <nuxt-link  to="addactualite" class="btn btn-warning" type="button">
+                        <i class="mdi mdi-plus-circle mr-2"></i>
+                      </nuxt-link>
                       <nuxt-link to="/post"><i class="fas fa-arrow-circle-right"></i></nuxt-link>
                     </td>
                     <td>
@@ -53,7 +56,7 @@ const i = 1;
                       ><button style="border: none">
                         <span style="color: red"><i class="far fa-trash-alt"></i></span>
                       </button>
-                    </td>
+                    </td> -->
                   </tr>
                 </tbody>
               </table>
