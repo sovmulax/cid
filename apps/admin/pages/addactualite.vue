@@ -2,70 +2,63 @@
   <NuxtLayout name="body">
     <template #title-header> Evènements</template>
     <template #content>
-      <center>
-        <div class="col-lg-6">
-          <div class="card">
-            <div class="card-body">
-              <h4 class="header-title mt-0">Ajout d'actualités</h4>
-              <p class="text-muted mb-4">Remplissez correctement les champs de ce formulaire sans aucune fantaisie</p>
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="header-title mt-0">Ajout d'actualités</h4>
+            <p class="text-muted mb-4">Remplissez correctement les champs de ce formulaire sans aucune fantaisie</p>
 
-              <form class="custom-validation" @submit.prevent="Addpost">
-                <div class="form-group">
-                  <label>Titre</label>
-                  <input v-model="title" type="text" class="form-control" required placeholder="Type something" />
-                </div>
+            <form class="custom-validation" @submit.prevent="Addpost">
+              <div class="form-group">
+                <label>Titre</label>
+                <input v-model="title" type="text" class="form-control" required placeholder="Type something" />
+              </div>
 
-                <div class="form-group">
-                  <label>Slug</label>
-                  <input v-model="slug" type="text" class="form-control" required placeholder="Type something" />
-                </div>
+              <div class="form-group">
+                <label>Slug</label>
+                <input v-model="slug" type="text" class="form-control" required placeholder="Type something" />
+              </div>
 
-                <div class="form-group">
-                  <label>Auteur</label>
-                  <div>
-                    <select class="form-control" v-model="author">
-                      <option v-for="item in data" :key="item.id" :value="item.id">{{ item.username }}</option>
-                    </select>
-                  </div>
+              <div class="form-group">
+                <label>Auteur</label>
+                <div>
+                  <select class="form-control" v-model="author">
+                    <option v-for="item in data" :key="item.id" :value="item.id">{{ item.username }}</option>
+                  </select>
                 </div>
-                <div class="form-group">
-                  <div class="card">
-                    <div class="card-body">
-                      <label>Photo</label>
+              </div>
+              <div class="form-group">
+                <label>Photo</label>
 
-                      <div class="custom-file">
-                        <input
-                          @change="handleFileUpload"
-                          id="fileInput"
-                          type="file"
-                          ref="image"
-                          accept="*/*"
-                          class="custom-file-input"
-                        />
+                <div class="custom-file">
+                  <input
+                    @change="handleFileUpload"
+                    id="fileInput"
+                    type="file"
+                    ref="image"
+                    accept="*/*"
+                    class="custom-file-input"
+                  />
+                  <label class="custom-file-label" for="customFile">Choisir une photo</label>
+                </div>
+              </div>
 
-                        <label class="custom-file-label" for="customFile">Choisir une photo</label>
-                      </div>
-                    </div>
-                  </div>
+              <div class="form-group">
+                <label>Détails</label>
+                <div>
+                  <textarea v-model="content" required class="form-control" rows="5" type="text"></textarea>
                 </div>
-
-                <div class="form-group">
-                  <label>Détails</label>
-                  <div>
-                    <textarea v-model="content" required class="form-control" rows="5" type="text"></textarea>
-                  </div>
+              </div>
+              <div class="form-group mb-0">
+                <div>
+                  <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">Envoyer</button>
+                  <button type="reset" class="btn btn-secondary waves-effect">Annuler</button>
                 </div>
-                <div class="form-group mb-0">
-                  <div>
-                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">Envoyer</button>
-                    <button type="reset" class="btn btn-secondary waves-effect">Annuler</button>
-                  </div>
-                </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
         </div>
-      </center>
+      </div>
     </template>
   </NuxtLayout>
 </template>

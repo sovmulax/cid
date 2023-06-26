@@ -14,14 +14,16 @@ const i = 1;
 <template>
   <NuxtLayout name="body">
     <template #title-header> Actualités </template>
+    <template #btn-header>
+      <nuxt-link  to="addactualite" class="btn btn-primary" type="button">
+        <i class="mdi mdi-plus-circle mr-2"></i> Ajouter Un Post
+      </nuxt-link>
+    </template>
     <template #content>
       <div class="row">
         <div class="col-md-12 card">
           <div class="card-body">
             <h4 class="header-title mt-0">Liste des Articles</h4>
-            <p class="text-muted mb-4">
-              <NuxtLink to="/addactualite" style="color: #00aeff"> Ajouter<i class="fas fa-plus-circle"></i></NuxtLink>
-            </p>
             <div class="table-responsive">
               <table class="table-striped mb-0 table">
                 <thead>
