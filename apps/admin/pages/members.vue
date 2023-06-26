@@ -13,9 +13,13 @@ const data = ref(records);
 <template>
   <NuxtLayout name="body">
     <template #title-header> Membres </template>
+    <template #btn-header>
+      <nuxt-link to="addmembers" class="btn btn-primary" type="button">
+        <i class="mdi mdi-plus-circle mr-2"></i> Ajouter Un Membres
+      </nuxt-link>
+    </template>
     <template #content>
       <div>
-        <NuxtLink to="/addmembers" style="color:black" class="btn btn-primary waves-effect waves-light mr-1">Ajouter<i class="fas fa-plus-circle"></i></NuxtLink><br/>
         <div class="row">
           <div v-for="item in data" :key="item.id" class="col-md-6 col-xl-3">
             <div class="card">

@@ -2,8 +2,7 @@
   <NuxtLayout name="body">
     <template #title-header> Evènements</template>
     <template #content>
-      <center>
-        <div class="col-lg-6">
+        <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
               <h4 class="header-title mt-0">Ajout de membres</h4>
@@ -69,7 +68,6 @@
             </div>
           </div>
         </div>
-      </center>
     </template>
   </NuxtLayout>
 </template>
