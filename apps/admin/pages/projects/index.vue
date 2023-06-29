@@ -5,7 +5,9 @@ import dateformat from '../../helper/helper.js';
 // collect data from pocketbase
 let records;
 try {
-  records = await pb.collection('projects').getFullList();
+  records = await pb.collection('projects').getFullList({
+    sort: '-created',
+  });
 } catch (error) {}
 const data = ref(records);
 </script>
