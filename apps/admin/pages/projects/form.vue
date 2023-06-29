@@ -7,20 +7,15 @@ const domaine = ref('');
 const subdomaine = ref('');
 const start = ref('');
 const end = ref('');
-const member0 = ref('');
-const role0 = ref('');
-const task0 = ref('');
 
 // collect data from pocketbase
 try {
   records = await pb.collection('projects').getFullList();
 } catch (error) {}
 
-let i = 0;
+let i = 1;
 
 function ajouterLigne() {
-  i += 1;
-
   const doc = document.getElementById('inputContainer');
 
   const row1 = document.createElement('div');
@@ -53,6 +48,42 @@ function ajouterLigne() {
   row1.appendChild(input);
   row2.appendChild(input0);
   row3.appendChild(input1);
+  i += 1;
+}
+
+async function submitdata() {
+  const formData = new FormData();
+  formData.append('title', intitule.value);
+  formData.append('domain', domaine.value);
+  formData.append('subDomain', subdomaine.value);
+  formData.append('startDate', start.value);
+  formData.append('endDate', end.value);
+
+  const record = await pb.collection('projects').create(formData);
+
+  for (let j = 0; j < i; j++) {
+    const member = document.getElementsByName('member' + j.toString())[0].value;
+    const task = document.getElementsByName('task' + j.toString())[0].value;
+    const roles = document.getElementsByName('role' + j.toString())[0].value;
+
+    const memberdata = {
+      projectId: record['id'],
+      role: roles,
+      name: member,
+    };
+    const recordmember = await pb.collection('project_members').create(memberdata);
+
+    const taskdata = {
+      title: task,
+      status: '1',
+      projectId: record['id'],
+      projectMembersId: recordmember['id'],
+      name: member,
+    };
+    await pb.collection('project_tasks').create(taskdata);
+  }
+
+  navigateTo('/projects');
 }
 </script>
 
@@ -102,7 +133,7 @@ function ajouterLigne() {
                       <div class="col-4">
                         <label for="tach">Membre</label>
                         <input
-                          v-model="member0"
+                          name="member0"
                           type="text"
                           class="form-control mb-2"
                           required
@@ -112,7 +143,7 @@ function ajouterLigne() {
                       <div class="col-4">
                         <label for="tach">Role</label>
                         <input
-                          v-model="role0"
+                          name="role0"
                           type="text"
                           class="form-control mb-2"
                           required
@@ -122,7 +153,7 @@ function ajouterLigne() {
                       <div class="col-4">
                         <label for="tach">Tache</label>
                         <input
-                          v-model="task0"
+                          name="task0"
                           type="text"
                           class="form-control mb-2"
                           required
@@ -137,7 +168,9 @@ function ajouterLigne() {
                 <br />
                 <div class="form-group mb-0">
                   <div>
-                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-1">Submit</button>
+                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-1" @click="submitdata">
+                      Submit
+                    </button>
                     <button type="reset" class="btn btn-secondary waves-effect">Cancel</button>
                   </div>
                 </div>
