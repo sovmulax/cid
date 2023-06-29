@@ -1,12 +1,10 @@
 <script setup>
 import pb from '../../pocket.config.js';
-import { ref, onMounted } from 'vue';
 // collect data from pocketbase
 try {
   records = await pb.collection('projects').getFullList();
 } catch (error) {}
 
-const counter = useState('counter', () => 0);
 let i = 0;
 
 function ajouterLigne() {
@@ -34,8 +32,6 @@ function ajouterLigne() {
   doc.appendChild(row2);
   row1.appendChild(input);
   row2.appendChild(input0);
-
-  console.log(i);
 }
 </script>
 

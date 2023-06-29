@@ -22,7 +22,7 @@
               <div class="form-group">
                 <label>Auteur</label>
                 <div>
-                  <select class="form-control" v-model="author">
+                  <select v-model="author" class="form-control">
                     <option v-for="item in data" :key="item.id" :value="item.id">{{ item.username }}</option>
                   </select>
                 </div>
@@ -32,12 +32,12 @@
 
                 <div class="custom-file">
                   <input
-                    @change="handleFileUpload"
                     id="fileInput"
-                    type="file"
                     ref="image"
+                    type="file"
                     accept="*/*"
                     class="custom-file-input"
+                    @change="handleFileUpload"
                   />
                   <label class="custom-file-label" for="customFile">Choisir une photo</label>
                 </div>
@@ -71,7 +71,7 @@ try {
   records = await pb.collection('users').getFullList();
 } catch (error) {}
 const data = ref(records);
-const i = 1;
+// const i = 1;
 
 const title = ref('');
 const content = ref('');
@@ -84,7 +84,7 @@ async function Addpost() {
     const fileInput = document.getElementById('fileInput');
 
     fileInput.addEventListener('change', function () {
-      for (let file of fileInput.files) {
+      for (const file of fileInput.files) {
         formData.append('documents', file);
       }
     });
@@ -95,8 +95,8 @@ async function Addpost() {
     formData.append('content', content.value);
     formData.append('cover', document.getElementById('fileInput').files[0]);
 
-    console.log(formData);
-    const createdRecord = await pb.collection('posts').create(formData);
+    // console.log(formData);
+    await pb.collection('posts').create(formData);
     title.value = '';
     content.value = '';
     author.value = '';
@@ -104,7 +104,7 @@ async function Addpost() {
 
     router.push('/post');
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 </script>

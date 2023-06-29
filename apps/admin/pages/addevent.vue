@@ -82,8 +82,8 @@ async function Createvent() {
       private: true,
     };
 
-    console.log(data);
-    const record = await pb.collection('events').create(data);
+    // console.log(data);
+    await pb.collection('events').create(data);
     router.push('/events');
   } catch (e) {}
 }

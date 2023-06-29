@@ -8,7 +8,7 @@
             <h4 class="header-title mt-0">Ajout de membres</h4>
             <p class="text-muted mb-4">Remplissez correctement les champs de ce formulaire sans aucune fantaisie</p>
 
-            <form class="custom-validation" @submit.prevent="Addmembers" enctype="multipart/form-data">
+            <form class="custom-validation" enctype="multipart/form-data" @submit.prevent="Addmembers">
               <div class="form-group">
                 <label>Nom & Prénoms</label>
                 <input
@@ -32,12 +32,12 @@
 
                     <div class="custom-file">
                       <input
-                        @change="handleFileUpload"
                         id="fileInput"
-                        type="file"
                         ref="image"
+                        type="file"
                         accept="*/*"
                         class="custom-file-input"
+                        @change="handleFileUpload"
                       />
 
                       <label class="custom-file-label" for="customFile">Choisir une photo</label>
@@ -91,7 +91,7 @@ async function Addmembers() {
 
     // listen to file input changes and add the selected files to the form data
     fileInput.addEventListener('change', function () {
-      for (let file of fileInput.files) {
+      for (const file of fileInput.files) {
         formData.append('documents', file);
       }
     });
@@ -104,10 +104,10 @@ async function Addmembers() {
     formData.append('facebook', facebook.value);
     formData.append('linkedin', linkedin.value);
     formData.append('picture', document.getElementById('fileInput').files[0]);
-    console.log(formData);
+    // console.log(formData);
 
     // upload and create new record
-    const createdRecord = await pb.collection('members').create(formData);
+    await pb.collection('members').create(formData);
   } catch (e) {}
   router.push('/members');
 }

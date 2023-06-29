@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import pb from '../pocket.config.js';
+// import pb from '../pocket.config.js';
 // const pb = new PocketBase('http://localhost:8080/');
 
 const email = ref<string | null>(null);
@@ -41,10 +41,10 @@ const password = ref<string | null>(null);
                   <div class="form-group">
                     <label for="username">Email</label>
                     <input
+                      id="username"
+                      v-model="email"
                       type="text"
                       class="form-control"
-                      v-model="email"
-                      id="username"
                       placeholder="Enter username"
                     />
                   </div>
@@ -52,10 +52,10 @@ const password = ref<string | null>(null);
                   <div class="form-group">
                     <label for="userpassword">Mot de Passe</label>
                     <input
+                      id="userpassword"
+                      v-model="password"
                       type="password"
                       class="form-control"
-                      v-model="password"
-                      id="userpassword"
                       placeholder="Enter password"
                     />
                   </div>
