@@ -22,7 +22,12 @@ html {
   min-height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 10px 0;
   font-family: $font-family-secondary;
 }
@@ -31,7 +36,7 @@ h6 {
   font-size: 14px;
 }
 
-p{
+p {
   line-height: 1.7;
 }
 
@@ -42,13 +47,16 @@ svg {
 a {
   color: $gray-600;
 
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     outline: 0;
     text-decoration: none;
   }
 }
 
-b, strong {
+b,
+strong {
   font-weight: 500;
 }
 
@@ -83,4 +91,3 @@ b, strong {
     }
   }
 }
-

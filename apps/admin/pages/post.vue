@@ -15,7 +15,7 @@ const i = 1;
   <NuxtLayout name="body">
     <template #title-header> Actualités </template>
     <template #btn-header>
-      <nuxt-link  to="addactualite" class="btn btn-primary" type="button">
+      <nuxt-link to="addactualite" class="btn btn-primary" type="button">
         <i class="mdi mdi-plus-circle mr-2"></i> Ajouter Un Post
       </nuxt-link>
     </template>

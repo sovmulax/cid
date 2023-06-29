@@ -1,22 +1,19 @@
-
 /* ==============
     Pricing
 ===================*/
 
-.plan-box{
-    .plan-icon{
-        position: relative;
+.plan-box {
+  .plan-icon {
+    position: relative;
 
-        &:before{
-            content: "";
-            position: absolute;
-            top: 30px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: $gray-200;
-        }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $gray-200;
     }
+  }
 }
-
-

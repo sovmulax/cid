@@ -3,7 +3,7 @@ Invoice
 ============= */
 
 .table {
-  > thead{
+  > thead {
     > tr {
       > .no-line {
         border-bottom: none;
@@ -22,12 +22,14 @@ Invoice
   }
 }
 
-
 /* ==============
   Print css
 ===================*/
 @media print {
-  .topbar, .header-bg, .page-title-box, .footer {
+  .topbar,
+  .header-bg,
+  .page-title-box,
+  .footer {
     display: none;
   }
   .wrapper {

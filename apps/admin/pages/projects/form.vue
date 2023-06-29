@@ -34,7 +34,7 @@ function ajouterLigne() {
   doc.appendChild(row2);
   row1.appendChild(input);
   row2.appendChild(input0);
-  
+
   console.log(i);
 }
 </script>
@@ -80,11 +80,23 @@ function ajouterLigne() {
                     <div id="inputContainer" class="row">
                       <div class="col-6">
                         <label for="tach">Membre</label>
-                        <input type="text" name="member0" class="form-control mb-2" required placeholder="Nom de l'exécutant" />
+                        <input
+                          type="text"
+                          name="member0"
+                          class="form-control mb-2"
+                          required
+                          placeholder="Nom de l'exécutant"
+                        />
                       </div>
                       <div class="col-6">
                         <label for="tach">Tache</label>
-                        <input type="text" name="task0" class="form-control mb-2" required placeholder="Intitulé de la tâche" />
+                        <input
+                          type="text"
+                          name="task0"
+                          class="form-control mb-2"
+                          required
+                          placeholder="Intitulé de la tâche"
+                        />
                       </div>
                     </div>
                     <br />

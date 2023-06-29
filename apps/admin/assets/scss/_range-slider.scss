@@ -4,25 +4,31 @@
 
 /* Ion Range slider */
 
-.irs--round{
-  .irs-bar, .irs-to, .irs-from, .irs-single {
+.irs--round {
+  .irs-bar,
+  .irs-to,
+  .irs-from,
+  .irs-single {
     background: $danger !important;
   }
 
-  .irs-handle{
+  .irs-handle {
     border-color: $danger;
   }
-  .irs-to, .irs-from, .irs-single{
+  .irs-to,
+  .irs-from,
+  .irs-single {
     font-size: 10px;
 
-    &:before{
+    &:before {
       border-top-color: $danger;
     }
   }
   .irs-grid-text {
     font-size: 11px;
   }
-  .irs-min, .irs-max{
+  .irs-min,
+  .irs-max {
     color: $gray-600;
     font-size: 10px;
   }

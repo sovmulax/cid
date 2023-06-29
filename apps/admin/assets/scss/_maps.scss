@@ -2,7 +2,8 @@
   Maps
 ===================*/
 
-.gmaps, .gmaps-panaroma {
+.gmaps,
+.gmaps-panaroma {
   height: 300px;
   background: $gray-100;
   border-radius: 3px;
@@ -37,7 +38,6 @@
     border-right: 16px solid transparent;
     border-bottom: 16px solid $primary;
   }
-  
 }
 
 // Vector Map Height
@@ -45,7 +45,7 @@
   height: 400px;
 }
 
-
-.jvectormap-zoomin, .jvectormap-zoomout {
+.jvectormap-zoomin,
+.jvectormap-zoomout {
   display: none;
 }

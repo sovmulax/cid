@@ -25,7 +25,6 @@ const password = ref<string | null>(null);
 // const users = login();
 
 // export const useAuth = () => useState('users', () => login())
-
 </script>
 
 <template>

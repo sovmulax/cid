@@ -21,7 +21,6 @@
   }
 }
 
-
 .percent {
   display: inline-block;
   line-height: 110px;
@@ -30,10 +29,9 @@
   &:after {
     content: '%';
     margin-left: 0.1em;
-    font-size: .8em;
+    font-size: 0.8em;
   }
 }
-
 
 /* Morris chart */
 .morris-charts {
@@ -44,14 +42,14 @@
 .morris-chart-height {
   height: 300px;
 }
-.morris-hover{
+.morris-hover {
   &.morris-default-style {
     border-radius: 5px;
     padding: 10px 12px;
     background: $white;
     border: none;
     box-shadow: 0 5px 25px 5px rgba(0, 0, 0, 0.14);
-  
+
     .morris-hover-point {
       font-weight: 500;
       font-size: $base-font;
@@ -84,7 +82,7 @@
 }
 
 /* Chartist chart */
-.ct-golden-section{
+.ct-golden-section {
   &:before {
     float: none;
   }
@@ -111,65 +109,88 @@
   stroke-dasharray: 3px;
 }
 
-.ct-chart{
-  .ct-series{
-    &.ct-series-a{
-      .ct-bar, .ct-line, .ct-point, .ct-slice-donut {
+.ct-chart {
+  .ct-series {
+    &.ct-series-a {
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
         stroke: $primary;
       }
     }
 
-    &.ct-series-b{
-      .ct-bar, .ct-line, .ct-point, .ct-slice-donut {
+    &.ct-series-b {
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
         stroke: $danger;
       }
     }
 
-    &.ct-series-c{
-      .ct-bar, .ct-line, .ct-point, .ct-slice-donut {
+    &.ct-series-c {
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
         stroke: $warning;
       }
     }
 
-    &.ct-series-d{
-      .ct-bar, .ct-line, .ct-point, .ct-slice-donut {
+    &.ct-series-d {
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
         stroke: $dark;
       }
     }
 
-    &.ct-series-e{
-      .ct-bar, .ct-line, .ct-point, .ct-slice-donut {
+    &.ct-series-e {
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
         stroke: $info;
       }
     }
 
-    &.ct-series-f{
-      .ct-bar, .ct-line, .ct-point, .ct-slice-donut {
+    &.ct-series-f {
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
         stroke: $success;
       }
     }
 
-    &.ct-series-g{
-      .ct-bar, .ct-line, .ct-point, .ct-slice-donut {
+    &.ct-series-g {
+      .ct-bar,
+      .ct-line,
+      .ct-point,
+      .ct-slice-donut {
         stroke: $gray-100;
       }
     }
   }
 }
 
-
 .ct-series-a {
-  .ct-area, .ct-slice-pie {
+  .ct-area,
+  .ct-slice-pie {
     fill: $primary;
   }
 }
 .ct-series-b {
-  .ct-area, .ct-slice-pie {
+  .ct-area,
+  .ct-slice-pie {
     fill: $warning;
   }
 }
 .ct-series-c {
-  .ct-area, .ct-slice-pie {
+  .ct-area,
+  .ct-slice-pie {
     fill: $dark;
   }
 }
@@ -189,7 +210,7 @@
   text-align: center;
   pointer-events: none;
   z-index: 1;
-  transition: opacity .2s linear;
+  transition: opacity 0.2s linear;
   &.tooltip-show {
     opacity: 1;
   }
@@ -213,9 +234,9 @@
       background-color: $dark;
     }
 
-    td{
+    td {
       border-left: none;
-      >span {
+      > span {
         background: $dark;
       }
     }
@@ -239,9 +260,9 @@
   font-size: 13px;
 }
 
-/**** E chart *****/ 
+/**** E chart *****/
 
-.e-chart{
+.e-chart {
   height: 350px;
 }
 

@@ -13,23 +13,25 @@
 }
 .dropdown-item {
   background-color: $white;
-  padding: .4rem 1rem;
-  
-  &:active,&:hover {
+  padding: 0.4rem 1rem;
+
+  &:active,
+  &:hover {
     background-color: $gray-100;
     color: $dark;
   }
 }
 
-.dropdown-item.active, .dropdown-item:active {
+.dropdown-item.active,
+.dropdown-item:active {
   background-color: $gray-100;
   color: $dark;
 }
 
-.breadcrumb>li+li:before {
+.breadcrumb > li + li:before {
   padding: 0 5px;
   color: $muted;
-  content: "\f105" !important;
+  content: '\f105' !important;
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
@@ -132,13 +134,11 @@
   color: $dark !important;
 }
 
-
 //Badge
 
 .badge {
   font-weight: 500;
 }
-
 
 .badge-primary {
   background-color: $primary;
@@ -198,7 +198,7 @@
 
 // border
 
-.border-primary{
+.border-primary {
   border-color: $primary !important;
 }
 
@@ -218,7 +218,7 @@
   border-color: $danger !important;
 }
 
-.border-dark{
+.border-dark {
   border-color: $dark !important;
 }
 
@@ -230,15 +230,16 @@ dt {
 
 // spinner
 
-.spinner-border, .spinner-grow {
+.spinner-border,
+.spinner-grow {
   margin-right: 10px;
   margin-top: 10px;
 }
 
 // checkbox
 
-.custom-control-input{
-  &:checked~.custom-control-label{
+.custom-control-input {
+  &:checked ~ .custom-control-label {
     &:before {
       border-color: $danger;
       background-color: $danger;

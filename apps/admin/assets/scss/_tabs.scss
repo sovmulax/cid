@@ -2,7 +2,8 @@
    Tabs & Accordions
 ============= */
 
-.nav-tabs,.nav-pills {
+.nav-tabs,
+.nav-pills {
   .nav-link {
     color: $dark;
     font-weight: 500;
@@ -10,14 +11,15 @@
 }
 
 .nav-pills {
-  .nav-link.active, .show>.nav-link{
+  .nav-link.active,
+  .show > .nav-link {
     background: $primary;
   }
 }
 
-.verti-tab{
-  .nav{
-    .nav-link{
+.verti-tab {
+  .nav {
+    .nav-link {
       margin-bottom: 7px;
     }
   }
@@ -28,12 +30,12 @@
     .nav-item {
       position: relative;
       padding-top: 3rem;
-  
+
       .nav-link {
         padding: 1rem;
-  
-        &::before{
-          content: "";
+
+        &::before {
+          content: '';
           position: absolute;
           background: $primary;
           width: 2px;
@@ -44,17 +46,19 @@
           bottom: 44px;
           transition: all 0.4s;
         }
-  
-        &:hover, &:focus, &.active{
-          &::before{
+
+        &:hover,
+        &:focus,
+        &.active {
+          &::before {
             height: 34px;
           }
-          .tab-icon{
+          .tab-icon {
             opacity: 1;
           }
         }
-  
-        .tab-icon{
+
+        .tab-icon {
           position: absolute;
           top: 0px;
           left: 0;
@@ -68,13 +72,11 @@
   }
 }
 
-
-
 #accordion {
-  .card{
+  .card {
     box-shadow: none !important;
     border: 1px solid $gray-200;
-    .card-header{
+    .card-header {
       border-bottom: 1px solid $gray-200;
     }
   }

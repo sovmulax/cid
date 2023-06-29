@@ -1,4 +1,3 @@
-
 /* ==============
   Menu
 ===================*/
@@ -17,7 +16,6 @@ body {
   }
 }
 
-
 .header-bg {
   position: fixed;
   top: 0;
@@ -25,18 +23,18 @@ body {
   right: 0;
   z-index: 1030;
   background-color: $topbar-background;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   box-shadow: $shadow;
 }
 
 #topnav {
   .has-submenu.active {
-    a{
+    a {
       color: $white;
     }
 
     .submenu {
-      li.active > a{
+      li.active > a {
         color: $primary;
       }
     }
@@ -47,19 +45,19 @@ body {
       line-height: 70px;
       float: left;
       .logo-large {
-          height: 18px;
+        height: 18px;
       }
-    } 
+    }
 
     .logo-small {
-        display: none;
-        height: 22px;
+      display: none;
+      height: 22px;
     }
   }
 
   .navbar-custom {
     padding-left: 0;
-    background-color: rgba($white,0.05);
+    background-color: rgba($white, 0.05);
   }
 
   .navbar-toggle {
@@ -85,15 +83,15 @@ body {
       padding-top: 23px;
       margin: 0 10px;
       height: 60px;
-      transition: all .5s ease;
+      transition: all 0.5s ease;
     }
     span {
       height: 2px;
       width: 100%;
-      background-color: rgba($white,0.8);
+      background-color: rgba($white, 0.8);
       display: block;
       margin-bottom: 5px;
-      transition: transform .5s ease;
+      transition: transform 0.5s ease;
     }
   }
 
@@ -128,25 +126,26 @@ body {
         display: block;
         color: $gray-300;
         font-size: 14.5px;
-        transition: all .5s ease;
+        transition: all 0.5s ease;
         line-height: 18px;
         padding-left: 15px;
         padding-right: 15px;
-    
+
         &:hover,
         &:focus,
         &:active {
           color: $white;
         }
-    
+
         i {
           font-size: 16px;
           vertical-align: baseline;
           margin-right: 10px;
-          transition: all .5s ease;
+          transition: all 0.5s ease;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background-color: transparent;
         }
       }
@@ -159,7 +158,7 @@ body {
     line-height: 60px;
     display: block;
     max-height: 60px;
-    color: rgba($white,0.7);
+    color: rgba($white, 0.7);
   }
 
   .dropdown-toggle {
@@ -187,61 +186,61 @@ body {
     max-height: 70px;
   }
 
-  .dropdown-menu{
+  .dropdown-menu {
     box-shadow: 0px 0px 13px 0px rgba(36, 36, 41, 0.07);
   }
 
   .noti-icon {
-      font-size: 24px;
-      vertical-align: middle;
+    font-size: 24px;
+    vertical-align: middle;
   }
   .noti-icon-badge {
-      display: inline-block;
-      position: absolute;
-      top: 16px;
-      right: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    right: 10px;
   }
   .notify-item {
-      padding: 10px 20px;
-      .notify-icon {
-          float: left;
-          height: 36px;
-          width: 36px;
-          line-height: 36px;
-          text-align: center;
-          margin-right: 10px;
-          border-radius: 50%;
-          i {
-              height: 32px;
-              width: 32px;
-              border-radius: 50%;
-              line-height: 32px;
-              margin-top: 2px;
-              color: $white;
-          }
+    padding: 10px 20px;
+    .notify-icon {
+      float: left;
+      height: 36px;
+      width: 36px;
+      line-height: 36px;
+      text-align: center;
+      margin-right: 10px;
+      border-radius: 50%;
+      i {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        line-height: 32px;
+        margin-top: 2px;
+        color: $white;
       }
-      .notify-details {
-          margin-bottom: 0;
-          overflow: hidden;
-          margin-left: 45px;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          font-family: $font-family-secondary;
-            span {
-                display: block;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: normal;
-                font-size: 12px;
-                font-weight: normal;   
-                font-family: $font-family; 
-            }
+    }
+    .notify-details {
+      margin-bottom: 0;
+      overflow: hidden;
+      margin-left: 45px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-family: $font-family-secondary;
+      span {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        font-size: 12px;
+        font-weight: normal;
+        font-family: $font-family;
       }
+    }
   }
 
-  .language-switch{
-    a{
-      img{
+  .language-switch {
+    a {
+      img {
         float: right;
         margin-top: 3px;
       }
@@ -250,26 +249,26 @@ body {
 
   .nav-user {
     img {
-        height: 36px;
-        width: 36px;
+      height: 36px;
+      width: 36px;
     }
   }
 
   .profile-dropdown {
     width: 170px;
     i {
-        font-size: 17px;
-        vertical-align: middle;
-        margin-right: 5px;
-        color: $gray-600;
+      font-size: 17px;
+      vertical-align: middle;
+      margin-right: 5px;
+      color: $gray-600;
     }
     span {
-        margin-top: 5px;
+      margin-top: 5px;
     }
   }
 }
 
-.arrow-none{
+.arrow-none {
   &:after {
     border: none;
     margin: 0;
@@ -286,40 +285,39 @@ body {
 .app-search {
   position: relative;
 
-  .form-control{
-    &::placeholder{
+  .form-control {
+    &::placeholder {
       color: $gray-300;
     }
   }
 
   .form-control,
   .form-control:focus {
-      border: 1px solid lighten($topbar-background, 4%);
-      font-size: 13px;
-      height: 34px;
-      padding-left: 18px;
-      padding-right: 40px;
-      margin-right: 16px;
-      background: lighten($topbar-background, 4%);
-      box-shadow: none;
-      border-radius: 30px;
-      width: 200px;
-      color: $gray-200;
+    border: 1px solid lighten($topbar-background, 4%);
+    font-size: 13px;
+    height: 34px;
+    padding-left: 18px;
+    padding-right: 40px;
+    margin-right: 16px;
+    background: lighten($topbar-background, 4%);
+    box-shadow: none;
+    border-radius: 30px;
+    width: 200px;
+    color: $gray-200;
   }
   button {
-      position: absolute;
-      top: 9px;
-      right: 26px;
-      display: block;
-      color: $gray-200;
-      font-size: 11px;
-      border: none;
-      background-color: transparent;
+    position: absolute;
+    top: 9px;
+    right: 26px;
+    display: block;
+    color: $gray-200;
+    font-size: 11px;
+    border: none;
+    background-color: transparent;
   }
 }
 
 /************* page title *************/
-
 
 .page-title-box {
   padding: 14px 20px;
@@ -329,20 +327,20 @@ body {
   position: relative;
   top: 30px;
   .page-title {
-      font-size: 18px;
-      margin: 0;
-      line-height: 30px;
+    font-size: 18px;
+    margin: 0;
+    line-height: 30px;
   }
   .breadcrumb {
-      padding: 4px 0;
-      background-color: transparent;
-      margin-bottom: 0;
-      a {
-          color: $gray-600;
-      }
-      .active {
-          color: $gray-600;
-      }
+    padding: 4px 0;
+    background-color: transparent;
+    margin-bottom: 0;
+    a {
+      color: $gray-600;
+    }
+    .active {
+      color: $gray-600;
+    }
   }
 }
 
@@ -359,14 +357,12 @@ body {
 */
 
 @media (min-width: 992px) {
-
   #topnav {
     .topbar-main {
       padding: 5px 0px;
     }
     .navigation-menu {
       > li {
-
         > a {
           padding-top: 20px;
           padding-bottom: 20px;
@@ -382,7 +378,7 @@ body {
           .submenu {
             left: auto;
             right: 0;
-            > li{
+            > li {
               &.has-submenu {
                 .submenu {
                   left: auto;
@@ -397,7 +393,7 @@ body {
 
         &:hover a {
           color: $white;
-    
+
           i {
             color: $white;
           }
@@ -416,7 +412,7 @@ body {
           opacity: 0;
           margin-top: 20px;
           border-radius: 4px;
-          transition: all .2s ease;
+          transition: all 0.2s ease;
           background-color: $white;
           box-shadow: 0 1px 12px rgba(0, 0, 0, 0.07);
 
@@ -431,13 +427,12 @@ body {
             }
           }
 
-          > li{
-
+          > li {
             &.has-submenu {
-              > a{
+              > a {
                 &:after {
-                  content: "\56";
-                  font-family: "dripicons-v2";
+                  content: '\56';
+                  font-family: 'dripicons-v2';
                   position: absolute;
                   right: 20px;
                   top: 9px;
@@ -467,7 +462,7 @@ body {
               clear: both;
               white-space: nowrap;
               font-size: 14px;
-              color: rgba($dark,0.7);
+              color: rgba($dark, 0.7);
               &:hover {
                 color: $primary;
               }
@@ -487,7 +482,7 @@ body {
         }
       }
     }
-    
+
     .navbar-toggle {
       display: none;
     }
@@ -495,32 +490,30 @@ body {
 }
 
 @media (max-width: 991px) {
-
   .wrapper {
     padding-top: 220px;
   }
 
   #topnav {
-    
     .navigation-menu {
       float: none;
       max-height: 400px;
       text-align: left;
       overflow-y: auto;
-      
+
       > li {
         display: block;
 
         > a {
-          color: rgba($dark,0.7);
+          color: rgba($dark, 0.7);
           padding: 15px;
-    
+
           i {
             display: inline-block;
             margin-right: 10px;
             margin-bottom: 0;
             vertical-align: inherit;
-            &.mdi-drop{
+            &.mdi-drop {
               float: right;
               margin-right: 0px;
             }
@@ -542,16 +535,16 @@ body {
               display: block;
               position: relative;
               padding: 7px 20px;
-              color: rgba($dark,0.7);
+              color: rgba($dark, 0.7);
               &:hover {
                 color: $primary;
               }
             }
             &.has-submenu {
-              > a{
+              > a {
                 &:after {
-                  content: "\54";
-                  font-family: "dripicons-v2";
+                  content: '\54';
+                  font-family: 'dripicons-v2';
                   position: absolute;
                   right: 30px;
                 }
@@ -586,7 +579,7 @@ body {
           }
         }
 
-        &.has-submenu{
+        &.has-submenu {
           &.open {
             > a {
               color: $primary;
@@ -596,7 +589,9 @@ body {
       }
     }
 
-    .has-submenu.active a, .navigation-menu > li > a:active,.navigation-menu > li > a:hover {
+    .has-submenu.active a,
+    .navigation-menu > li > a:active,
+    .navigation-menu > li > a:hover {
       color: $primary;
     }
   }
@@ -623,25 +618,25 @@ body {
 
 @media (max-width: 620px) {
   .logo-large {
-      display: none;
+    display: none;
   }
   .logo-small {
-      display: inline-block !important;
+    display: inline-block !important;
   }
 }
 
 @media (min-width: 768px) {
   #topnav {
     .navigation-menu {
-      > li{
-        &.has-submenu{
+      > li {
+        &.has-submenu {
           &:hover {
             > .submenu {
               visibility: visible;
               opacity: 1;
               margin-top: 0;
-              > li{
-                &.has-submenu{
+              > li {
+                &.has-submenu {
                   &:hover {
                     > .submenu {
                       visibility: visible;
@@ -664,8 +659,6 @@ body {
   }
 }
 
-
-
 .footer {
   padding: 20px 30px;
   color: $gray-600;
@@ -678,55 +671,52 @@ body {
   font-family: $font-family-secondary;
 }
 
-
 // layout width
 
-.layout-width{
-    .container-fluid {
-      max-width: 1300px;
+.layout-width {
+  .container-fluid {
+    max-width: 1300px;
   }
 }
 
-
 // Dark Header
 
-.dark-header{
+.dark-header {
   background-color: $topbar-dark-background;
-  .app-search{
-    .form-control{
+  .app-search {
+    .form-control {
       border: 1px solid lighten($topbar-dark-background, 4%);
       background: lighten($topbar-dark-background, 4%);
     }
   }
 }
 
-
 // Topbar light
 
-.topbar-light{
-  .topbar-main{
+.topbar-light {
+  .topbar-main {
     background-color: $white;
   }
   .notification-list {
-    .nav-link{
+    .nav-link {
       color: $gray-600;
     }
   }
-  .app-search{
-    .form-control{
+  .app-search {
+    .form-control {
       border: 1px solid $gray-100;
       background: $gray-100;
       color: $gray-500;
-      &::placeholder{
+      &::placeholder {
         color: $gray-500;
       }
     }
 
-    button{
-      color: $gray-500
+    button {
+      color: $gray-500;
     }
   }
-  .navbar-toggle span{
+  .navbar-toggle span {
     background-color: rgba($dark, 0.6) !important;
   }
 }

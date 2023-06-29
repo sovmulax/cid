@@ -2,33 +2,37 @@
   Tables
 ===================*/
 
-.table{
-  th{
+.table {
+  th {
     font-weight: 500;
   }
-  td{
+  td {
     padding: 15px 12px;
   }
 
-  th, td{
+  th,
+  td {
     vertical-align: middle;
   }
 }
 
-.table-hover tbody tr:hover,.table-striped tbody tr:nth-of-type(odd),
-.thead-default th{
+.table-hover tbody tr:hover,
+.table-striped tbody tr:nth-of-type(odd),
+.thead-default th {
   background-color: $gray-100;
 }
 
-.table-sm{
-  th, td{
-    padding: .3rem !important;
+.table-sm {
+  th,
+  td {
+    padding: 0.3rem !important;
   }
 }
 
 // Tables nowrap
 .table-nowrap {
-  th, td {
+  th,
+  td {
     white-space: nowrap;
   }
 }
@@ -66,7 +70,7 @@
         background-color: $white;
         border-radius: 3px;
         border: 1px solid $gray-300;
-        content: "";
+        content: '';
         display: inline-block;
         height: 17px;
         left: 0;
@@ -90,7 +94,7 @@
         width: 16px;
       }
     }
-    input[type="checkbox"] {
+    input[type='checkbox'] {
       cursor: pointer;
       opacity: 0;
       z-index: 1;
@@ -100,26 +104,26 @@
         opacity: 0.65;
       }
     }
-    input[type="checkbox"]:focus + label {
+    input[type='checkbox']:focus + label {
       &::before {
         outline-offset: -2px;
         outline: none;
       }
     }
-    input[type="checkbox"]:checked + label {
+    input[type='checkbox']:checked + label {
       &::after {
-        content: "\f00c";
+        content: '\f00c';
         font-family: 'Font Awesome 5 Free';
         font-weight: 900;
       }
     }
-    input[type="checkbox"]:disabled + label {
+    input[type='checkbox']:disabled + label {
       &::before {
         background-color: $gray-100;
         cursor: not-allowed;
       }
     }
-    input[type="checkbox"]:checked + label {
+    input[type='checkbox']:checked + label {
       &::before {
         background-color: $primary;
         border-color: $primary;
@@ -131,48 +135,46 @@
   }
 
   .fixed-solution {
-    .sticky-table-header{
+    .sticky-table-header {
       top: 258px !important;
     }
   }
-
 }
 
-
-@media (max-width: 991px){
+@media (max-width: 991px) {
   .table-rep-plugin {
-      .fixed-solution {
-        .sticky-table-header {
-            top: 189px !important;
-        }
+    .fixed-solution {
+      .sticky-table-header {
+        top: 189px !important;
       }
+    }
   }
 }
 
-/******** table editable **********/ 
+/******** table editable **********/
 
-.table-editable{
-  .editable-input{
-    .form-control{
+.table-editable {
+  .editable-input {
+    .form-control {
       height: 2rem;
     }
   }
-  .editable-buttons{
+  .editable-buttons {
     .btn {
-      &.btn-sm{
+      &.btn-sm {
         font-size: 12px;
       }
     }
   }
   tbody {
-    td{
-      &.focus{
+    td {
+      &.focus {
         box-shadow: inset 0 0 1px 1px $primary !important;
       }
     }
   }
 }
 
-.dt-autofill-list{
+.dt-autofill-list {
   border: none !important;
 }

@@ -12,34 +12,34 @@
 
 .alert-primary {
   color: $primary;
-  background-color: lighten($primary,36%);
+  background-color: lighten($primary, 36%);
   .alert-link {
-    color: darken($primary,10%);
+    color: darken($primary, 10%);
   }
   hr {
-    border-top-color: darken($primary,10%);
+    border-top-color: darken($primary, 10%);
   }
 }
 
 .alert-success {
   color: $success;
-  background-color: lighten($success,38%);
+  background-color: lighten($success, 38%);
   .alert-link {
-    color: darken($success,10%);
+    color: darken($success, 10%);
   }
   hr {
-    border-top-color: darken($success,10%);
+    border-top-color: darken($success, 10%);
   }
 }
 
 .alert-danger {
   color: $danger;
-  background-color: lighten($danger,30%);
+  background-color: lighten($danger, 30%);
   .alert-link {
-    color: darken($danger,10%);
+    color: darken($danger, 10%);
   }
   hr {
-    border-top-color: darken($danger,10%);
+    border-top-color: darken($danger, 10%);
   }
 }
 
@@ -56,11 +56,11 @@
 
 .alert-info {
   color: $info;
-  background-color: lighten($info,46%);
+  background-color: lighten($info, 46%);
   .alert-link {
-    color: darken($info,10%);
+    color: darken($info, 10%);
   }
   hr {
-    border-top-color: darken($info,10%);
+    border-top-color: darken($info, 10%);
   }
 }
