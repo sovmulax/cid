@@ -7,45 +7,36 @@ try {
 } catch (error) {}
 
 const counter = useState('counter', () => 0);
+let i = 0;
 
 function ajouterLigne() {
-  let i = 2;
-  
+  i += 1;
+
   const doc = document.getElementById('inputContainer');
 
   const row1 = document.createElement('div');
-  row1.className = 'row insert';
+  row1.className = 'col-6';
 
-  const fieldset = document.createElement('fieldset');
-  fieldset.className = 'form-fieldset ui-input __first';
+  const row2 = document.createElement('div');
+  row2.className = 'col-6';
 
   const input = document.createElement('input');
   input.type = 'text';
-  input.name = 'player' + i.toString();
-  input.id = 'username';
-  input.tabIndex = '0';
+  input.name = 'member' + i.toString();
+  input.className = 'form-control mb-2';
 
-  const label = document.createElement('label');
-  label.htmlFor = 'username';
-  label.textContent = 'username';
-  label.id = 'label';
+  const input0 = document.createElement('input');
+  input0.type = 'text';
+  input0.name = 'task' + i.toString();
+  input0.className = 'form-control mb-2';
 
-  const span = document.createElement('span');
-  span.dataset.text = 'Pseudonyme';
-  const texte = 'Pseudonyme';
-  span.innerHTML = texte;
-
-  i += 1;
   doc.appendChild(row1);
-  row1.appendChild(fieldset);
-  fieldset.appendChild(input);
-  fieldset.appendChild(label);
-  label.appendChild(span);
-
-  const parent = document.getElementById('nbJoueurs');
-  parent.value =  i;
+  doc.appendChild(row2);
+  row1.appendChild(input);
+  row2.appendChild(input0);
+  
+  console.log(i);
 }
-
 </script>
 
 <template>
@@ -56,7 +47,7 @@ function ajouterLigne() {
         <div class="col-lg-12">
           <div class="card">
             <div class="card-body">
-              <form action="#" class="custom-validation">
+              <div class="custom-validation">
                 <div class="form-group">
                   <label>Intitulé du Projet</label>
                   <div>
@@ -87,13 +78,17 @@ function ajouterLigne() {
                   <div class="col-12">
                     <h5>Liste des Membres</h5>
                     <div id="inputContainer" class="row">
-                      <!-- <div class="col-6">
-                        <input type="text" class="form-control" required placeholder="Min 6 chars." />
+                      <div class="col-6">
+                        <label for="tach">Membre</label>
+                        <input type="text" name="member0" class="form-control mb-2" required placeholder="Nom de l'exécutant" />
                       </div>
                       <div class="col-6">
-                        <input type="text" class="form-control" required placeholder="Min 6 chars." />
-                      </div> -->
+                        <label for="tach">Tache</label>
+                        <input type="text" name="task0" class="form-control mb-2" required placeholder="Intitulé de la tâche" />
+                      </div>
                     </div>
+                    <br />
+                    <button class="btn btn-warning waves-effect" @click="ajouterLigne">Ajouter une Tâche</button>
                   </div>
                 </div>
                 <br />
@@ -103,8 +98,7 @@ function ajouterLigne() {
                     <button type="reset" class="btn btn-secondary waves-effect">Cancel</button>
                   </div>
                 </div>
-              </form>
-              <button @click="ajouterLigne">test</button>
+              </div>
             </div>
           </div>
         </div>
