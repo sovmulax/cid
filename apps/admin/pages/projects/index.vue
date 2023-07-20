@@ -10,6 +10,23 @@ try {
   });
 } catch (error) {}
 const data = ref(records);
+
+async function countask(id) {
+  let all_tasks;
+  let done_tasks;
+  try {
+    all_tasks = await pb.collection('project_tasks').getFullList({
+      filter: `projectId=${id}`,
+    });
+
+    done_tasks = await pb.collection('project_tasks').getFullList({
+      filter: `projectId=${id}&&status=3`,
+    });
+  } catch (error) {}
+
+  const percent = (done_tasks['totalItems'] * 100) / all_tasks['totalItems'];
+  return percent;
+}
 </script>
 
 <template>
@@ -49,7 +66,7 @@ const data = ref(records);
                     <td>{{ item.subDomain }}</td>
                     <td>{{ dateformat(item.startDate) }}</td>
                     <td>{{ dateformat(item.endDate) }}</td>
-                    <td>0%</td>
+                    <td>{{ countask(item.id) }}%</td>
                     <td>
                       <nuxt-link :to="`/projects/taches/${item.id}`"
                         ><i class="fas fa-arrow-circle-right"></i
