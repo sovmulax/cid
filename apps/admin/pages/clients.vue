@@ -19,7 +19,7 @@ const data = ref(records);
           <div class="card">
             <img
               class="card-img-top img-fluid size"
-              :src="`https://cid.marcaureln.com/api/files/` + item.collectionId + `/` + item.id + `/` + item.logo"
+              :src="pb.baseUrl + `/api/files/` + item.collectionId + `/` + item.id + `/` + item.logo"
               alt="Card image cap"
             />
             <div class="card-body">

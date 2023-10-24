@@ -1,12 +1,12 @@
 import PocketBase from 'pocketbase';
 
-// collect data from pocketbase
-const pb = new PocketBase('http://localhost:8080/');
+const pb = new PocketBase('https://cid.pockethost.io/');
 
 try {
   await pb.admins.authWithPassword('soumailaevane@gmail.com', 'onditmdpdoitetrelong');
 } catch (error) {
-  // console.log(error);
+  // eslint-disable-next-line no-console
+  console.error(error);
 }
 
 export default pb;
