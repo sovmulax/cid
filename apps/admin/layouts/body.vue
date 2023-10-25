@@ -7,9 +7,9 @@
           <div class="container-fluid">
             <!-- Logo container-->
             <div class="logo">
-              <a href="index.html" class="logo">
-                <img src="images/logo-sm.png" alt="" class="logo-small" />
-                <img src="images/logo-light.png" alt="" class="logo-large" />
+              <a href="/" class="logo">
+                <img src="/images/logo-sm.png" alt="" class="logo-small" />
+                <img src="/images/logo-light.png" alt="" class="logo-large" />
               </a>
             </div>
             <!-- End Logo container-->
@@ -35,7 +35,7 @@
                       aria-haspopup="false"
                       aria-expanded="false"
                     >
-                      <img src="images/users/user-4.jpg" alt="user" class="rounded-circle" />
+                      <img src="/images/users/user-4.jpg" alt="user" class="rounded-circle" />
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown">
                       <a class="dropdown-item text-danger" href="#"
