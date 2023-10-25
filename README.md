@@ -1,6 +1,6 @@
 # CID
 
-Bienvenue sur le dépôt du site web de la CID. Le site est développé en utilisant le framework [Nuxt.js](https://nuxt.com/), [Turborepo](https://turbo.build/repo) et [PocketBase](https://pocketbase.io/).
+Bienvenue sur le dépôt du site web de la CID. Le site est développé en utilisant le framework [Nuxt.js](https://nuxt.com/), [Turborepo](https://turbo.build/repo) et [PocketBase](https://pocketbase.io/) (Nous utilisons [PocketHost](https://pockethost.io/) pour l'hébergement de notre [instance PocketBase](https://cid.pockethost.io/_)).
 
 **Architecture :**
 
