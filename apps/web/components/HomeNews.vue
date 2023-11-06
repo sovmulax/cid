@@ -4,7 +4,7 @@
     <div class="flex flex-wrap justify-around">
       <div v-for="post in posts" :key="post.id" class="mb-3 flex flex-col gap-1">
         <NuxtLink :to="`/actualites/${post.slug}`" class="zoom-in-effect inline-block w-80 overflow-hidden md:w-96">
-          <img :src="post.cover" :alt="`Couverture de l'article : ${post.title}`" class="h-80 object-cover" />
+          <img :src="post.cover" :alt="`Couverture de l'article : ${post.title}`" class="h-80 object-contain m-auto" />
         </NuxtLink>
         <NuxtLink :to="`/actualites/${post.slug}`" title="Lire l'article">
           <h2 class="text-xl font-semibold uppercase tracking-tight transition-colors hover:text-primary">

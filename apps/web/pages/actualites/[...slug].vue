@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
   <main class="bg-neutral-50 lg:px-72 xl:px-96">
-    <img :alt="`Couverture de l'article : ${post.title}`" :src="post.cover" class="max-h-96 w-full object-cover" />
+    <img :alt="`Couverture de l'article : ${post.title}`" :src="post.cover" class="max-h-96 w-full object-contain" />
 
     <div class="mx-auto flex max-w-4xl flex-col gap-3 p-9">
       <div class="text-center">
