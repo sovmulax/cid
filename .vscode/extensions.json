@@ -1,3 +1,10 @@
 {
-  "recommendations": ["esbenp.prettier-vscode", "dbaeumer.vscode-eslint", "sdras.vue-vscode-snippets", "Vue.volar"]
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "sdras.vue-vscode-snippets",
+    "Vue.volar",
+    "Vue.vscode-typescript-vue-plugin"
+  ],
+  "unwantedRecommendations": ["vscode.typescript-language-features"] // Volar takeover mode: https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode
 }
