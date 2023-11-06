@@ -1,5 +1,5 @@
 <template>
-  <form class="flex flex-col gap-3 w-full px-3 lg:w-1/3" @submit.prevent="submit">
+  <form class="flex w-full flex-col gap-3 px-3 lg:w-1/3" @submit.prevent="submit">
     <input
       v-model="data.company"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"

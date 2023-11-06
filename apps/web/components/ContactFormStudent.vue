@@ -1,5 +1,5 @@
 <template>
-  <form class="flex flex-col gap-3 w-full px-3 lg:w-1/3" @submit.prevent="submit">
+  <form class="flex w-full flex-col gap-3 px-3 lg:w-1/3" @submit.prevent="submit">
     <input
       v-model="data.title"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
@@ -81,7 +81,7 @@
           </button>
         </div>
 
-        <div class="flex gap-3 flex-wrap">
+        <div class="flex flex-wrap gap-3">
           <input
             v-model="member.name"
             class="focus:shadow-outline flex-grow-[2] appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
