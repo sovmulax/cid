@@ -19,7 +19,8 @@
 .hero__wrapper {
   height: 100vh;
   background-size: cover !important;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0.65) 100%),
+  background:
+    radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 37%, rgba(0, 0, 0, 0.65) 100%),
     url('~/assets/img/home-hero.webp') no-repeat center center scroll;
 
   & h1,
