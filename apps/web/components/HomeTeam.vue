@@ -1,7 +1,7 @@
 <template>
   <section class="flex flex-col items-center gap-12 py-16">
     <h1 class="text-center text-6xl font-bold tracking-tight">Une équipe d'experts</h1>
-    <div class="flex flex-wrap justify-around gap-12">
+    <div v-if="!pending" class="flex flex-wrap justify-around gap-12">
       <div v-for="member in members" :key="member.fullname" class="w-64 text-center">
         <img
           :src="member.picture"
@@ -20,13 +20,18 @@
         </div>
       </div>
     </div>
+    <AppLoader v-else />
     <NuxtLink to="/a-propos" class="btn btn--primary">En savoir plus</NuxtLink>
   </section>
 </template>
 
 <script setup lang="ts">
 const { $pb } = useNuxtApp();
-const list = await $pb.collection('members').getList(1, 4, { sort: 'created' });
-const members = list.items as unknown as Member[];
-members.map((member) => getFileUrl(member, 'picture'));
+const { data: members, pending } = await useLazyAsyncData<Project[]>(
+  'members',
+  () => $pb.collection('members').getList(1, 4, { sort: 'created' }),
+  {
+    transform: (members: { items: Member[] }) => members.items.map((member) => getFileUrl(member, 'picture')),
+  }
+);
 </script>

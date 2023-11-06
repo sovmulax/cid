@@ -2,7 +2,7 @@
   <main class="flex flex-col items-center gap-12 bg-neutral-50 px-9 py-24">
     <h1 class="text-center text-6xl font-bold tracking-tight">Nos projets</h1>
 
-    <div class="flex flex-col">
+    <div v-if="!pending" class="flex flex-col">
       <div v-for="project in projects" :key="project.id" class="flex flex-col gap-3 md:flex-row">
         <img
           :src="project.cover"
@@ -18,11 +18,17 @@
         </div>
       </div>
     </div>
+    <AppLoader v-else />
   </main>
 </template>
 
 <script setup lang="ts">
 const { $pb } = useNuxtApp();
-const projects: Project[] = await $pb.collection('projects').getFullList();
-projects.map((project) => getFileUrl(project, 'cover'));
+const { data: projects, pending } = await useLazyAsyncData<Project[]>(
+  'companies',
+  () => $pb.collection('projects').getFullList(),
+  {
+    transform: (projects) => projects.map((project) => getFileUrl(project, 'cover')),
+  }
+);
 </script>

@@ -2,11 +2,12 @@
   <main class="flex flex-col items-center gap-12 bg-neutral-50 py-24">
     <h1 class="text-center text-6xl font-bold tracking-tight">Actualités</h1>
 
-    <div class="flex flex-wrap justify-center gap-9">
-      <BlogPost v-for="post in posts" :key="post.id" :post="post" />
+    <div v-if="!pending" class="flex flex-wrap justify-center gap-9">
+      <BlogPost v-for="post in response?.items" :key="post.id" :post="post" />
     </div>
+    <AppLoader v-else />
 
-    <BlogPagination :current-page="currentPage" :total-pages="response.totalPages" />
+    <BlogPagination v-if="!pending" :current-page="currentPage" :total-pages="response?.totalPages ?? 1" />
   </main>
 </template>
 
@@ -14,7 +15,14 @@
 const { query } = useRoute();
 const { $pb } = useNuxtApp();
 const currentPage = query.page ? parseInt(query.page as string) : 1;
-const response = await $pb.collection('posts').getList(currentPage, 6, { sort: '-created' });
-const posts = response.items as unknown as Post[];
-posts.map((post) => getFileUrl(post, 'cover'));
+const { data: response, pending } = await useLazyAsyncData<{ items: Post[]; totalPages: number }>(
+  'posts',
+  () => $pb.collection('posts').getList(currentPage, 6, { sort: '-created' }),
+  {
+    transform: (response) => ({
+      ...response,
+      items: response.items.map((post) => getFileUrl(post, 'cover')),
+    }),
+  }
+);
 </script>

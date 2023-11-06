@@ -51,4 +51,7 @@ export default defineNuxtConfig({
   snackbar: {
     duration: 5000,
   },
+  experimental: {
+    asyncContext: true,
+  },
 });

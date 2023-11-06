@@ -1,7 +1,7 @@
 <template>
   <section class="flex flex-col items-center gap-12 py-12 xl:px-64">
     <h1 class="text-center text-6xl font-bold tracking-tight">Rencontrer l'équipe</h1>
-    <div class="flex flex-wrap justify-around gap-12">
+    <div v-if="!pending" class="flex flex-wrap justify-around gap-12">
       <div v-for="member in members" :key="member.fullname" class="w-64 text-center">
         <img
           :src="member.picture"
@@ -20,11 +20,17 @@
         </div>
       </div>
     </div>
+    <AppLoader v-else />
   </section>
 </template>
 
 <script setup lang="ts">
 const { $pb } = useNuxtApp();
-const members: Member[] = await $pb.collection('members').getFullList();
-members.map((member) => getFileUrl(member, 'picture'));
+const { data: members, pending } = await useLazyAsyncData<Member[]>(
+  'members',
+  () => $pb.collection('members').getFullList(),
+  {
+    transform: (members) => members.map((member) => getFileUrl(member, 'picture')),
+  }
+);
 </script>
