@@ -3,10 +3,14 @@
 .btn {
   background-color: $secondary;
   color: $background;
+  min-width: max-content;
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   font-weight: bold;
-  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition:
+    background-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 
   &:hover,
   &:focus {
