@@ -22,6 +22,7 @@
     </div>
 
     <nuxt-link to="/contact" class="btn hidden lg:block">Nous contacter</nuxt-link>
+
     <HeadlessMenu v-slot="{ open, close }">
       <HeadlessMenuButton id="menu-btn" class="lg:hidden">
         <Icon v-if="open" name="mdi:close" size="32px" @vue:mounted="hideBodyOverflow" />
@@ -47,6 +48,7 @@
           >
             {{ link.name }}
           </nuxt-link>
+          <nuxt-link to="/contact" class="font-bold text-foreground">Nous contacter</nuxt-link>
         </HeadlessMenuItems>
       </transition>
     </HeadlessMenu>
