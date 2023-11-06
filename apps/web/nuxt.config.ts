@@ -10,7 +10,7 @@ export default defineNuxtConfig({
             "La Cellule d'Innovation et de Dévéloppement (CID) est le centre de recherche de projets innovants de l'ESATIC.",
         },
       ],
-      link: [{ rel: 'icon', href: '/favicon.ico' }],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
     pageTransition: { name: 'page', mode: 'in-out' },
   },
