@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col items-center gap-12 px-9 pb-24 pt-12 lg:px-64">
+  <section class="flex flex-col items-center gap-12 px-9 pb-24 pt-12 xl:px-64">
     <h1 class="text-6xl font-bold tracking-tight">Podcast</h1>
 
     <div class="container flex justify-center">

@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-col items-center gap-12 py-12 lg:px-64">
+  <section class="flex flex-col items-center gap-12 py-12 xl:px-64">
     <h1 class="text-center text-6xl font-bold tracking-tight">Rencontrer l'équipe</h1>
     <div class="flex flex-wrap justify-around gap-12">
       <div v-for="member in members" :key="member.fullname" class="w-64 text-center">
