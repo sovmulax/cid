@@ -36,6 +36,8 @@ const props = defineProps({
   },
 });
 
-const prev = computed(() => (props.currentPage > 1 ? `/actualites?page=${props.currentPage - 1}` : '#'));
-const next = computed(() => (props.currentPage < props.totalPages ? `/actualites?page=${props.currentPage + 1}` : '#'));
+const prev = computed(() => (props.currentPage > 1 ? `/actualites?page=${props.currentPage - 1}` : undefined));
+const next = computed(() =>
+  props.currentPage < props.totalPages ? `/actualites?page=${props.currentPage + 1}` : undefined
+);
 </script>
