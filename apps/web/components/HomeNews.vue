@@ -2,7 +2,7 @@
   <section class="flex flex-col items-center gap-12 py-16">
     <h1 class="text-center text-6xl font-bold tracking-tight">À la une</h1>
     <div v-if="!pending" class="flex flex-wrap justify-around">
-      <div v-for="post in posts" :key="post.id" class="mb-3 flex flex-col gap-1">
+      <div v-for="post in posts" :key="post.id" class="m-3 flex flex-col gap-1">
         <NuxtLink :to="`/actualites/${post.slug}`" class="zoom-in-effect inline-block w-80 overflow-hidden md:w-96">
           <img :src="post.cover" :alt="`Couverture de l'article : ${post.title}`" class="m-auto h-80 object-contain" />
         </NuxtLink>
