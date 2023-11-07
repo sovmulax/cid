@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'page', mode: 'in-out' },
   },
+  ssr: false,
   runtimeConfig: {
     public: {
       apiBaseUrl: 'https://cid.pockethost.io/', // You can override this value at runtime with NUXT_PUBLIC_API_BASE_URL env var
