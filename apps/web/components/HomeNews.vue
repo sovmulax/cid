@@ -23,9 +23,9 @@
 const { $pb } = useNuxtApp();
 const { data: posts, pending } = await useLazyAsyncData<Post[]>(
   'posts',
-  () => $pb.collection('posts').getList(1, 3, { sort: '-created' }),
+  () => $pb.collection('posts').getList(1, 3, { sort: '-created' }) as Promise<any>,
   {
-    transform: (posts: { items: Post[] }) => posts.items.map((post) => getFileUrl(post, 'cover')),
+    transform: (posts: any) => posts.items.map((post: Post) => getFileUrl(post, 'cover')),
   }
 );
 </script>

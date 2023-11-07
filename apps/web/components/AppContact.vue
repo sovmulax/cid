@@ -10,5 +10,3 @@
     <NuxtLink to="/contact" class="btn btn--neutral"> Contactez-nous </NuxtLink>
   </section>
 </template>
-
-<script setup lang="ts"></script>

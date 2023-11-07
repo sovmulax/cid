@@ -2,7 +2,7 @@
   <section class="flex flex-col items-center gap-12 py-12 xl:px-64">
     <h1 class="text-center text-6xl font-bold tracking-tight">Rencontrer l'équipe</h1>
     <div v-if="!pending" class="flex flex-wrap justify-around gap-12">
-      <div v-for="member in members" :key="member.fullname" class="w-64 text-center">
+      <div v-for="member in members as Member[]" :key="member.fullname" class="w-64 text-center">
         <img
           :src="member.picture"
           :alt="`Photo de ${member.fullname}`"

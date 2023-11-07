@@ -194,14 +194,7 @@ async function submit() {
   try {
     loading.value = true;
 
-    const { id } = await $pb.collection('projects').create({
-      title: data.value.title,
-      domain: data.value.domain,
-      subDomain: data.value.subDomain,
-      duration: data.value.duration,
-      description: data.value.description,
-      problem: data.value.problem,
-    });
+    const { id } = await $pb.collection('projects').create({ ...data.value, private: true });
 
     for (const member of members.value) {
       await $pb.collection('project_members').create({

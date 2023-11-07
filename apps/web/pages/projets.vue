@@ -3,7 +3,7 @@
     <h1 class="text-center text-6xl font-bold tracking-tight">Nos projets</h1>
 
     <div v-if="!pending" class="flex flex-col">
-      <div v-for="project in projects" :key="project.id" class="flex flex-col gap-3 md:flex-row">
+      <div v-for="project in projects as Project[]" :key="project.id" class="flex flex-col gap-3 md:flex-row">
         <img
           :src="project.cover"
           :alt="`Image du projet ${project.title}`"
@@ -26,7 +26,7 @@
 const { $pb } = useNuxtApp();
 const { data: projects, pending } = await useLazyAsyncData<Project[]>(
   'companies',
-  () => $pb.collection('projects').getFullList(),
+  () => $pb.collection('projects').getFullList({ filter: 'private=false' }),
   {
     transform: (projects) => projects.map((project) => getFileUrl(project, 'cover')),
   }

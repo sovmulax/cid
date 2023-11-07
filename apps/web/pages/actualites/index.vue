@@ -3,11 +3,11 @@
     <h1 class="text-center text-6xl font-bold tracking-tight">Actualités</h1>
 
     <div v-if="!pending" class="flex flex-wrap justify-center gap-9">
-      <BlogPost v-for="post in response?.items" :key="post.id" :post="post" />
+      <BlogPost v-for="post in response.items" :key="post.id" :post="post" />
     </div>
     <AppLoader v-else />
 
-    <BlogPagination v-if="!pending" :current-page="currentPage" :total-pages="response?.totalPages ?? 1" />
+    <BlogPagination v-if="response" :current-page="currentPage" :total-pages="response.totalPages" />
   </main>
 </template>
 
@@ -19,9 +19,9 @@ const { data: response, pending } = await useLazyAsyncData<{ items: Post[]; tota
   'posts',
   () => $pb.collection('posts').getList(currentPage, 6, { sort: '-created' }),
   {
-    transform: (response) => ({
-      ...response,
-      items: response.items.map((post) => getFileUrl(post, 'cover')),
+    transform: ({ items, totalPages }) => ({
+      totalPages,
+      items: items.map((post) => getFileUrl(post, 'cover')),
     }),
   }
 );

@@ -6,7 +6,7 @@
       plusieurs domaines d'activité satifaisant ainsi une majeure partie de la population.
     </p>
     <div v-if="!pending" class="flex flex-wrap">
-      <div v-for="project in projects" :key="project.title" class="flex w-80 flex-col md:w-96">
+      <div v-for="project in projects as Project[]" :key="project.title" class="flex w-80 flex-col md:w-96">
         <div class="zoom-in-effect mb-3 inline-block overflow-hidden">
           <img :src="project.cover" :alt="`Image du projet ${project.title}`" class="h-80 object-cover" />
         </div>
@@ -27,9 +27,9 @@
 const { $pb } = useNuxtApp();
 const { data: projects, pending } = await useLazyAsyncData<Project[]>(
   'projects',
-  () => $pb.collection('projects').getList(1, 3, { filter: 'featured=true' }),
+  () => $pb.collection('projects').getList(1, 3, { filter: 'featured=true' }) as Promise<any>,
   {
-    transform: (projects: { items: Project[] }) => projects.items.map((project) => getFileUrl(project, 'cover')),
+    transform: (projects: any) => projects.items.map((project: Project) => getFileUrl(project, 'cover')),
   }
 );
 </script>

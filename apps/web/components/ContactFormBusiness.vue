@@ -69,12 +69,7 @@ async function submit() {
   try {
     loading.value = true;
 
-    await $pb.collection('inbox').create({
-      company: data.value.company,
-      contact: data.value.contact,
-      subject: data.value.subject,
-      body: data.value.body,
-    });
+    await $pb.collection('inbox').create(data.value);
 
     snackbar.add({
       type: 'success',
