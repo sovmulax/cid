@@ -38,9 +38,9 @@
                       <img src="/images/users/user-4.jpg" alt="user" class="rounded-circle" />
                     </a>
                     <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-                      <a class="dropdown-item text-danger" href="#"
-                        ><i class="mdi mdi-power text-danger"></i> Deconnexion</a
-                      >
+                      <button class="dropdown-item text-danger" @click="logout">
+                        <i class="mdi mdi-power text-danger"></i> Deconnexion
+                      </button>
                     </div>
                   </div>
                 </li>
@@ -152,6 +152,12 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const router = useRouter();
+const user = useUserState();
 
-<style scoped></style>
+function logout() {
+  user.value = null;
+  router.push('/');
+}
+</script>
