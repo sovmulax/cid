@@ -33,8 +33,12 @@ label {
 }
 
 .custom-control-input:focus ~ .custom-control-indicator {
-  -webkit-box-shadow: 0 0 0 1px $white, 0 0 0 3px $primary;
-  box-shadow: 0 0 0 1px $white, 0 0 0 3px $primary;
+  -webkit-box-shadow:
+    0 0 0 1px $white,
+    0 0 0 3px $primary;
+  box-shadow:
+    0 0 0 1px $white,
+    0 0 0 3px $primary;
 }
 
 .input-group-text {
