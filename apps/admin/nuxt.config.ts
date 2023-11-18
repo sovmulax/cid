@@ -20,13 +20,9 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/scss/main.scss'],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          // additionalData: '@import "@/assets/scss/my-style.scss";', // Auto import scss files your Single-File Component (SFC)
-        },
-      },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: 'https://cid.pockethost.io/', // You can override this value at runtime with NUXT_PUBLIC_API_BASE_URL env var
     },
   },
   modules: ['@nuxtjs/device', '@nuxtjs/eslint-module', '@nuxtjs/google-fonts', 'nuxt-headlessui'],

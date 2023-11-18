@@ -1,30 +1,23 @@
 <script lang="ts" setup>
-import { ref } from 'vue';
-// import pb from '../pocket.config.js';
-// const pb = new PocketBase('http://localhost:8080/');
+const { $pb, $router } = useNuxtApp();
+const user = useUserState();
+const email = ref('');
+const password = ref('');
 
-const email = ref<string | null>(null);
-const password = ref<string | null>(null);
+async function login() {
+  if (!email.value || !password.value) {
+    alert('Veuillez remplir tous les champs');
+  }
 
-// async function login() {
-//   if (email && password) {
-//     await pb
-//       .collection('users')
-//       .authWithPassword(email.value as string, password.value as string)
-//       .then((user) => {
-//         return user;
-//         // navigateTo('/projects');
-//         // console.log(user);
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//   }
-// }
+  const response = await $pb.collection('users').authWithPassword(email.value, password.value);
 
-// const users = login();
-
-// export const useAuth = () => useState('users', () => login())
+  if (response) {
+    user.value = response;
+    $router.push('/projects');
+  } else {
+    alert('Email ou mot de passe incorrect');
+  }
+}
 </script>
 
 <template>
@@ -61,7 +54,9 @@ const password = ref<string | null>(null);
                   </div>
 
                   <div class="mt-3">
-                    <button class="btn btn-primary btn-block waves-effect waves-light">Log In</button>
+                    <button class="btn btn-primary btn-block waves-effect waves-light" @click="login">
+                      Se connecter
+                    </button>
                   </div>
                 </div>
               </div>
@@ -72,5 +67,3 @@ const password = ref<string | null>(null);
     </div>
   </div>
 </template>
-
-<style scoped></style>
