@@ -62,8 +62,7 @@
   </NuxtLayout>
 </template>
 <script setup>
-import { ref } from 'vue';
-import pb from '../pocket.config.js';
+const { $pb } = useNuxtApp();
 
 const title = ref('');
 const type = ref('');
@@ -83,7 +82,7 @@ async function Createvent() {
     };
 
     // console.log(data);
-    await pb.collection('events').create(data);
+    await $pb.collection('events').create(data);
     router.push('/events');
   } catch (e) {}
 }

@@ -1,11 +1,11 @@
 <script setup>
-// import { ref } from 'vue';
-import pb from '../../../pocket.config.js';
+const { $pb } = useNuxtApp();
+
 let records;
 try {
   const route = useRoute();
   const id = route.params.id;
-  records = await pb.collection('project_tasks').getFullList({
+  records = await $pb.collection('project_tasks').getFullList({
     filter: `projectId = "${id}"`,
     sort: 'status',
   });
@@ -28,7 +28,7 @@ async function updatetask(id, type) {
       break;
   }
 
-  await pb.collection('project_tasks').update(id, data);
+  await $pb.collection('project_tasks').update(id, data);
   const router = useRouter();
   router.go();
 }

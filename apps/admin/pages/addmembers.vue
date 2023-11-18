@@ -72,8 +72,7 @@
   </NuxtLayout>
 </template>
 <script setup>
-import { ref } from 'vue';
-import pb from '../pocket.config.js';
+const { $pb } = useNuxtApp();
 
 const fullname = ref('');
 const jobTitle = ref('');
@@ -107,7 +106,7 @@ async function Addmembers() {
     // console.log(formData);
 
     // upload and create new record
-    await pb.collection('members').create(formData);
+    await $pb.collection('members').create(formData);
   } catch (e) {}
   router.push('/members');
 }

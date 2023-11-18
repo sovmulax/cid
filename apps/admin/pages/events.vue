@@ -1,15 +1,13 @@
 <script setup>
-import { ref } from 'vue';
-import pb from '../pocket.config.js';
+const { $pb } = useNuxtApp();
 
-// collect data from pocketbase
 let events;
 let agenda;
 try {
-  agenda = await pb.collection('events').getFullList({
+  agenda = await $pb.collection('events').getFullList({
     filter: 'private = false',
   });
-  events = await pb.collection('events').getFullList({
+  events = await $pb.collection('events').getFullList({
     filter: 'private = true',
   });
 } catch (error) {}

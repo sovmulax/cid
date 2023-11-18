@@ -1,11 +1,9 @@
 <script setup>
-import { ref } from 'vue';
-import pb from '../pocket.config.js';
+const { $pb } = useNuxtApp();
 
-// collect data from pocketbase
 let records;
 try {
-  records = await pb.collection('posts').getFullList();
+  records = await $pb.collection('posts').getFullList();
 } catch (error) {}
 const data = ref(records);
 const i = 1;

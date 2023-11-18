@@ -1,11 +1,9 @@
 <script setup>
-import { ref } from 'vue';
-import pb from '../pocket.config.js';
+const { $pb } = useNuxtApp();
 
-// collect data from pocketbase
 let records;
 try {
-  records = await pb.collection('clients').getFullList();
+  records = await $pb.collection('clients').getFullList();
 } catch (error) {}
 const data = ref(records);
 </script>
@@ -19,7 +17,7 @@ const data = ref(records);
           <div class="card">
             <img
               class="card-img-top img-fluid size"
-              :src="pb.baseUrl + `/api/files/` + item.collectionId + `/` + item.id + `/` + item.logo"
+              :src="$pb.baseUrl + `/api/files/` + item.collectionId + `/` + item.id + `/` + item.logo"
               alt="Card image cap"
             />
             <div class="card-body">

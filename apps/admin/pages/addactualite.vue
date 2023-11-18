@@ -64,11 +64,12 @@
 </template>
 <script setup>
 import { ref } from 'vue';
-import pb from '../pocket.config.js';
+const { $pb } = useNuxtApp();
+
 const router = useRouter();
 let records;
 try {
-  records = await pb.collection('users').getFullList();
+  records = await $pb.collection('users').getFullList();
 } catch (error) {}
 const data = ref(records);
 // const i = 1;
@@ -96,7 +97,7 @@ async function Addpost() {
     formData.append('cover', document.getElementById('fileInput').files[0]);
 
     // console.log(formData);
-    await pb.collection('posts').create(formData);
+    await $pb.collection('posts').create(formData);
     title.value = '';
     content.value = '';
     author.value = '';

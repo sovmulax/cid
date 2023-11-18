@@ -1,13 +1,12 @@
 <script setup>
-// import { ref } from 'vue';
-import pb from '../../../pocket.config.js';
-// collect data from pocketbase
+const { $pb } = useNuxtApp();
+
 let records;
 
 try {
   const route = useRoute();
   const id = route.params.id;
-  records = await pb.collection('project_members').getFullList({
+  records = await $pb.collection('project_members').getFullList({
     filter: `projectId = "${id}"`,
   });
 } catch (error) {

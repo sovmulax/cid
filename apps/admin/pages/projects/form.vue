@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from 'vue';
-import pb from '../../pocket.config.js';
+const { $pb } = useNuxtApp();
 
 const intitule = ref('');
 const domaine = ref('');
@@ -8,9 +7,8 @@ const subdomaine = ref('');
 const start = ref('');
 const end = ref('');
 
-// collect data from pocketbase
 try {
-  records = await pb.collection('projects').getFullList();
+  records = await $pb.collection('projects').getFullList();
 } catch (error) {}
 
 let i = 1;
@@ -59,7 +57,7 @@ async function submitdata() {
   formData.append('startDate', start.value);
   formData.append('endDate', end.value);
 
-  const record = await pb.collection('projects').create(formData);
+  const record = await $pb.collection('projects').create(formData);
 
   for (let j = 0; j < i; j++) {
     const member = document.getElementsByName('member' + j.toString())[0].value;
@@ -67,20 +65,20 @@ async function submitdata() {
     const roles = document.getElementsByName('role' + j.toString())[0].value;
 
     const memberdata = {
-      projectId: record['id'],
+      projectId: record.id,
       role: roles,
       name: member,
     };
-    const recordmember = await pb.collection('project_members').create(memberdata);
+    const recordmember = await $pb.collection('project_members').create(memberdata);
 
     const taskdata = {
       title: task,
       status: '1',
-      projectId: record['id'],
-      projectMembersId: recordmember['id'],
+      projectId: record.id,
+      projectMembersId: recordmember.id,
       name: member,
     };
-    await pb.collection('project_tasks').create(taskdata);
+    await $pb.collection('project_tasks').create(taskdata);
   }
 
   navigateTo('/projects');

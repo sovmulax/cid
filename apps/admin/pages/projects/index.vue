@@ -1,30 +1,30 @@
 <script setup>
-import { ref } from 'vue';
-import pb from '../../pocket.config.js';
 import dateformat from '../../helper/helper.js';
-// collect data from pocketbase
+
+const { $pb } = useNuxtApp();
+
 let records;
 try {
-  records = await pb.collection('projects').getFullList({
+  records = await $pb.collection('projects').getFullList({
     sort: '-created',
   });
 } catch (error) {}
 const data = ref(records);
 
 async function countask(id) {
-  let all_tasks;
-  let done_tasks;
+  let allTasks;
+  let doneTasks;
   try {
-    all_tasks = await pb.collection('project_tasks').getFullList({
+    allTasks = await $pb.collection('project_tasks').getFullList({
       filter: `projectId=${id}`,
     });
 
-    done_tasks = await pb.collection('project_tasks').getFullList({
+    doneTasks = await $pb.collection('project_tasks').getFullList({
       filter: `projectId=${id}&&status=3`,
     });
   } catch (error) {}
 
-  const percent = (done_tasks['totalItems'] * 100) / all_tasks['totalItems'];
+  const percent = (doneTasks.totalItems * 100) / allTasks.totalItems;
   return percent;
 }
 </script>
