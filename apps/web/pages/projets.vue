@@ -2,7 +2,7 @@
   <main class="flex flex-col items-center gap-12 bg-neutral-50 px-9 py-24">
     <h1 class="text-center text-6xl font-bold tracking-tight">Nos projets</h1>
 
-    <div v-if="!pending" class="flex flex-col">
+    <div v-if="!pending" class="flex max-w-6xl flex-col">
       <div v-for="project in projects as Project[]" :key="project.id" class="flex flex-col gap-3 md:flex-row">
         <img
           :src="project.cover"
