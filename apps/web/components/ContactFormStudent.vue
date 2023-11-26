@@ -36,8 +36,7 @@
       v-model="data.description"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       rows="4"
-      placeholder="Résume du projet (maximum 250 mots et 05 mots-clés)"
-      maxlength="250"
+      placeholder="Résume du projet (maximum 250 mots)"
       required
     ></textarea>
 
@@ -46,7 +45,6 @@
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       rows="4"
       placeholder="Problématique (maximum 500 mots)"
-      maxlength="500"
       required
     ></textarea>
 
@@ -190,7 +188,32 @@ function clear() {
   members.value = [];
 }
 
+/**
+ * Validates the form data.
+ * Returns true if the form data is valid, otherwise returns an error message.
+ */
+function validate(): boolean | string {
+  if (countWords(data.value.description) > 250) {
+    return 'Le résume du projet ne doit pas dépasser 250 mots !';
+  }
+
+  if (countWords(data.value.problem) > 500) {
+    return 'La problématique ne doit pas dépasser 500 mots !';
+  }
+
+  return true;
+}
+
 async function submit() {
+  const formValidation = validate();
+
+  if (formValidation !== true) {
+    return snackbar.add({
+      type: 'error',
+      text: formValidation,
+    });
+  }
+
   try {
     loading.value = true;
 
