@@ -11,10 +11,22 @@
         <h2 class="text-xl font-semibold uppercase tracking-tight">{{ member.fullname }}</h2>
         <h3 class="leading-6 text-neutral-800">{{ member.jobTitle }}</h3>
         <div class="my-3 flex justify-center gap-3">
-          <a v-if="member.facebook" :href="member.facebook" target="_blank" rel="noopener noreferrer">
+          <a
+            v-if="member.facebook"
+            :href="member.facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="`Page Facebook de ${member.fullname}`"
+          >
             <Icon name="mdi:facebook" size="48px" class="text-neutral-800 hover:text-black" />
           </a>
-          <a v-if="member.linkedin" :href="member.linkedin" target="_blank" rel="noopener noreferrer">
+          <a
+            v-if="member.linkedin"
+            :href="member.linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="`Page LinkedIn de ${member.fullname}`"
+          >
             <Icon name="mdi:linkedin" size="48px" class="text-neutral-800 hover:text-black" />
           </a>
         </div>

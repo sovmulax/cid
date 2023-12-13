@@ -1,8 +1,13 @@
+const cacheTTL = 60 * 60 * 24 * 365; // 1 year
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: {
       title: "Cellule d'Innovation et de Développement — ESATIC",
+      htmlAttrs: {
+        lang: 'fr',
+      },
       meta: [
         {
           name: 'description',
@@ -21,6 +26,13 @@ export default defineNuxtConfig({
     },
   },
   css: ['@/assets/scss/main.scss'],
+  nitro: {
+    compressPublicAssets: true,
+    routeRules: {
+      '/img/**': { headers: { 'cache-control': `public,max-age=${cacheTTL},s-maxage=${cacheTTL}` } },
+      '/_nuxt/**': { headers: { 'cache-control': `public,max-age=${cacheTTL},s-maxage=${cacheTTL}` } },
+    },
+  },
   modules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
