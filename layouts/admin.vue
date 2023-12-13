@@ -124,6 +124,6 @@ useHead({
 
 function logout() {
   user.value = null;
-  router.push('/');
+  router.push('/admin/login');
 }
 </script>

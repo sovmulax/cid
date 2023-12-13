@@ -1,7 +1,7 @@
 export default defineNuxtRouteMiddleware((to, _) => {
   const user = useUserState();
 
-  if (to.path === '/admin' && user.value) {
+  if (to.path === '/admin/login' && user.value) {
     return navigateTo('/admin/projects');
   }
 
