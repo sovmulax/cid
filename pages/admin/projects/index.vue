@@ -2,29 +2,15 @@
 const { $pb } = useNuxtApp();
 
 let records;
+
+// TODO: Use Nuxt asyncData hook instead
 try {
   records = await $pb.collection('projects').getFullList({
     sort: '-created',
   });
 } catch (error) {}
+
 const data = ref(records);
-
-async function countask(id) {
-  let allTasks;
-  let doneTasks;
-  try {
-    allTasks = await $pb.collection('project_tasks').getFullList({
-      filter: `projectId=${id}`,
-    });
-
-    doneTasks = await $pb.collection('project_tasks').getFullList({
-      filter: `projectId=${id}&&status=3`,
-    });
-  } catch (error) {}
-
-  const percent = (doneTasks.totalItems * 100) / allTasks.totalItems;
-  return percent;
-}
 
 definePageMeta({
   layout: false,
@@ -36,7 +22,7 @@ definePageMeta({
     <template #title-header> Projets </template>
     <template #btn-header>
       <nuxt-link to="/projects/form" class="btn btn-primary" type="button">
-        <i class="mdi mdi-plus-circle mr-2"></i> Ajouter Un Projet
+        <i class="mdi mdi-plus-circle mr-2"></i> Nouveau
       </nuxt-link>
     </template>
     <template #content>
@@ -55,7 +41,6 @@ definePageMeta({
                     <th>Sous-Domaine</th>
                     <th>Date Début</th>
                     <th>Date Fin</th>
-                    <th>État</th>
                     <th>Tâches</th>
                     <th>Membres</th>
                   </tr>
@@ -68,7 +53,6 @@ definePageMeta({
                     <td>{{ item.subDomain }}</td>
                     <td>{{ dateformat(item.startDate) }}</td>
                     <td>{{ dateformat(item.endDate) }}</td>
-                    <td>{{ countask(item.id) }}%</td>
                     <td>
                       <nuxt-link :to="`/projects/taches/${item.id}`"
                         ><i class="fas fa-arrow-circle-right"></i
@@ -89,5 +73,3 @@ definePageMeta({
     </template>
   </NuxtLayout>
 </template>
-
-<style scoped></style>

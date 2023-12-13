@@ -17,7 +17,7 @@ definePageMeta({
     <template #title-header> Membres </template>
     <template #btn-header>
       <nuxt-link to="addmembers" class="btn btn-primary" type="button">
-        <i class="mdi mdi-plus-circle mr-2"></i> Ajouter Un Membres
+        <i class="mdi mdi-plus-circle mr-2"></i> Nouveau
       </nuxt-link>
     </template>
     <template #content>

@@ -39,6 +39,6 @@ definePageMeta({
 <style scoped>
 .size {
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
 }
 </style>
