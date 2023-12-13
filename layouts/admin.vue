@@ -1,85 +1,41 @@
 <template>
   <div>
-    <div class="header-bg">
-      <!-- Navigation Bar-->
+    <div class="header-bg py-3">
       <header id="topnav">
         <div class="topbar-main">
-          <div class="container-fluid">
-            <!-- Logo container-->
+          <div class="container-fluid py-3">
             <div class="logo">
-              <a href="/" class="logo">
-                <img src="/images/logo-sm.png" alt="" class="logo-small" />
-                <img src="/images/logo-light.png" alt="" class="logo-large" />
+              <a href="/admin" class="logo">
+                <img class="w-12 object-contain" src="~/assets/img/logo.png" alt="Logo CID" />
               </a>
             </div>
-            <!-- End Logo container-->
 
             <div class="menu-extras topbar-custom">
               <ul class="navbar-right list-inline float-right mb-0">
                 <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
-                  <form role="search" class="app-search">
-                    <div class="form-group mb-0">
-                      <input type="text" class="form-control" placeholder="Search.." />
-                      <button type="submit"><i class="fa fa-search"></i></button>
-                    </div>
-                  </form>
-                </li>
-
-                <li class="dropdown notification-list list-inline-item">
-                  <div class="dropdown notification-list nav-pro-img">
-                    <a
-                      class="dropdown-toggle nav-link arrow-none nav-user"
-                      data-toggle="dropdown"
-                      href="#"
-                      role="button"
-                      aria-haspopup="false"
-                      aria-expanded="false"
-                    >
-                      <img src="/images/users/user-4.jpg" alt="user" class="rounded-circle" />
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-                      <button class="dropdown-item text-danger" @click="logout">
-                        <i class="mdi mdi-power text-danger"></i> Deconnexion
-                      </button>
-                    </div>
-                  </div>
-                </li>
-
-                <li class="menu-item list-inline-item">
-                  <!-- Mobile menu toggle-->
-                  <a class="navbar-toggle nav-link">
-                    <div class="lines">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                  </a>
-                  <!-- End mobile menu toggle-->
+                  <button class="text-danger rounded bg-white px-3 py-2" @click="logout">
+                    <i class="mdi mdi-power text-danger"></i> Déconnexion
+                  </button>
                 </li>
               </ul>
             </div>
-            <!-- end menu-extras -->
 
             <div class="clearfix"></div>
           </div>
-          <!-- end container -->
         </div>
-        <!-- end topbar-main -->
 
-        <!-- MENU Start -->
         <div class="navbar-custom">
           <div class="container-fluid">
             <div id="navigation">
-              <!-- Navigation Menu-->
               <ul class="navigation-menu">
                 <li class="has-submenu">
-                  <nuxt-link to="/admin/projects"><i class="ion ion-md-laptop"></i>Gestion de Projets</nuxt-link>
+                  <nuxt-link to="/admin/projects"><i class="ion ion-md-laptop"></i>Projets</nuxt-link>
                 </li>
                 <li class="has-submenu">
                   <nuxt-link to="/admin/clients"><i class="ion ion-md-business"></i>Entreprises</nuxt-link>
                 </li>
                 <li class="has-submenu">
-                  <nuxt-link to="/admin/events"><i class="ion ion-md-calendar"></i>Agenda / Évenements</nuxt-link>
+                  <nuxt-link to="/admin/events"><i class="ion ion-md-calendar"></i>Agenda</nuxt-link>
                 </li>
                 <li class="has-submenu">
                   <nuxt-link to="/admin/post"><i class="ion ion-md-paper"></i>Actualités</nuxt-link>
@@ -88,15 +44,10 @@
                   <nuxt-link to="/admin/members"><i class="ion ion-md-people"></i>Membres</nuxt-link>
                 </li>
               </ul>
-              <!-- End navigation menu -->
             </div>
-            <!-- end #navigation -->
           </div>
-          <!-- end container -->
         </div>
-        <!-- end navbar-custom -->
       </header>
-      <!-- End Navigation Bar-->
 
       <div class="container-fluid">
         <div class="row">
@@ -115,40 +66,40 @@
                     </div>
                   </div>
                 </div>
-                <!-- end col-->
               </div>
-              <!-- end row-->
             </div>
-            <!-- end page title -->
           </div>
-          <!-- end col -->
         </div>
-        <!-- end row-->
       </div>
     </div>
 
-    <!-- page wrapper start -->
     <div class="wrapper">
       <div class="container-fluid">
         <slot name="content" />
       </div>
-      <!-- end container-fluid -->
     </div>
-    <!-- page wrapper end -->
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <span class="d-none d-sm-inline-block">
-              Made with <i class="mdi mdi-heart text-danger"></i> by InputStudio X Sovmulax</span
-            >
-          </div>
-        </div>
+        <p>
+          Développé par
+          <a class="font-bold" href="https://sovmulax.me" target="_blank" rel="noopener noreferrer">sovmulax</a>
+          x
+          <a class="font-bold" href="https://marcaureln.com?ref=cid" target="_blank" rel="noopener noreferrer">
+            marcaureln
+          </a>
+          x
+          <a
+            class="font-bold"
+            href="https://konankouameaimefabrice.000webhostapp.com/index.php"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            konan-fabrice
+          </a>
+        </p>
       </div>
     </footer>
-    <!-- End Footer -->
   </div>
 </template>
 
