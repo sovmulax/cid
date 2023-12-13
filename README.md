@@ -6,24 +6,25 @@ Bienvenue sur le dépôt du site web de la CID. Le site est développé en utili
 
 ```mermaid
 flowchart LR
-    subgraph Serveur
-        web(Vitrine)
-        admin(Dashboard)
+    subgraph "Serveur ESATIC"
+        web(Site web)
     end
 
-    web <--> pb(PocketBase)
-    admin <--> pb
+    subgraph PocketHost
+        pb(Instance PocketBase)
+    end
+
+    web <--> pb
 ```
 
 **Structure du projet :**
 
 - `.vscode/` : Configuration [Visual Studio Code](https://code.visualstudio.com/)
-- `apps/` : Applications
-  - `admin/` : Dashboard
-  - `web/` : Vitrine
 - `pocketbase/` : Dockerfile et données de PocketBase (les données sont ignorées par git)
 - `.gitignore` : Fichiers ignorés par git
 - `README.md` : Ce fichier
+
+Pour les autres dossiers, voir la [documentation de Nuxt](https://nuxt.com/docs/guide/directory-structure/app).
 
 ## Installation
 
@@ -51,13 +52,6 @@ PocketBase est maintenant accessible à l'adresse http://localhost:8080/\_. Pour
 Depuis la racine du projet :
 
 ```bash
-# Démarrer la vitrine
-cd apps/web
-yarn # Installer les dépendances
-yarn dev # Démarrer le serveur de développement
-
-# Démarrer le dashboard
-cd apps/admin
 yarn # Installer les dépendances
 yarn dev # Démarrer le serveur de développement
 ```
@@ -65,12 +59,11 @@ yarn dev # Démarrer le serveur de développement
 ## Déploiement
 
 ```bash
-cd apps/web # ou apps/admin
 yarn build # Si vous avez un serveur avec Node.js
 yarn generate # Pour les hébergements statiques (ex: Apache, Nginx, etc.)
 ```
 
-Les applications sont construites dans le dossier `.output/` de chaque application (ex: `apps/web/.output/`). Vous pouvez ensuite les déployer sur votre serveur. Pour plus d'informations, voir la [documentation de Nuxt](https://nuxt.com/docs/getting-started/deployment)
+Les applications sont construites dans le dossier `.output/`. Vous pouvez ensuite les déployer sur votre serveur. Pour plus d'informations, voir la [documentation de Nuxt](https://nuxt.com/docs/getting-started/deployment).
 
 ## Crédits
 
