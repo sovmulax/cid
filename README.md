@@ -6,7 +6,7 @@ Bienvenue sur le dépôt du site web de la CID. Le site est développé en utili
 
 ```mermaid
 flowchart LR
-    subgraph Turborepo
+    subgraph Serveur
         web(Vitrine)
         admin(Dashboard)
     end
