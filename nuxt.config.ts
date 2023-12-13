@@ -20,7 +20,7 @@ export default defineNuxtConfig({
       apiBaseUrl: 'https://cid.pockethost.io/', // You can override this value at runtime with NUXT_PUBLIC_API_BASE_URL env var
     },
   },
-  css: ['@/assets/scss/main.scss', '@/assets/admin-scss/main.scss'],
+  css: ['@/assets/scss/main.scss'],
   modules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/google-fonts',
