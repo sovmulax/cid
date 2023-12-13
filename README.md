@@ -45,7 +45,7 @@ docker build -t pocketbase pocketbase --build-arg PB_VERSION=0.16.3
 docker run -d --name pocketbase -p 8080:8080 -v $PWD/pocketbase/pb_data:/pb_data pocketbase serve --debug --http=0.0.0.0:8080 --dir=/pb_data
 ```
 
-PocketBase est maintenant accessible à l'adresse http://localhost:8080/\_. Pour plus d'informations, voir la [documentation de PocketBase](https://pocketbase.io/docs/).
+PocketBase est maintenant accessible à [cette adresse](http://localhost:8080/_). Pour plus d'informations, voir la [documentation de PocketBase](https://pocketbase.io/docs/).
 
 ### Applications
 
