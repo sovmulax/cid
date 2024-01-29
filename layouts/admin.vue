@@ -100,6 +100,7 @@
         </p>
       </div>
     </footer>
+    <NuxtSnackbar />
   </div>
 </template>
 
