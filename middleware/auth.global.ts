@@ -1,11 +1,11 @@
 export default defineNuxtRouteMiddleware((to, _) => {
   const user = useUserState();
 
-  if (to.path === '/admin/login' && user.value) {
+  if (['/admin', '/admin/login'].includes(to.path) && user.value) {
     return navigateTo('/admin/projects');
   }
 
-  if (to.path.includes('/admin') && to.path !== '/admin/login' && !user.value) {
+  if (to.path.startsWith('/admin') && to.path !== '/admin/login' && !user.value) {
     return navigateTo('/admin/login');
   }
 });
