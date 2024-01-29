@@ -1,16 +1,10 @@
 <script setup>
 const { $pb } = useNuxtApp();
-
-let records;
-
-// TODO: Use Nuxt asyncData hook instead
-try {
-  records = await $pb.collection('projects').getFullList({
+const { data, pending } = await useLazyAsyncData('projects', () =>
+  $pb.collection('projects').getFullList({
     sort: '-created',
-  });
-} catch (error) {}
-
-const data = ref(records);
+  })
+);
 
 definePageMeta({
   layout: false,
@@ -29,10 +23,11 @@ definePageMeta({
       <div class="row">
         <div class="col-md-12 card">
           <div class="card-body">
-            <h4 class="header-title mt-0">Liste des Articles</h4>
+            <h4 class="header-title mt-0">Liste des projets</h4>
             <p class="text-muted mb-4"></p>
             <div class="table-responsive">
-              <table class="table-striped mb-0 table">
+              <AppLoader v-if="pending" />
+              <table v-else class="table-striped mb-0 table">
                 <thead>
                   <tr>
                     <th>#</th>
