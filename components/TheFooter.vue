@@ -5,7 +5,7 @@
         <NuxtLink :to="contact.link" class="flex items-center gap-3">
           <Icon :name="contact.icon" size="32px" :class="'text-primary'" />
           <div class="flex flex-col gap-1">
-            <h3 class="font-black">{{ contact.title }}</h3>
+            <span class="font-black">{{ contact.title }}</span>
             <span>{{ contact.text }}</span>
           </div>
         </NuxtLink>
