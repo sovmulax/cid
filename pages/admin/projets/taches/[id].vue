@@ -2,7 +2,7 @@
 const projectId = useRoute().params.id;
 
 if (!projectId) {
-  navigateTo('/admin/projects');
+  navigateTo('/admin/projets');
 }
 
 const { $pb } = useNuxtApp();
@@ -24,7 +24,7 @@ definePageMeta({
   <NuxtLayout name="admin">
     <template #title-header> Projets / Tâches </template>
     <template #btn-header>
-      <nuxt-link to="/admin/projects" class="btn btn-primary">
+      <nuxt-link to="/admin/projets" class="btn btn-primary">
         <i class="mdi mdi-arrow-left mr-1"></i> Retour
       </nuxt-link>
     </template>

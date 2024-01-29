@@ -29,19 +29,19 @@
             <div id="navigation">
               <ul class="navigation-menu">
                 <li class="has-submenu">
-                  <nuxt-link to="/admin/projects"><i class="ion ion-md-laptop"></i>Projets</nuxt-link>
+                  <nuxt-link to="/admin/projets"><i class="ion ion-md-laptop"></i>Projets</nuxt-link>
                 </li>
                 <li class="has-submenu">
                   <nuxt-link to="/admin/clients"><i class="ion ion-md-business"></i>Entreprises</nuxt-link>
                 </li>
                 <li class="has-submenu">
-                  <nuxt-link to="/admin/events"><i class="ion ion-md-calendar"></i>Agenda</nuxt-link>
+                  <nuxt-link to="/admin/evenements"><i class="ion ion-md-calendar"></i>Agenda</nuxt-link>
                 </li>
                 <li class="has-submenu">
-                  <nuxt-link to="/admin/post"><i class="ion ion-md-paper"></i>Actualités</nuxt-link>
+                  <nuxt-link to="/admin/actualites"><i class="ion ion-md-paper"></i>Actualités</nuxt-link>
                 </li>
                 <li class="has-submenu">
-                  <nuxt-link to="/admin/members"><i class="ion ion-md-people"></i>Membres</nuxt-link>
+                  <nuxt-link to="/admin/membres"><i class="ion ion-md-people"></i>Membres</nuxt-link>
                 </li>
               </ul>
             </div>

@@ -17,7 +17,7 @@ async function login() {
 
     if (response) {
       user.value = response;
-      $router.push('/admin/projects');
+      $router.push('/admin/projets');
     }
   } catch (error) {
     alert(error);

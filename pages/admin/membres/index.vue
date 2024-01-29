@@ -16,7 +16,7 @@ definePageMeta({
   <NuxtLayout name="admin">
     <template #title-header> Membres </template>
     <template #btn-header>
-      <nuxt-link to="addmembers" class="btn btn-primary" type="button">
+      <nuxt-link to="/admin/membres/nouveau" class="btn btn-primary" type="button">
         <i class="mdi mdi-plus-circle mr-2"></i> Nouveau
       </nuxt-link>
     </template>

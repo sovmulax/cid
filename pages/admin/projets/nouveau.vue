@@ -40,9 +40,11 @@ async function submit() {
       text: 'Le projet a bien été créé !',
     });
 
-    navigateTo('/admin/projects');
+    navigateTo('/admin/projets');
   }
 }
+
+// TODO: Add members
 
 definePageMeta({
   layout: false,
@@ -53,7 +55,7 @@ definePageMeta({
   <NuxtLayout name="admin">
     <template #title-header> Ajouter projet </template>
     <template #btn-header>
-      <nuxt-link to="/admin/projects" class="btn btn-primary">
+      <nuxt-link to="/admin/projets" class="btn btn-primary">
         <i class="mdi mdi-arrow-left mr-1"></i> Retour
       </nuxt-link>
     </template>

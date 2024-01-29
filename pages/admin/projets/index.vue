@@ -15,7 +15,7 @@ definePageMeta({
   <NuxtLayout name="admin">
     <template #title-header> Projets </template>
     <template #btn-header>
-      <nuxt-link to="/admin/projects/new" class="btn btn-primary">
+      <nuxt-link to="/admin/projets/nouveau" class="btn btn-primary">
         <i class="mdi mdi-plus mr-1"></i> Nouveau
       </nuxt-link>
     </template>
@@ -49,12 +49,12 @@ definePageMeta({
                     <td>{{ dateformat(project.startDate) }}</td>
                     <td>{{ dateformat(project.endDate) }}</td>
                     <td>
-                      <nuxt-link :to="`/admin/projects/taches/${project.id}`"
+                      <nuxt-link :to="`/admin/projets/taches/${project.id}`"
                         ><i class="fas fa-arrow-circle-right"></i
                       ></nuxt-link>
                     </td>
                     <td>
-                      <nuxt-link :to="`/admin/projects/membres/${project.id}`">
+                      <nuxt-link :to="`/admin/projets/membres/${project.id}`">
                         <i class="fas fa-arrow-circle-right"></i>
                       </nuxt-link>
                     </td>
