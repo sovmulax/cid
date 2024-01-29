@@ -36,7 +36,7 @@
       v-model="data.description"
       class="focus:shadow-outline appearance-none rounded border p-3 leading-tight text-gray-700 focus:outline-none"
       rows="4"
-      placeholder="Résume du projet (maximum 250 mots)"
+      placeholder="Résumé du projet (maximum 250 mots)"
       required
     ></textarea>
 
@@ -194,7 +194,7 @@ function clear() {
  */
 function validate(): boolean | string {
   if (countWords(data.value.description) > 250) {
-    return 'Le résume du projet ne doit pas dépasser 250 mots !';
+    return 'Le résumé du projet ne doit pas dépasser 250 mots !';
   }
 
   if (countWords(data.value.problem) > 500) {
