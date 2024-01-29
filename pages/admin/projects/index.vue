@@ -1,6 +1,6 @@
 <script setup>
 const { $pb } = useNuxtApp();
-const { data, pending } = await useLazyAsyncData('projects', () =>
+const { data: projects, pending } = await useLazyAsyncData('projects', () =>
   $pb.collection('projects').getFullList({
     sort: '-created',
   })
@@ -41,20 +41,20 @@ definePageMeta({
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="item in data" :key="item.id">
+                  <tr v-for="project in projects" :key="project.id">
                     <th scope="row"></th>
-                    <td>{{ item.title }}</td>
-                    <td>{{ item.domain }}</td>
-                    <td>{{ item.subDomain }}</td>
-                    <td>{{ dateformat(item.startDate) }}</td>
-                    <td>{{ dateformat(item.endDate) }}</td>
+                    <td>{{ project.title }}</td>
+                    <td>{{ project.domain }}</td>
+                    <td>{{ project.subDomain }}</td>
+                    <td>{{ dateformat(project.startDate) }}</td>
+                    <td>{{ dateformat(project.endDate) }}</td>
                     <td>
-                      <nuxt-link :to="`/projects/taches/${item.id}`"
+                      <nuxt-link :to="`/admin/projects/taches/${project.id}`"
                         ><i class="fas fa-arrow-circle-right"></i
                       ></nuxt-link>
                     </td>
                     <td>
-                      <nuxt-link :to="`/projects/membres/${item.id}`">
+                      <nuxt-link :to="`/admin/projects/membres/${project.id}`">
                         <i class="fas fa-arrow-circle-right"></i>
                       </nuxt-link>
                     </td>
